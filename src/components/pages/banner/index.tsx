@@ -1,0 +1,25 @@
+import Link from "next/link";
+import { BannerStyles } from "./BannerStyle";
+
+const PageBanner = ({ data }: any) => {
+
+  const { attrs } = data;
+  const { posts } = attrs;
+  const banner = posts[0];
+
+  return (
+    <BannerStyles>
+      <div className="banner-wrapper">
+        <div className="content" style={{background:`url(${banner.thumbnail.url_full})`}}>
+          <h1>{banner.name}</h1>
+          <p>{banner.excerpt}</p>
+          <Link href={`/article/${banner.slug}`}>
+            Leer más
+          </Link>
+        </div>
+      </div>
+    </BannerStyles>
+  )
+}
+
+export default PageBanner;
