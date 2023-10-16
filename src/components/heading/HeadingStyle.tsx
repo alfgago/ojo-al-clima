@@ -9,6 +9,7 @@ export const HeadingStyle = styled.section<{color: string}>`
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  position: relative;
   .wrapper{
     max-width: 84.6875rem;
     width: 100%;
@@ -26,6 +27,28 @@ export const HeadingStyle = styled.section<{color: string}>`
         border-radius: 5rem;
         background: ${(props) => COLORS[props.color]};
         left: 0;
+      }
+    }
+  }
+  .learn-colors {
+    position: absolute;
+    display: flex;
+    height: 100%;
+    right: 0;
+    div {
+      width: 5.875rem;
+      height: 100%;
+      &.red {
+        background: ${GRADIENTS.red};
+      }
+      &.purple {
+        background: ${GRADIENTS.purple};
+      }
+      &.blue {
+        background: ${GRADIENTS.blue};
+      }
+      &.yellow {
+        background: ${GRADIENTS.yellow};
       }
     }
   }

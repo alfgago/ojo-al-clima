@@ -11,6 +11,12 @@ export const Heading = ({
           {title}
         </h1>
       </div>
+      <div className="learn-colors">
+        <div className="red"></div>
+        <div className="purple"></div>
+        <div className="blue"></div>
+        <div className="yellow"></div>
+      </div>
     </HeadingStyle>
   )
 }

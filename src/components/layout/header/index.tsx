@@ -24,9 +24,14 @@ export const Header = ({ data }: any) => {
             <div className={`menu-wrapper ${hideMenuDesktop}`}>
               {menu?.items?.map((item: any, index: number) => (
                 <div key={index} className="item">
-                  <Link href={item.url}>
-                    <span className="parent">{item.title}</span>
-                  </Link>
+                  <div className="parent">
+                    <Link href={item.url}>
+                      {item.title}
+                    </Link>
+                    <span>
+                      <ReactSVG src="/icons/arrow-down.svg" />
+                    </span>
+                  </div>
                   <div className="childrens">
                     {item?.childrens?.map((child: any, index: number) => (
                       <Link key={index} href={child.url}>

@@ -45,6 +45,13 @@ export const HeaderStyle = styled.header`
             .item {
               transition: all 0.4s ease;
               ${generateDelay(8)}
+              &:hover {
+                .parent {
+                  span {
+                    transform: rotate(-180deg);    
+                  }
+                }
+              }
             }
             &.true {
               .item {
@@ -58,6 +65,15 @@ export const HeaderStyle = styled.header`
             transition: all 0.4s ease;
             position: relative;
             opacity: 1;
+            .parent {
+              padding: 1rem 0;
+              display: flex;
+              align-items: center;
+              gap: 0.39rem;
+              span {
+                transition: all 0.4s ease;
+              }
+            }
             a {
               display: block;
               text-decoration: none;
@@ -67,10 +83,6 @@ export const HeaderStyle = styled.header`
                 font-style: normal;
                 font-weight: 400;
                 line-height: normal;
-              }
-              .parent {
-                padding: 1rem 0;
-                display: block;
               }
             }
             .childrens {
@@ -125,7 +137,7 @@ export const HeaderStyle = styled.header`
       }
     }
     .learn {
-      width: 23rem;
+      width: 23.55rem;
       background: ${GRADIENTS.red};
     }
   }
