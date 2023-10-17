@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 import { COLORS, GRADIENTS, DEVICE } from "@/styles/variables"
 
-export const GridNewStyle = styled.section<{ background: string, asset: string }>`
+export const GridNewStyle = styled.section<{ background: string, asset: string, reverse: number }>`
   .grid-news-container {
     background: ${props => props.background === 'light' ? COLORS.white : COLORS.black};
     padding: 3.25rem 0 ;
@@ -33,6 +33,7 @@ export const GridNewStyle = styled.section<{ background: string, asset: string }
         &.highlight {
           h2 {
             margin-bottom: -3rem;
+            left: ${props => props.reverse ? 'calc(65% + 3.25rem)' : '0'}; 
           }
         }
         &.normal {
@@ -42,6 +43,7 @@ export const GridNewStyle = styled.section<{ background: string, asset: string }
       .articles {
         &.highlight {
           display: flex;
+          flex-direction: ${props => props.reverse ? 'row-reverse' : 'row'};
           gap: 3.25rem;
           .featured-wrapper {
             width: 65%;
