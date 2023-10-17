@@ -30,7 +30,7 @@ const GridImages = ({ data }: any) => {
               <div key={index} className="item">
                   <Image 
                     src={image.url_full} 
-                    alt={image.title} 
+                    alt={image.alt} 
                     width={image.width}
                     height={image.height}
                   />
