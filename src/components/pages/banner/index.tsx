@@ -15,7 +15,7 @@ const PageBanner = ({ data }: any) => {
             <div className="data-wrapper">
               <h1>{banner.name}</h1>
               <p>{banner.excerpt}</p>
-              <Link href={`/article/${banner.slug}`}>
+              <Link href={`/articles/${banner.slug}`}>
                 Leer más
               </Link>
             </div>
