@@ -9,6 +9,9 @@ body {
   overscroll-behavior: contain;
   width: 100%;
   font-family: Avenir;
+  @media screen and (max-width: 1600px) {
+    font-size: 14px;
+  }
 }
 
 *,
