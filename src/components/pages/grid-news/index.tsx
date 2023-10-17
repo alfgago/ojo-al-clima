@@ -6,6 +6,7 @@ const GridNews = ({ data }: any) => {
   const { attrs } = data;
   
   const {
+    reverse_order,
     highlight_first,
     light_background,
     title_text,
@@ -21,6 +22,7 @@ const GridNews = ({ data }: any) => {
     <GridNewStyle
       background={background}
       asset={title_asset_color} 
+      reverse={reverse_order}
     >
       <div className="grid-news-container">
         <div className="wrapper">
