@@ -1,25 +1,31 @@
 import Link from "next/link";
 import { HeaderStyle } from "./HeaderStyles"
-import Image from "next/image";
 import { SearchHeader } from "./search";
 import { useState } from 'react';
 import { ReactSVG } from "react-svg";
+import { Control } from "./learn/Control";
+import { useRouter } from "next/router";
 
-export const Header = ({ data }: any) => {
+export const Header = ({ data, learn }: any) => {
 
   const { menu } = data;
 
   const [hideMenuDesktop, setHideMenuDesktop] = useState(false);
+  const [activeLearn, setActiveLearn] = useState(-1)
+
+  const router = useRouter();
+  const isHomePage = router.pathname === '/';
+
 
   return (
     <HeaderStyle>
       <div className="header-container">
-        <div className="site-logo">
+        <div className={isHomePage ? 'site-logo homepage' : 'site-logo'}>
           <Link href="/">
             <ReactSVG src="/logos/site-logo.svg" />
           </Link>
         </div>
-        <div className="content">
+        <div className={isHomePage ? 'content homepage' : 'content'}>
           <div className="menu">
             <div className={`menu-wrapper ${hideMenuDesktop}`}>
               {menu?.items?.map((item: any, index: number) => (
@@ -47,8 +53,19 @@ export const Header = ({ data }: any) => {
             <SearchHeader menuState={setHideMenuDesktop} />
           </div>
         </div>
-        <div className="learn">
-
+        <div className="learn-controls">
+          {
+            learn?.map((item: any, index: number) => (
+              <Control
+                key={item.ID}
+                data={item}
+                index={index}
+                setActive={setActiveLearn}
+                active={activeLearn}
+                isHomePage={isHomePage}
+              />
+            ))
+          }
         </div>
       </div>
     </HeaderStyle>
