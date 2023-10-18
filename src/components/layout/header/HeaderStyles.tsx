@@ -15,12 +15,15 @@ const generateDelay = (numOfItems:any) => {
 }
 
 export const HeaderStyle = styled.header`
+  position: relative;
+  z-index: 20;
   .header-container { 
     position: relative;
     display: flex;
     width: 100%;
     justify-content: space-between;
     margin: auto;
+    height: 5rem;
     .site-logo {
       padding-left: 5rem;
       svg {
@@ -28,6 +31,15 @@ export const HeaderStyle = styled.header`
         display: block;
         rect:nth-child(2) {
           filter: brightness(0.6);
+        }
+      }
+      &.homepage {
+        @media ${DEVICE.md} {
+          svg {
+            rect:nth-child(2) {
+              filter: brightness(1);
+            }
+          }
         }
       }
     }
@@ -135,9 +147,50 @@ export const HeaderStyle = styled.header`
         align-items: center;
         padding: 0 6rem 0 2rem;
       }
+
+      &.homepage {
+        @media ${DEVICE.md} {
+          .parent {
+            a {
+              color: ${COLORS.white} !important;
+            }
+            svg {
+              path { 
+                stroke: ${COLORS.white} !important;
+              }
+            }
+          }
+          .search-header-wrapper {
+            input {
+              border-radius: 3.125rem;
+              border: 0.5px solid #FFF;
+              background: rgba(255, 255, 255, 0.55);
+              backdrop-filter: blur(2.5px);
+            }
+            .text {
+              color: ${COLORS.white};
+            }
+            .search-icon {
+              svg {
+                path {
+                  fill: ${COLORS.white} !important;
+                }
+              }
+            }
+            .close-icon {
+              svg {
+                path {
+                  stroke: ${COLORS.white} !important;
+                }
+              }
+            }
+          }
+        }
+      }
+
     }
-    .learn {
-      width: 23.55rem;
+    .learn-controls {
+      width: 23.2rem;
       background: ${GRADIENTS.red};
     }
   }

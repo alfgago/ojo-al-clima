@@ -36,7 +36,7 @@ export const HeadingStyle = styled.section<{color: string}>`
     height: 100%;
     right: 0;
     div {
-      width: 5.875rem;
+      width: 5.8rem;
       height: 100%;
       &.red {
         background: ${GRADIENTS.red};
