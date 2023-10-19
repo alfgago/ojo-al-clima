@@ -3,8 +3,9 @@ import { HeaderStyle } from "./HeaderStyles"
 import { SearchHeader } from "./search";
 import { useState } from 'react';
 import { ReactSVG } from "react-svg";
-import { Control } from "./learn/Control";
+import { Control } from "./learn/control";
 import { useRouter } from "next/router";
+import { Learn } from "./learn";
 
 export const Header = ({ data, learn }: any) => {
 
@@ -53,8 +54,8 @@ export const Header = ({ data, learn }: any) => {
             <SearchHeader menuState={setHideMenuDesktop} />
           </div>
         </div>
-        <div className="learn-controls">
-          {
+        <div className={isHomePage ? 'learn-controls homepage' : 'learn-controls'}>
+          { 
             learn?.map((item: any, index: number) => (
               <Control
                 key={item.ID}
@@ -63,6 +64,20 @@ export const Header = ({ data, learn }: any) => {
                 setActive={setActiveLearn}
                 active={activeLearn}
                 isHomePage={isHomePage}
+              />
+            ))
+          }
+        </div>
+      </div>
+      <div className="learn-container">
+        <div className="learn-wrapper">
+        {
+            learn?.map((item: any, index: number) => (
+              <Learn
+                key={item.ID}
+                data={item}
+                index={index}
+                active={activeLearn}
               />
             ))
           }

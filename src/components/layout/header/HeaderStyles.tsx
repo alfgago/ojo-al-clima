@@ -192,6 +192,13 @@ export const HeaderStyle = styled.header`
     .learn-controls {
       width: 23.2rem;
       background: ${GRADIENTS.red};
+      &.homepage {
+        @media ${DEVICE.md} {
+          .control-wrapper {
+            pointer-events: all;
+          }
+        }
+      }
     }
   }
 `
