@@ -30,7 +30,7 @@ export const Control = ({ data, index, setActive, active, isHomePage }: any) => 
         >
           <ReactSVG src="/icons/plus.svg" />
         </div>
-        <div className={ isHomePage ? 'name homepage' : 'name'}>
+        <div className={`name ${isHomePage ? 'homepage' : ''} ${active !== -1 ? 'active' : ''}`}>
           <span>
             {post_title}
           </span>

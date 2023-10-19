@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from "framer-motion"
 
 import { Header } from "./header"
 import { Footer } from "./footer"
-
+ 
 const defaultVariants = {
   out: {
     opacity: 0,
@@ -22,6 +22,7 @@ const defaultVariants = {
 const onExitCompleteHandler = () => {
   window.scrollTo(0, 0)
 }
+
 export const Layout = ({ children, header, footer, learn }: any) => {
   const { asPath } = useRouter()
   return (

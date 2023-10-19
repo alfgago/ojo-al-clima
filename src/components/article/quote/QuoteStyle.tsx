@@ -4,7 +4,7 @@ import { COLORS, GRADIENTS, DEVICE } from "@/styles/variables"
 
 export const QuoteStyle = styled.blockquote`
   display: flex;
-  padding: 2.8125rem 3.3125rem;
+  padding: 1.2rem 3.3125rem;
   margin: 3rem 0;
   justify-content: center;
   align-items: center;

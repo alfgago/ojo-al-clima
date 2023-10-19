@@ -17,6 +17,8 @@ export const COLORS: PARAMS = {
   red: "#C5242A",
   green: "#27C840",
   blue: "#48A1BF",
+  purple: "#3F448F",
+  yellow: "#F58B28",
   disabled: "#999999",
 }
 

@@ -22,6 +22,7 @@ export const ControlStyle = styled.div<ControlProps>`
     z-index: 90;
     cursor: pointer;
     transition: all 0.3s ease;
+    pointer-events: none;
     &.active {
       pointer-events: none;
     }
@@ -30,9 +31,9 @@ export const ControlStyle = styled.div<ControlProps>`
       display: flex;
       align-items: center;
       justify-content: center;
-      pointer-events: none;
       background: ${props => GRADIENTS[props.color]};
       background-size: 100% 100vh;
+      pointer-events: all;
       svg {
         transition: all 0.3s ease;
       }
@@ -44,6 +45,9 @@ export const ControlStyle = styled.div<ControlProps>`
         }
         z-index: 100;
       }
+      &:hover + .name {
+        opacity: 1 !important;
+      }
     }
     .name {
       height: calc(100% - 5rem);
@@ -51,6 +55,7 @@ export const ControlStyle = styled.div<ControlProps>`
       background: ${props => GRADIENTS[props.color]};
       opacity: 0;
       transition: all 0.3s ease;
+      pointer-events: none;
       span {
         color: ${COLORS.white};
         font-size: 2rem;
@@ -64,7 +69,7 @@ export const ControlStyle = styled.div<ControlProps>`
       &.homepage {
         opacity: 1;
       }
-      &:hover {
+      &.active { 
         opacity: 1;
       }
     }
