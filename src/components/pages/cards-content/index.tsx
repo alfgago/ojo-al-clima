@@ -16,9 +16,9 @@ const CardsContent = ({ data }: any) => {
   } = attrs;
 
   return (
-    <CardsContentStyle>
-      <div className="cards-content-container" style={{ background: `url(${thumbnail.url_full}), lightgray 50% / cover no-repeat;` }}>
-        <div className="colors-layer" style={{ background: `url(/layers/colors.webp), lightgray 50% / cover no-repeat;` }}>
+    <CardsContentStyle background={thumbnail.url_full}>
+      <div className="cards-content-container">
+        <div className="colors-layer">
           <div className="wrapper">
             <div className="content">
               <div className="title">
