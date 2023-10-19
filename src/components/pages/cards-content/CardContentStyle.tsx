@@ -2,8 +2,9 @@ import styled from "styled-components"
 
 import { COLORS, GRADIENTS, DEVICE } from "@/styles/variables"
 
-export const CardsContentStyle = styled.section`
+export const CardsContentStyle = styled.section<{background: string}>`
   .cards-content-container {
+    background: url(${(props) => props.background});
     background-size: 100% 115% !important;
     background-repeat: no-repeat!important;
     position: relative;
@@ -17,6 +18,7 @@ export const CardsContentStyle = styled.section`
       background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, #050507 95.56%);
     }
     .colors-layer {
+      background: url(/layers/colors.webp);
       background-repeat: no-repeat !important;
       background-size: 100% 90% !important;
       position: relative;
