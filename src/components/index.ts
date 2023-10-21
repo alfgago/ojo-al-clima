@@ -11,6 +11,9 @@ export * from './pages/PageComponents';
 //Category blocks
 export * from './category';
 
+//Learn
+export * from './learn-page';
+
 //Utils blocks
 export * from './category-label';
 export * from './recents';

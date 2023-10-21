@@ -6,7 +6,7 @@ const ImageCard = ({ data }: any) => {
   const { attrs } = data;
 
   return (
-    <ImageStyle>
+    <ImageStyle className={attrs.className}>
       <div className="img-wrapper">
         <Image
           src={attrs.url_full}
@@ -15,11 +15,13 @@ const ImageCard = ({ data }: any) => {
           height={attrs.height}
         />
       </div>
-      <figcaption>
-        <span>
-          {attrs.caption}
-        </span>
-      </figcaption>
+      {attrs.caption && (
+        <figcaption>
+          <span>
+            {attrs.caption}
+          </span>
+        </figcaption>
+      )}
     </ImageStyle>
   )
 }

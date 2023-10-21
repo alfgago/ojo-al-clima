@@ -9,7 +9,7 @@ export const layoutPageData = async (slug: string, staleTime?: number) => {
       console.log('request layout data:', slug);
       return response.data;
     }, 
-    { staleTime: staleTime ? staleTime * 1000 : 6000 } 
+    { staleTime: staleTime ? staleTime * 1000 : 10000 } 
   );
 
   return queryClient.getQueryData(['layoutData', slug]);

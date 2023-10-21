@@ -11,12 +11,13 @@ import { queryClient } from '@/utils';
 import '@/styles/fonts/stylesheet.css';
 import '@/styles/styles.scss';
 
+
 function App({ Component, pageProps}: AppProps) {
   return (
     <QueryClientProvider client={queryClient}>
       <Meta />
       <Hydrate state={pageProps.dehydratedState}>
-        <Layout header={pageProps.header} learn={pageProps.learn} footer={pageProps.footer}>
+        <Layout header={pageProps.header} footer={pageProps.footer}>
           <Component {...pageProps} />
         </Layout>
       </Hydrate>
@@ -29,11 +30,10 @@ App.getInitialProps = async (appContext: AppContext): Promise<AppInitialProps> =
   
   const footer = await layoutPageData('footer', 380);
   const header = await layoutPageData('header', 380);
-  const learn = await layoutPageData('learn', 380);
-
+  
   const pageProps = (await appContext.Component.getInitialProps?.(appContext.ctx));
 
-  return { pageProps: { ...pageProps, footer, header, learn } };
+  return { pageProps: { ...pageProps, footer, header } };
 }
 
 export default App;

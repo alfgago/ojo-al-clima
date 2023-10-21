@@ -1,21 +1,61 @@
 import Link from "next/link";
 import { HeaderStyle } from "./HeaderStyles"
 import { SearchHeader } from "./search";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ReactSVG } from "react-svg";
-import { Control } from "./learn/control";
 import { useRouter } from "next/router";
-import { Learn } from "./learn";
+import { Control } from "./learn-background/control";
+import { Learn } from "./learn-background";
 
-export const Header = ({ data, learn }: any) => {
+
+const learn = [
+  {
+    "post_title": "Evidencias",
+    "post_name": "evidencias",
+    "color": "red"
+  },
+  {
+    "post_title": "Causas",
+    "post_name": "causas",
+    "color": "purple"
+  },
+  {
+    "post_title": "Efectos",
+    "post_name": "efectos",
+    "color": "blue"
+  },
+  {
+    "post_title": "Soluciones",
+    "post_name": "soluciones",
+    "color": "yellow"
+  }
+]
+
+
+export const Header = ({ data }: any) => {
 
   const { menu } = data;
 
   const [hideMenuDesktop, setHideMenuDesktop] = useState(false);
-  const [activeLearn, setActiveLearn] = useState(-1)
 
   const router = useRouter();
   const isHomePage = router.pathname === '/';
+
+  const initialActiveLearn = () => {
+    let initial = -1;
+    if (router.pathname === '/evidencias') {
+      initial = 0;
+    } else if (router.pathname === '/causas') {
+      initial = 1;
+    } else if (router.pathname === '/efectos') {
+      initial = 2;
+    } else if (router.pathname === '/soluciones') {
+      initial = 3;
+    }
+    return initial;
+  }
+
+  const [activeLearn, setActiveLearn] = useState(initialActiveLearn);
 
 
   return (
@@ -55,7 +95,7 @@ export const Header = ({ data, learn }: any) => {
           </div>
         </div>
         <div className={isHomePage ? 'learn-controls homepage' : 'learn-controls'}>
-          { 
+          {
             learn?.map((item: any, index: number) => (
               <Control
                 key={item.ID}
@@ -71,7 +111,7 @@ export const Header = ({ data, learn }: any) => {
       </div>
       <div className="learn-container">
         <div className="learn-wrapper">
-        {
+          {
             learn?.map((item: any, index: number) => (
               <Learn
                 key={item.ID}
