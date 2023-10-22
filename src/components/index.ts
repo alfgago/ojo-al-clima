@@ -14,6 +14,9 @@ export * from './category';
 //Learn
 export * from './learn-page';
 
+//Search 
+export * from './search'
+
 //Utils blocks
 export * from './category-label';
 export * from './recents';
