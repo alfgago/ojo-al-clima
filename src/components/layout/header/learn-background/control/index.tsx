@@ -1,8 +1,11 @@
 import { ReactSVG } from "react-svg";
 import { ControlStyle } from "./ControlStyle";
+import { useRouter } from "next/router";
 
 export const Control = ({ data, index, setActive, active, isHomePage }: any) => {
-  const { post_title, color } = data;
+
+  const router = useRouter();  // <-- Añadir esto
+  const { post_title, post_name, color } = data;
 
   const setActivePosition = (index: number, active: number) => {
     if (index <= active) {
@@ -10,11 +13,15 @@ export const Control = ({ data, index, setActive, active, isHomePage }: any) => 
     }
   };
 
-  const toggleActive = (currentIndex: number, activeIndex: number) => {
+  const toggleActive = async (currentIndex: number, activeIndex: number) => {
     if (currentIndex === activeIndex) {
-      setActive(-1);
+      await router.push('/');
+      setTimeout(() => {
+        setActive(-1);
+      }, 400);
     } else {
       setActive(currentIndex);
+      await router.push(`/${post_name}`);
     }
   };
 

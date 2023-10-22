@@ -11,6 +11,9 @@ export * from './pages/PageComponents';
 //Category blocks
 export * from './category';
 
+//Learn
+export * from './learn-page';
+
 //Utils blocks
 export * from './category-label';
 export * from './recents';
@@ -23,3 +26,4 @@ export * from './pagination';
 //Styles
 export * from './pages/PageStyle';
 export * from './category/CategoryStyle';
+export * from './quienes-somos/QuienesSomosSyle';
