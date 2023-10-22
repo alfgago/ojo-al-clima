@@ -26,3 +26,4 @@ export * from './pagination';
 //Styles
 export * from './pages/PageStyle';
 export * from './category/CategoryStyle';
+export * from './quienes-somos/QuienesSomosSyle';
