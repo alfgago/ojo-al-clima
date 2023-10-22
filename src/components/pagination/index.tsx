@@ -10,17 +10,22 @@ export const Pagination = ({ data }: any) => {
     total_pages,
     next_page,
     prev_page,
-    parent_category
+    parent_category,
+    is_search
   } = data;
 
   const pagesToShow = getPaginationNumbers(total_pages, current_page);
 
   const generateHref = (page: number) => {
-    const basePath = parent_category
-      ? `/category/${parent_category}/subcategory/${slug}`
-      : `/category/${slug}`;
-    return `${basePath}/${page}`;
-  };
+    if (is_search) {
+      const { q, author } = slug;
+      return `/search/${page}?q=${q}${author ? `&author=${author}` : ''}`;
+    }
+    
+    return parent_category 
+      ? `/category/${parent_category}/subcategory/${slug}/${page}`
+      : `/category/${slug}/${page}`;
+  };  
 
   return (
     <PaginationStyle>

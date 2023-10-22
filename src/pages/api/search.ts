@@ -3,14 +3,14 @@ import { queryClient } from "@/utils";
 
 export const fetchSearchData = async (query: string, author: string, page: number, staleTime?: number) => {
   await queryClient.prefetchQuery(
-    ['searchData', query, page], 
+    ['searchData', query, author, page], 
     async () => {
       const response = await customAPI.get(`/search?q=${query}&page=${page}&author=${author}`);
       console.log('request search data:', query, 'page:', page);
       
       // Prefetch next page if exists
       if (response.data.pagination.next_page) {
-        queryClient.prefetchQuery(['searchData', query, response.data.pagination.next_page], 
+        queryClient.prefetchQuery(['searchData', query, author, response.data.pagination.next_page], 
         () => fetchSearchData(query, author, response.data.pagination.next_page));
       }
 
@@ -19,6 +19,6 @@ export const fetchSearchData = async (query: string, author: string, page: numbe
     { staleTime: staleTime ? staleTime * 1000 : undefined } 
   );
 
-  return queryClient.getQueryData(['searchData', query, page]) || null;
+  return queryClient.getQueryData(['searchData', query, author, page]) || null;
 
 };

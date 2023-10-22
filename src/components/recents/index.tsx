@@ -1,10 +1,14 @@
 import { PreviewCard } from ".."
 import { RecentStyle } from "./RecentStyles"
- 
+
 
 export const Recents = ({
-  articles
+  articles,
+  limit = null
 }: any) => {
+
+  const displayedArticles = limit ? articles.slice(0, limit) : articles;
+
   return (
     <RecentStyle>
       <div className="recents-news-wrapper">
@@ -13,10 +17,10 @@ export const Recents = ({
         </h3>
         <div className="articles-container">
           {
-            articles.map((article: any, index: number) => (
-              <PreviewCard 
-                key={index} 
-                {...article} 
+            displayedArticles.map((article: any, index: number) => (
+              <PreviewCard
+                key={index}
+                {...article}
                 type="lateral"
               />
             ))
@@ -26,3 +30,4 @@ export const Recents = ({
     </RecentStyle>
   )
 }
+
