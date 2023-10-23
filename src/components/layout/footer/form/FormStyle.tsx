@@ -147,4 +147,34 @@ export const FormStyle = styled.section`
       display: block;
     }
   }
+  &.on-about-page {
+    .learn-colors {
+      height: 100rem;
+      bottom: 0;
+      top: auto;  
+      &:before {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 50rem;
+        top: 0;
+        background: linear-gradient(0deg, rgba(7, 10, 17, 0.00) 0%, rgba(7, 9, 15, 0.18) 20.83%, #050507 100%);
+      }
+    }
+  }
+  &.on-home-page { 
+    .learn-colors {
+      height: 66rem;
+      bottom: 0;
+      top: auto;  
+      &:before {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 50rem;
+        top: 0;
+        background: linear-gradient(0deg, rgba(7, 10, 17, 0.00) 0%, rgba(7, 9, 15, 0.18) 20.83%, #050507 100%);
+      }
+    }
+  }
 `

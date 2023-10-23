@@ -5,6 +5,17 @@ import { useRouter } from "next/router";
 export const Form = ({ form }: any) => {
 
   const { pathname } = useRouter();
+  
+  const pathClassMapping: PathClassMapping = {
+    "/": "on-home-page",
+    "/quienes-somos": "on-about-page",
+    "/contactenos": "on-contact-page"
+  };
+  
+  const getClassFromPath = (pathname: string): string => {
+    return pathClassMapping[pathname] || "";  // Retorna la clase correspondiente o una cadena vacía si no se encuentra
+  };
+
   const fields = form.data[0].fields;
 
   const [errors, setErrors] = useState({
@@ -18,7 +29,7 @@ export const Form = ({ form }: any) => {
   }
 
   return (
-    <FormStyle className={(pathname === "/contactenos" ? 'on-contact-page' : '')}>
+    <FormStyle className={getClassFromPath(pathname)}>
       <div className="form-wrapper">
         <div className="title">
           {
@@ -94,3 +105,7 @@ export const Form = ({ form }: any) => {
     </FormStyle>
   )
 }
+
+type PathClassMapping = {
+  [key: string]: string;
+};

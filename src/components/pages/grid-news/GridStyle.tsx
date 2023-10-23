@@ -10,7 +10,8 @@ export const GridNewStyle = styled.section<{ background: string, asset: string, 
       max-width: 84.30856rem;
       width: 100%;
       margin: auto;
-
+      position: relative;
+      z-index: 100;
       .title {
         h2 {
           color: ${props => props.background === 'light' ? COLORS.black : COLORS.white};

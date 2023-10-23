@@ -32,7 +32,7 @@ export const SearchBar = () => {
   }
 
   return (
-    <BarStyle>
+    <BarStyle className='search-general'>
       <div className="bar-container">
         <div className="authors">
           <select

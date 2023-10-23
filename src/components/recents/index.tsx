@@ -1,5 +1,6 @@
 import { PreviewCard } from ".."
 import { RecentStyle } from "./RecentStyles"
+import { SearchBlock } from "./search-block";
 
 
 export const Recents = ({
@@ -26,6 +27,11 @@ export const Recents = ({
             ))
           }
         </div>
+        { 
+          !limit && (
+            <SearchBlock/>
+          )
+        }
       </div>
     </RecentStyle>
   )
