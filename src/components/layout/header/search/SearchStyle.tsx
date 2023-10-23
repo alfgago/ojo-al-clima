@@ -33,6 +33,20 @@ export const SearchHeaderStyle = styled.div`
       outline: none;
     }
 
+    span {
+      position: absolute;
+      z-index: 1;
+      left: 1.56rem;
+      top: 50%;
+      transform: translateY(-50%);
+      svg {
+        display: block;
+        path {
+          fill: #858585;
+        }
+      }
+    }
+
     &.true {
       width: 45rem;
       pointer-events: all;

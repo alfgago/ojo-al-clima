@@ -5,6 +5,15 @@ import { COLORS, GRADIENTS, DEVICE } from "@/styles/variables"
 export const QuienesSomosStyle = styled.section`
   background: ${COLORS.black};
   color: ${COLORS.white} !important;
+  .banner {
+    width: 100%;
+    height: 40rem;
+    background: url('/images/banner-quienes-somos.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    margin-bottom: -15rem;
+  }
   .wordpress-content {
     width: 84.4375rem;
     margin: auto;

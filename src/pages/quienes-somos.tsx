@@ -9,6 +9,7 @@ export default function QuienesSomos({ page }: any) {
 
   return (
     <QuienesSomosStyle>
+      <div className="banner"></div>
       <ArticleComponents blocks={blocks}/>
     </QuienesSomosStyle>
   );

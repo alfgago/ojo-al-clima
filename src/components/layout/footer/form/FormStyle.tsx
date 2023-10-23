@@ -87,6 +87,13 @@ export const FormStyle = styled.section`
           border-radius: 1.5625rem;
           padding-top: 1rem;
         }
+
+        .error-message {
+          font-size: 1rem;
+          font-weight: 700;
+          color: ${COLORS.red};
+        }
+
       }
       button {
         display: flex;
@@ -102,6 +109,18 @@ export const FormStyle = styled.section`
         font-style: normal;
         line-height: normal;
         border: none;
+        cursor: pointer;
+      }
+      span.form-request-message {
+        font-size: 1.2rem;
+        text-shadow: 0rem 0.3rem 0.6rem #636363;
+        font-weight: 800;
+       &.error {
+        color: ${COLORS.red};
+       }
+       &.success {
+        color: ${COLORS.green};
+       }
       }
     }
     .meta-data {
@@ -145,6 +164,36 @@ export const FormStyle = styled.section`
   &.on-contact-page {
     .meta-data {
       display: block;
+    }
+  }
+  &.on-about-page {
+    .learn-colors {
+      height: 100rem;
+      bottom: 0;
+      top: auto;  
+      &:before {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 50rem;
+        top: 0;
+        background: linear-gradient(0deg, rgba(7, 10, 17, 0.00) 0%, rgba(7, 9, 15, 0.18) 20.83%, #050507 100%);
+      }
+    }
+  }
+  &.on-home-page { 
+    .learn-colors {
+      height: 66rem;
+      bottom: 0;
+      top: auto;  
+      &:before {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 50rem;
+        top: 0;
+        background: linear-gradient(0deg, rgba(7, 10, 17, 0.00) 0%, rgba(7, 9, 15, 0.18) 20.83%, #050507 100%);
+      }
     }
   }
 `

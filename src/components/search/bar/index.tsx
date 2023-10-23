@@ -7,8 +7,11 @@ import { layoutPageData } from '@/pages/api/layout';
 
 export const SearchBar = () => {
   const router = useRouter();
+  
   const initialAuthor = router.query.author as string || "";
-  const [inputValue, setInputValue] = useState("");
+  const initialQuery = router.query.q as string || "";
+
+  const [query, setQuery] = useState(initialQuery);
   const [author, setAuthor] = useState(initialAuthor);
 
   const { data: authors, isLoading } = useQuery<any>(
@@ -21,18 +24,29 @@ export const SearchBar = () => {
     if (router.query.author && author !== router.query.author) {
       setAuthor(router.query.author as string);
     }
+    if (router.query.q && query !== router.query.q) {
+      setQuery(router.query.q as string);
+    }
   }, [router.query]);
 
-  const handleSearch = () => {
-    let url = `/search/1?q=${inputValue}`;
+  const buildSearchURL = () => {
+    const base = `/search/1?q=${encodeURIComponent(query)}`;
     if (author) {
-      url += `&author=${author}`;
+      return `${base}&author=${encodeURIComponent(author)}`;
     }
-    router.push(url);
+    return base;
+  };
+
+  const handleSearch = () => {
+    if (!query.trim()) {  
+      return;
+    }
+    const searchURL = buildSearchURL();
+    router.push(searchURL);
   }
 
   return (
-    <BarStyle>
+    <BarStyle className='search-general'>
       <div className="bar-container">
         <div className="authors">
           <select
@@ -53,11 +67,14 @@ export const SearchBar = () => {
         </div>
         <div className="search-wrapper">
           <div className='bar'>
+            <span>
+              <ReactSVG src="/icons/search.svg" />  
+            </span>
             <input
               type="text"
               placeholder="Busqueda..."
-              value={inputValue}
-              onChange={(e) => setInputValue(e.target.value)}
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
             />
           </div>
           <div className='btn'>
