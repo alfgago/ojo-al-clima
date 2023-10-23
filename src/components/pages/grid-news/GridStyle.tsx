@@ -31,6 +31,22 @@ export const GridNewStyle = styled.section<{ background: string, asset: string, 
             left: 0;
           }
         }
+        .btn-show-more-top-wrapper {
+          a {
+            color: ${props => props.background === 'light' ? COLORS.black : COLORS.white};
+            font-size: 1.25rem;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.62rem;
+            svg {
+              display: block;
+            }
+          }
+        }
         &.highlight {
           h2 {
             margin-bottom: -3rem;
@@ -38,6 +54,9 @@ export const GridNewStyle = styled.section<{ background: string, asset: string, 
           }
         }
         &.normal {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
           margin-bottom: 3.19rem;
         }
       }
@@ -86,6 +105,28 @@ export const GridNewStyle = styled.section<{ background: string, asset: string, 
               }
             }
           }
+        }
+      }
+      .btn-show-more-bottom-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 3.12rem 0;
+        a {
+          color: ${props => props.background === 'light' ? COLORS.black : COLORS.white};
+          font-size: 1.25rem;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+          text-decoration: none;
+          display: flex;
+          width: fit-content;
+          padding: 0.625rem 2.25rem;
+          justify-content: center;
+          align-items: center;
+          border-radius: 3.125rem;
+          border: 1px solid #FFF;
+          backdrop-filter: blur(3px);
         }
       }
     }
