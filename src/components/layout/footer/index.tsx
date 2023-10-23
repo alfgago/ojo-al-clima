@@ -10,9 +10,9 @@ export const Footer = ({ data }: any) => {
 
   return (
     <FooterStyle>
-      {/* <div className="form-container">
-        <Form data={form} />
-      </div> */}
+      <div className="form-container">
+        <Form form={form} />
+      </div>
       <div className="links-container">
         <div className="links-wrapper">
           <div className="logo">
