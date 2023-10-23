@@ -87,6 +87,13 @@ export const FormStyle = styled.section`
           border-radius: 1.5625rem;
           padding-top: 1rem;
         }
+
+        .error-message {
+          font-size: 1rem;
+          font-weight: 700;
+          color: ${COLORS.red};
+        }
+
       }
       button {
         display: flex;
@@ -102,6 +109,18 @@ export const FormStyle = styled.section`
         font-style: normal;
         line-height: normal;
         border: none;
+        cursor: pointer;
+      }
+      span.form-request-message {
+        font-size: 1.2rem;
+        text-shadow: 0rem 0.3rem 0.6rem #636363;
+        font-weight: 800;
+       &.error {
+        color: ${COLORS.red};
+       }
+       &.success {
+        color: ${COLORS.green};
+       }
       }
     }
     .meta-data {

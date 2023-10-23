@@ -1,31 +1,91 @@
 import { useState } from "react";
 import { FormStyle } from "./FormStyle"
 import { useRouter } from "next/router";
+import { contactFormAPI } from "@/pages/api/base";
+
+const pathClassMapping: PathClassMapping = {
+  "/": "on-home-page",
+  "/quienes-somos": "on-about-page",
+  "/contactenos": "on-contact-page"
+};
 
 export const Form = ({ form }: any) => {
 
   const { pathname } = useRouter();
-  
-  const pathClassMapping: PathClassMapping = {
-    "/": "on-home-page",
-    "/quienes-somos": "on-about-page",
-    "/contactenos": "on-contact-page"
-  };
-  
+
   const getClassFromPath = (pathname: string): string => {
-    return pathClassMapping[pathname] || "";  // Retorna la clase correspondiente o una cadena vacía si no se encuentra
+    return pathClassMapping[pathname] || "";  
   };
 
-  const fields = form.data[0].fields;
+  const { id, fields } = form.data[0];
+
+  const [formSubmission, setFormSubmissionError] = useState({
+    show: false,
+    status: "",
+    message: "",
+  })
 
   const [errors, setErrors] = useState({
     nombre: false,
-    email: false,
+    mail: false,
     mensaje: false,
   }) as any
 
   const clearError = (name: any) => {
     setErrors({ ...errors, [name]: false })
+  }
+
+  const formSubmissionHandler = async (e: any) => {
+    e.preventDefault()
+
+    const formElement = e.target
+    const { action, method } = formElement
+
+    const formData = new FormData(formElement)
+
+    const newErrors = {
+      nombre: !formData.get("nombre"),
+      mail: !formData.get("mail"),
+      mensaje: !formData.get("mensaje"),
+    }
+    setErrors(newErrors)
+
+    if (Object.values(newErrors).every((error) => !error)) {
+      try {
+        const response = await fetch(action, {
+          method,
+          body: formData,
+        })
+
+        if (response.ok) {
+          await response.json()
+          setFormSubmissionError({
+            show: true,
+            status: "success",
+            message: "Tu mensaje ha sido enviado exitosamente",
+          })
+          formElement.reset()
+        } else {
+          setFormSubmissionError({
+            show: true,
+            status: "error",
+            message: "Formato de correo inválido",
+          })
+        }
+      } catch (error) {
+        setFormSubmissionError({
+          show: true,
+          status: "error",
+          message: "Formato de correo inválido",
+        })
+      }
+    } else {
+      setFormSubmissionError({
+        show: true,
+        status: "error",
+        message: "Debes completar todos los campos requeridos",
+      })
+    }
   }
 
   return (
@@ -41,9 +101,9 @@ export const Form = ({ form }: any) => {
           }
         </div>
         <form
-          action={""}
+          action={contactFormAPI(id)}
           method={"POST"}
-          onSubmit={() => { }}
+          onSubmit={formSubmissionHandler}
         >
           {fields?.map(
             (field: any, index: number) =>
@@ -71,7 +131,7 @@ export const Form = ({ form }: any) => {
                     )}
                   {errors[field.name] && (
                     <span className="error-message">
-                      This field is required
+                      Este campo es requerido
                     </span>
                   )}
                 </div>
@@ -80,6 +140,13 @@ export const Form = ({ form }: any) => {
           <button className="btn-send" type="submit">
             Enviar
           </button>
+          {formSubmission.show && (
+            <span
+              className={`form-request-message ${formSubmission.status}`}
+            >
+              {formSubmission.message}
+            </span>
+          )}
         </form>
         <div className="meta-data">
           <div className="phone">

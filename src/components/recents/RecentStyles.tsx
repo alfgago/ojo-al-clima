@@ -67,6 +67,11 @@ export const RecentStyle = styled.div`
           padding: 0.75rem 1.62rem;
           height: 2.9375rem;
         }
+        .bar {
+          span {
+            display: none;
+          }
+        }
         .btn {
           position: relative;
           z-index: 1;

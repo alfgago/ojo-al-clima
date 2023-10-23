@@ -4,7 +4,7 @@ import { ReactSVG } from "react-svg"
 import { SearchHeaderStyle } from "./SearchStyle";
 import { useRouter } from "next/router";
 
-export const SearchHeader = ({ menuState=null }:any) => {
+export const SearchHeader = ({ menuState = null }: any) => {
 
   const router = useRouter();
 
@@ -17,7 +17,16 @@ export const SearchHeader = ({ menuState=null }:any) => {
   }
 
   const handleSearch = () => {
+
+    if (!inputValue.trim()) {
+      return;
+    }
+
     let url = `/search/1?q=${inputValue}`;
+
+    setInputValue("");
+    onHandleBar();
+
     router.push(url);
   }
 
@@ -25,11 +34,14 @@ export const SearchHeader = ({ menuState=null }:any) => {
     <SearchHeaderStyle>
       <div className="search-header-wrapper">
         <div className={`bar ${active}`}>
-          <input 
-            type="text" 
-            placeholder="Busqueda..." 
+          <span>
+            <ReactSVG src="/icons/search.svg" />
+          </span>
+          <input
+            type="text"
+            placeholder="Busqueda..."
             value={inputValue}
-            onChange={(e) => setInputValue(e.target.value)}  
+            onChange={(e) => setInputValue(e.target.value)}
           />
         </div>
         <div className={`btn ${active}`}>

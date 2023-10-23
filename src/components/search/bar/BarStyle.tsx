@@ -33,6 +33,17 @@ export const BarStyle = styled.section`
       gap: 0.75rem;
       .bar {
         flex: 1;
+        position: relative;
+        span {
+          position: absolute;
+          z-index: 1;
+          left: 1.56rem;
+          top: 50%;
+          transform: translateY(-50%);
+          svg {
+            display: block;
+          }
+        }    
         input {
           height: 100%;
           width: 100%;
