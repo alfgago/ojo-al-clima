@@ -6,12 +6,13 @@ import { ArticleStyle } from '@/components/article/ArticleSyle';
 
 export default function Post({ post, recents }: any) {
 
-  const { blocks } = post;
+  const { category, blocks } = post;
+  const { color } = category;
 
   return (
     <article>
       <ArticleBanner {...post} />
-      <ArticleStyle>
+      <ArticleStyle color={color}>
         <ArticleComponents blocks={blocks} />
         <Recents articles={recents} />
       </ArticleStyle>

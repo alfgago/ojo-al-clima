@@ -10,9 +10,26 @@ export const QuoteStyle = styled.blockquote`
   align-items: center;
   gap: 0.625rem;
   border-radius: 1.25rem;
-  border: 3px solid #137E24;
+  border: 3px solid #fff;
+  position: relative;
   @media ${DEVICE.maxxs} {
     padding: 1.2rem 1.5rem;
+  }
+  span {
+    position: absolute;
+    svg {
+      display: block;
+      width: 2.2rem;
+      height: 2.2rem;
+    }
+    &.top {
+      top: -9%;
+      left: 6%;
+    }
+    &.down {
+      bottom: -9%;
+      right: 6%;
+    }
   }
   .content-wrapper{
     p {
