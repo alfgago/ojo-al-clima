@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { QuoteStyle } from "./QuoteStyle";
+import { ReactSVG } from "react-svg";
 
 interface ParagraphBlock {
   innerHTML: string;
@@ -11,6 +12,9 @@ const Quote = ({ data }: any) => {
 
   return (
     <QuoteStyle>
+      <span className="top">
+        <ReactSVG src="/icons/quote-top.svg" />
+      </span>
       <div className="content-wrapper">
         {
           innerBlocks.map((paragraph: ParagraphBlock, index: number) => {
@@ -20,6 +24,9 @@ const Quote = ({ data }: any) => {
           })
         }
       </div>
+      <span className="down">
+        <ReactSVG src="/icons/quote-down.svg" />
+      </span>
     </QuoteStyle>
   )
 }

@@ -17,6 +17,7 @@ export const BannerStyles = styled.section`
         bottom: 0;
       }
       img {
+        display: block;
         width: 100%;
         height: 85vh;
         object-fit: cover;
@@ -79,7 +80,7 @@ export const BannerStyles = styled.section`
             color: ${COLORS.white};
             font-size: 3.375rem;
             font-style: normal;
-            font-weight: 800;
+            font-weight: 500;
             line-height: 118%; 
             @media ${DEVICE.maxxs} {
               font-size: 1.5rem;

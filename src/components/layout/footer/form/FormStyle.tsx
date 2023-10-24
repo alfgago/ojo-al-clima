@@ -21,6 +21,10 @@ export const FormStyle = styled.section`
     padding: 4.5rem 0 5.31rem;
     position: relative;
     z-index: 1;
+    @media ${DEVICE.maxmd} {
+      width: 100%;
+      padding: 5rem 2rem 5rem;
+    }
     .title {
       h1,
       h5 {
@@ -144,9 +148,25 @@ export const FormStyle = styled.section`
     height: 100%;
     right: 0;
     top: 0;
+    @media ${DEVICE.maxmd} {
+      width: 100%;
+      display: none;
+      height: 15rem;
+      &:before {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 10rem;
+        background: linear-gradient(0deg, rgba(7, 10, 17, 0.00) 0%, rgba(7, 9, 15, 0.18) 20.83%, #050507 100%);
+        top: 0;
+      }
+    }
     div {
       width: 5.8rem;
       height: 100%;
+      @media ${DEVICE.maxmd} {
+        flex: 1;
+      }
       &.red {
         background: ${GRADIENTS.red};
       }
@@ -162,8 +182,10 @@ export const FormStyle = styled.section`
     }
   }
   &.on-contact-page {
-    .meta-data {
-      display: block;
+    @media ${DEVICE.md} {
+      .meta-data {
+        display: block;
+      }
     }
   }
   &.on-about-page {
@@ -183,7 +205,7 @@ export const FormStyle = styled.section`
   }
   &.on-home-page { 
     .learn-colors {
-      height: 66rem;
+      height: 75rem;
       bottom: 0;
       top: auto;  
       &:before {

@@ -1,10 +1,11 @@
 import Image from 'next/image';
 import { BannerStyles } from './BannerStyles';
+import { CategoryLabel } from '@/components';
 
 export const ArticleBanner = ({
   post_title,
   thumbnail,
-  primary_category,
+  category,
   publish_date,
   author
 }: any) => {
@@ -22,7 +23,7 @@ export const ArticleBanner = ({
         <div className="content-wrapper">
           <div className="data">
             <div className="meta">
-              <span className="category">{primary_category}</span>
+              <CategoryLabel {...category} type='circle'/>
               <span className="date">{publish_date}</span>
             </div>
             <div className="title">

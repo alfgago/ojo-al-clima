@@ -12,6 +12,11 @@ export const FooterStyle = styled.footer`
       padding: 7.19rem 0 6.19rem;
       display: flex;
       gap: 4.85rem;
+      @media ${DEVICE.maxmd} {
+        flex-direction: column;
+        padding: 5rem 2rem 5rem;
+        max-width: 100%;
+      }
       .logo {
         display: flex;
         flex-direction: column;
@@ -29,15 +34,45 @@ export const FooterStyle = styled.footer`
           font-weight: 400;
           line-height: normal;
         }
+        @media ${DEVICE.maxmd} {
+          width: 100%;
+          span {
+            font-size: 1.2rem;
+          }
+        }
       }
       .menu {
         display: flex;
         gap: 4.44rem;
         flex: 1;
+        @media ${DEVICE.maxmd} {
+          gap: 2.44rem;
+          flex-wrap: wrap;
+        }
         .item {
           display: flex;
           flex-direction: column;
           gap: 0.94rem;
+          @media ${DEVICE.maxmd} {
+            flex: 1 9rem;
+            &:nth-child(1){
+              order: 1
+            }
+            &:nth-child(2){
+              order: 3
+            }
+            &:nth-child(3){
+              order: 2
+            }
+            &:nth-child(4){
+              order: 4;
+            }
+          }
+          @media ${DEVICE.maxxss} {
+            &:nth-child(4){
+              margin-top: -6rem;
+            }
+          }
           span {
             color: ${COLORS.white};
             font-size: 1.375rem;
@@ -70,7 +105,21 @@ export const FooterStyle = styled.footer`
         img {
           width: 100%;
           height: auto;
-
+        }
+        @media ${DEVICE.maxmd} {
+          width: 35%;
+          flex-direction: row;
+        }
+        @media ${DEVICE.maxxss} {
+          width: 100%;
+          display: grid;
+          grid-gap: 3.25rem;
+          margin: -10rem 0 -0.75rem;
+          justify-items: center;
+          align-items: center;
+          justify-content: end;
+          grid-auto-columns: 47%;
+          padding-right: 1rem;
         }
       }
     }
@@ -87,7 +136,9 @@ export const FooterStyle = styled.footer`
       align-items: center;
       justify-content: flex-start;
       height: 100%;
-      
+      @media ${DEVICE.maxmd} {
+        justify-content: center;
+      }
       a,
       span {
         color: #B9B9B9;

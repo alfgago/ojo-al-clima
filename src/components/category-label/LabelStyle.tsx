@@ -41,7 +41,7 @@ export const LabelStyle = styled.div<{ gradient: string}>`
         font-size: 0.75rem;
         font-weight: 800;
         display: flex;
-        padding: 0.25rem 1.25rem;
+        padding: 0.4rem 1.25rem;
         justify-content: center;
         align-items: center;
         width: fit-content;

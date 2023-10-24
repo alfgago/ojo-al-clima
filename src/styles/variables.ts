@@ -36,7 +36,7 @@ export const DEVICE = {
   lg: `(min-width: ${SIZE.lg}px)`,
   xl: `(min-width: ${SIZE.xl}px)`,
 
-  maxxss: `(max-width: ${SIZE.xs}px)`,
+  maxxss: `(max-width: ${SIZE.xss}px)`,
   maxxs: `(max-width: ${SIZE.xs}px)`,
   maxmd: `(max-width: ${SIZE.md}px)`,
   maxlg: `(max-width: ${SIZE.lg}px)`,

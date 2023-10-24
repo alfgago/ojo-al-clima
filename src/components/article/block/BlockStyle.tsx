@@ -8,7 +8,7 @@ export const BlockStyle = styled.div`
       color: #242424;
       font-size: 1.25rem;
       font-style: normal;
-      font-weight: 400;
+      font-weight: 500;
       line-height: 140%; /* 1.75rem */
     }
     a {
