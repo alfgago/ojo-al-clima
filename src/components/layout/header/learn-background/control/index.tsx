@@ -1,6 +1,7 @@
 import { ReactSVG } from "react-svg";
 import { ControlStyle } from "./ControlStyle";
 import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 export const Control = ({ data, index, setActive, active, isHomePage }: any) => {
 
@@ -24,6 +25,12 @@ export const Control = ({ data, index, setActive, active, isHomePage }: any) => 
       await router.push(`/${post_name}`);
     }
   };
+
+  useEffect(() => {
+    if (router.pathname.includes(post_name)) {
+      setActive(index);
+    }
+  }, [router.pathname]);
 
   return (
     <ControlStyle color={color} index={index}>
