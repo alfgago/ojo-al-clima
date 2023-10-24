@@ -17,6 +17,9 @@ const generateDelay = (numOfItems:any) => {
 export const HeaderStyle = styled.header`
   position: relative;
   z-index: 20;
+  @media ${DEVICE.maxmd} {
+    display: none;
+  }
   .header-container { 
     position: relative;
     display: flex;
@@ -26,9 +29,12 @@ export const HeaderStyle = styled.header`
     height: 5rem;
     .site-logo {
       padding-left: 5rem;
+      display: flex;
+      align-items: center;
       svg {
         max-width: 8rem;
         display: block;
+        height: auto;
         rect:nth-child(2) {
           filter: brightness(0.6);
         }

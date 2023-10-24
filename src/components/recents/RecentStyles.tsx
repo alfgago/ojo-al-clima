@@ -4,6 +4,9 @@ import { COLORS, GRADIENTS, DEVICE } from "@/styles/variables"
 
 export const RecentStyle = styled.div`
   max-width: 26rem;  
+  @media ${DEVICE.maxxs} {
+    max-width: 100%;
+  }
   .recents-news-wrapper{
    h3 {
     color: #000;
@@ -28,6 +31,11 @@ export const RecentStyle = styled.div`
       flex-direction: column;
       gap: 1.94rem;
       margin-top: 1.94rem;
+      @media ${DEVICE.maxxs} {
+        display: grid;
+        grid-gap: 3.25rem;
+        grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+      }
       .article-card {
         .date {
           display: none;

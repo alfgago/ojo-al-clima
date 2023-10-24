@@ -22,6 +22,7 @@ export const BarStyle = styled.section`
         padding: 0.75rem 1.5rem;
         align-items: center;
         gap: 5.5625rem;
+        font-size: 1rem;
         &:outline {
           border: none;
         }
@@ -45,6 +46,7 @@ export const BarStyle = styled.section`
           }
         }    
         input {
+          font-size: 1rem;
           height: 100%;
           width: 100%;
           display: flex;

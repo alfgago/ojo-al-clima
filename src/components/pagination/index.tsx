@@ -2,8 +2,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { PaginationStyle } from "./PaginationStyle"
 import { getPaginationNumbers } from "@/helpers/getPaginationNumbers";
+import { useWindowSize } from "usehooks-ts";
 
 export const Pagination = ({ data }: any) => {
+
   const {
     slug,
     current_page,
@@ -27,6 +29,9 @@ export const Pagination = ({ data }: any) => {
       : `/category/${slug}/${page}`;
   };  
 
+  const { width } = useWindowSize()
+  const isMobile = width < 767
+
   return (
     <PaginationStyle>
       <div className="pagination-container">
@@ -39,7 +44,11 @@ export const Pagination = ({ data }: any) => {
                 width={20}
                 height={20}
               />
-              <span>Entradas recientes</span>
+              <span>
+                {
+                  !isMobile ? 'Entradas recientes' : 'Anterior'
+                }  
+              </span>
             </Link>
           )}
         </div>
@@ -60,7 +69,12 @@ export const Pagination = ({ data }: any) => {
         <div className="arrow next">
           {next_page && (
             <Link href={generateHref(next_page)}>
-              <span>Entradas más antiguas</span>
+              <span>
+                
+                {
+                  !isMobile ? 'Entradas más antiguas' : 'Siguientes'
+                }  
+              </span>
               <Image
                 src="/icons/arrow-next.svg"
                 alt="arrow next"
