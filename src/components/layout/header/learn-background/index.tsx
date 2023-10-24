@@ -12,7 +12,9 @@ export const Learn = ({ data, index, active }: any) => {
     if (active === index) {
       setOpacityValue(1);
       if (pathname.includes(post_name)) {
-        setOpacityValue(0);
+        setTimeout(() => {
+          setOpacityValue(0);
+        }, 300);
       } 
     }
     else {

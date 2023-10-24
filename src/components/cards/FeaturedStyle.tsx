@@ -39,7 +39,7 @@ export const FeaturedStyle = styled.div`
           color: ${COLORS.white};
           font-size: 2rem;
           font-style: normal;
-          font-weight: 600;
+          font-weight: 500;
           line-height: 118%; /* 2.36rem */
           text-decoration: none;
         }

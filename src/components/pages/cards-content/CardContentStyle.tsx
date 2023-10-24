@@ -59,9 +59,9 @@ export const CardsContentStyle = styled.section<{background: string}>`
           .description {
             color: ${COLORS.white};
             text-align: center;
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-style: normal;
-            font-weight: 800;
+            font-weight: 500;
             line-height: normal;
             margin: 2.9rem 0rem 3.12rem;
             p,a,li,strong {
