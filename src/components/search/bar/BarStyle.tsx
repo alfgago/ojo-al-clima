@@ -5,12 +5,18 @@ import { COLORS, GRADIENTS, DEVICE } from "@/styles/variables"
 export const BarStyle = styled.section`
   max-width: 84.6875rem;
   margin: 3.12rem auto;
+  @media ${DEVICE.maxmd} {
+    padding: 0 2rem;
+  }
   .bar-container {
     display: flex;
     flex-wrap: wrap;
     gap: 0.75rem;
     max-width: 55.25rem;
     .authors {
+      @media ${DEVICE.maxxss} {
+        width: 100%;
+      }
       select {
         border-radius: 3.125rem;
         border: 1px solid #000;
@@ -59,6 +65,9 @@ export const BarStyle = styled.section`
           background: rgba(255, 255, 255, 0.55);
           backdrop-filter: blur(2.5px);
           outline: none;
+          @media ${DEVICE.maxxs} {
+            min-width: 15rem;
+          }
         }  
       }
       .btn {

@@ -7,10 +7,22 @@ export const BannerStyles = styled.section`
     position: relative;
     margin-bottom: 3rem;
     .thumbnail-wrapper {
+      position: relative;
+      &:before {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 50%;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(7, 10, 17, 0.80) 100%);
+        bottom: 0;
+      }
       img {
         width: 100%;
-        height: 75vh;
+        height: 85vh;
         object-fit: cover;
+        @media ${DEVICE.maxxs} {
+          height: 32rem
+        }
       }
     }
     .content-wrapper {
@@ -19,11 +31,19 @@ export const BannerStyles = styled.section`
       width: 85rem;
       left: 50%;
       transform: translateX(-50%);
+      @media ${DEVICE.maxmd} {
+        width: 100%;
+        padding: 0 2rem;
+        bottom: 3rem;
+      }
       .data {
         display: flex;
         flex-direction: column;
         gap: 1.25rem;
         width: 71rem;
+        @media ${DEVICE.maxmd} {
+          width: 100%;
+        }
         .meta {
           display: flex;
           gap: 1.69rem;
@@ -48,6 +68,10 @@ export const BannerStyles = styled.section`
             font-style: normal;
             font-weight: 800;
             line-height: normal;
+            @media ${DEVICE.maxxs} {
+              font-size: 1.15rem;
+              font-weight: 500;
+            }
           }
         }
         .title {
@@ -57,6 +81,10 @@ export const BannerStyles = styled.section`
             font-style: normal;
             font-weight: 800;
             line-height: 118%; 
+            @media ${DEVICE.maxxs} {
+              font-size: 1.5rem;
+              font-weight: 600;
+            }
           }
         }
         .author {
@@ -65,6 +93,10 @@ export const BannerStyles = styled.section`
           font-style: normal;
           font-weight: 800;
           line-height: normal;
+          @media ${DEVICE.maxxs} {
+            font-size: 1.15rem;
+            font-weight: 500;
+          }
         }
       }
     }
