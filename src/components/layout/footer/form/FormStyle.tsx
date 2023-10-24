@@ -205,7 +205,7 @@ export const FormStyle = styled.section`
   }
   &.on-home-page { 
     .learn-colors {
-      height: 66rem;
+      height: 75rem;
       bottom: 0;
       top: auto;  
       &:before {
