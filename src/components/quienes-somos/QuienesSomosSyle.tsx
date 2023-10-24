@@ -17,7 +17,7 @@ export const QuienesSomosStyle = styled.section`
   .wordpress-content {
     width: 84.4375rem;
     margin: auto;
-    padding: 1rem 12rem 1rem 0;
+    padding: 1rem 16rem 1rem 0;
     h1 {
       font-size: 4rem;
       margin-bottom: 3rem;

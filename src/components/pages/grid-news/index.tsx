@@ -45,7 +45,7 @@ const GridNews = ({ data }: any) => {
                 </div>
               )
             }
-          </div>
+          </div> 
           <div className={`articles ${type} ${layout}`}>
             {
               !highlight_first ?
