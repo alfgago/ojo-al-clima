@@ -54,6 +54,9 @@ export const FeaturedStyle = styled.div`
         }
       }
       .excerpt {
+        @media ${DEVICE.maxmd} {
+          display: none;
+        }
         p {
           color: ${COLORS.white};
           font-size: 1rem;

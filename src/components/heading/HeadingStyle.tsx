@@ -19,6 +19,7 @@ export const HeadingStyle = styled.section<{color: string}>`
       line-height: 1;
       padding-left: 1.5rem;
       position: relative;
+      margin-left: 2rem;
       &:before {
         position: absolute;
         content: "";
@@ -35,6 +36,9 @@ export const HeadingStyle = styled.section<{color: string}>`
     display: flex;
     height: 100%;
     right: 0;
+    @media ${DEVICE.maxmd} {
+      display: none;
+    }
     div {
       width: 5.8rem;
       height: 100%;

@@ -8,8 +8,14 @@ export const PaginationStyle = styled.section`
     align-items: center;
     justify-content: center;
     gap: 6.25rem;
+    @media ${DEVICE.maxmd} { 
+      padding: 0 2rem;
+    }
     .arrow {
       min-width: 10rem;
+      @media ${DEVICE.maxxs} {
+        min-width: -webkit-fill-available;
+      }
       display: flex;
       a {
         display: flex;

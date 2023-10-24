@@ -9,6 +9,12 @@ export const CategoryStyle = styled.section`
     margin: 4.38rem auto;
     display: flex;
     gap: 3.38rem;
+    @media ${DEVICE.maxmd} {
+      padding: 0 2rem;
+    }
+    @media ${DEVICE.maxxs} {
+      flex-direction: column;
+    }
     .articles-container {
       .featured-article {
         height: 35.3125rem;
