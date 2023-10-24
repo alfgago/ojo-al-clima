@@ -29,7 +29,7 @@ export const PreviewStyle = styled.div<{color: string}>`
           color: ${COLORS.black};
           font-size: 1.125rem;
           font-style: normal;
-          font-weight: 800;
+          font-weight: 500;
           line-height: 118%; /* 1.3275rem */
           text-decoration: none;
         }
@@ -82,7 +82,7 @@ export const PreviewStyle = styled.div<{color: string}>`
             color: ${COLORS.black};
             font-size: 1.5625rem;
             font-style: normal;
-            font-weight: 800;
+            font-weight: 500;
             line-height: 118%; /* 1.84375rem */
           }
         }

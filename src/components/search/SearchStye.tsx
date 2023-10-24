@@ -18,7 +18,7 @@ export const SearchComponentsStyle = styled.section`
       display: grid;
       grid-gap: 3.25rem;
       grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
-      
+      width: 100%;
     }
     .pagination-wrapper {
       order: 4;
