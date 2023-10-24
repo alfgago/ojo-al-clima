@@ -11,7 +11,7 @@ export const Recents = ({
   const displayedArticles = limit ? articles.slice(0, limit) : articles;
 
   return (
-    <RecentStyle>
+    <RecentStyle className="recents-block">
       <div className="recents-news-wrapper">
         <h3>
           Recientes

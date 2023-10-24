@@ -4,6 +4,9 @@ import { COLORS, GRADIENTS, DEVICE } from "@/styles/variables"
 
 export const FeaturedStyle = styled.div`
   height: 100%;
+  @media ${DEVICE.maxxss} {
+    min-height: 25rem;
+  }
   .featured-card {
     height: 100%;
     position: relative;
@@ -33,6 +36,9 @@ export const FeaturedStyle = styled.div`
       bottom: 1.87rem;
       width: 100%;
       padding: 0 2.5rem;
+      @media ${DEVICE.maxxs} {
+        padding: 0 1.5rem;
+      }
       h3 {
         padding: 0.75rem 0;
         a {

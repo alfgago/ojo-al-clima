@@ -11,6 +11,9 @@ export const QuoteStyle = styled.blockquote`
   gap: 0.625rem;
   border-radius: 1.25rem;
   border: 3px solid #137E24;
+  @media ${DEVICE.maxxs} {
+    padding: 1.2rem 1.5rem;
+  }
   .content-wrapper{
     p {
       color: #5A5A5A;

@@ -9,8 +9,11 @@ export const SearchComponentsStyle = styled.section`
     margin: auto;
     flex-wrap: wrap;
     gap: 3.25rem;
+    @media ${DEVICE.maxmd} {
+      padding: 0 2rem;
+    }
     .featured-article {
-      width: 65%;
+      flex: 1;
       order: 1;
     }
     .others-articles {
@@ -24,9 +27,16 @@ export const SearchComponentsStyle = styled.section`
       order: 4;
       width: 100%;
       margin-bottom: 10rem; 
+      @media ${DEVICE.maxxs} {
+        margin-bottom: 1rem; 
+      }
     }
     .recents-items {
       order: 2; 
+      @media ${DEVICE.maxxs} {
+        order: 5;
+        margin-bottom: 5rem;
+      }
     }
   }
 `

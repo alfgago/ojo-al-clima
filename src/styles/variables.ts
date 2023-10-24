@@ -23,6 +23,7 @@ export const COLORS: PARAMS = {
 }
 
 export const SIZE = {
+  xss: "360",
   xs: "767",
   md: "1024",
   lg: "1440",
@@ -35,6 +36,7 @@ export const DEVICE = {
   lg: `(min-width: ${SIZE.lg}px)`,
   xl: `(min-width: ${SIZE.xl}px)`,
 
+  maxxss: `(max-width: ${SIZE.xs}px)`,
   maxxs: `(max-width: ${SIZE.xs}px)`,
   maxmd: `(max-width: ${SIZE.md}px)`,
   maxlg: `(max-width: ${SIZE.lg}px)`,
