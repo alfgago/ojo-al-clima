@@ -10,7 +10,7 @@ export const GRADIENTS: PARAMS = {
   purple: "linear-gradient(90deg, #3F448F 0%, #6967F1 100%)",
   gray: "linear-gradient(90deg, #787277 0%, #E4E4E4 100%)"
 }
-
+ 
 export const COLORS: PARAMS = {
   black: "#050507",
   white: "#fff",
