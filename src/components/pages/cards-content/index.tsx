@@ -30,8 +30,8 @@ const CardsContent = ({ data }: any) => {
                 className="description"
                 dangerouslySetInnerHTML={{ __html: description }}
               ></div>
-              <div className="btn">
-                <Link href={`/${button_url}`}>
+              <div className="btn"> 
+                <Link href={`${button_url}`}>
                   {button_title}
                 </Link>
               </div>

@@ -168,7 +168,7 @@ export const FormStyle = styled.section`
   }
   &.on-about-page {
     .learn-colors {
-      height: 100rem;
+      height: 160rem;
       bottom: 0;
       top: auto;  
       &:before {

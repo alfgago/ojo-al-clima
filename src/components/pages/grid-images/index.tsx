@@ -19,7 +19,7 @@ const GridImages = ({ data }: any) => {
             </h3>
           </div>
           <div className="btn">
-            <Link href={`/${btn_url}`}>
+            <Link href={`${btn_url}`}>
               {btn_label} <ReactSVG src="/icons/arrow-next.svg" />
             </Link>
           </div>
