@@ -9,6 +9,7 @@ export const LabelStyle = styled.div<{ gradient: string}>`
       text-transform: uppercase;
       text-decoration: none;
       background: ${(props) => GRADIENTS[props.gradient]};
+      transition: all 0.3s ease;
     }
 
     &.normal {
@@ -30,6 +31,7 @@ export const LabelStyle = styled.div<{ gradient: string}>`
           left: 0rem;
           border-radius: 100%;
           background: ${(props) => GRADIENTS[props.gradient]};     
+          transition: all 0.3s ease;
         } 
       }
     }

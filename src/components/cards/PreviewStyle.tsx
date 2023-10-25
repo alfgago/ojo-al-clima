@@ -5,6 +5,7 @@ import { COLORS, GRADIENTS, DEVICE } from "@/styles/variables"
 export const PreviewStyle = styled.div<{color: string}>`
   width: 100%;
   .article-card {
+    transition: all 0.3s ease;
     .thumbnail {
       img {
         width: 100%;
@@ -19,6 +20,7 @@ export const PreviewStyle = styled.div<{color: string}>`
       display: flex;
       flex-direction: column;
       gap: 0.45rem;
+      transition: all 0.6s ease;
       h4 {
         margin: 0;
         padding: 0;
@@ -32,6 +34,7 @@ export const PreviewStyle = styled.div<{color: string}>`
           font-weight: 500;
           line-height: 118%; /* 1.3275rem */
           text-decoration: none;
+          transition: all 0.2s ease;
         }
       }
       span {
@@ -40,6 +43,7 @@ export const PreviewStyle = styled.div<{color: string}>`
         font-style: normal;
         font-weight: 500;
         line-height: normal;
+        transition: all 0.3s ease;
       }
     }
 
@@ -64,6 +68,7 @@ export const PreviewStyle = styled.div<{color: string}>`
           background: ${props => COLORS[props.color]};
           bottom: 0;
           z-index: 1;
+          transition: background 0.3s ease;
         }
       }
       .content {
@@ -84,6 +89,28 @@ export const PreviewStyle = styled.div<{color: string}>`
             font-style: normal;
             font-weight: 500;
             line-height: 118%; /* 1.84375rem */
+          }
+        }
+      }
+      &:hover {
+        .thumbnail {
+          &:before {
+            background: ${COLORS.white};
+          }
+        }
+        .content {
+          background: ${props => GRADIENTS[props.color]};
+          span, a {
+            color: ${COLORS.white} !important;
+          }
+          .article-category {
+            a {
+              background: ${COLORS.white};
+              -webkit-background-clip: text;
+              &:before {
+                background: ${COLORS.white};
+              }
+            }
           }
         }
       }
