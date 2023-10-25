@@ -61,7 +61,7 @@ export const PreviewStyle = styled.div<{color: string}>`
           position: absolute;
           width: 100%;
           height: 0.5rem;
-          background: #48A1BF;
+          background: ${props => COLORS[props.color]};
           bottom: 0;
           z-index: 1;
         }

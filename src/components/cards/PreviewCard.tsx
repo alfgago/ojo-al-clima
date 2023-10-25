@@ -3,16 +3,6 @@ import Link from "next/link"
 import { CategoryLabel } from ".."
 import { PreviewStyle } from "./PreviewStyle"
 
-type ArticleCardProps = {
-  name: string;
-  slug: string;
-  date: string;
-  category: any;  
-  thumbnail: any; 
-  author: string;
-  type: "lateral" | "vertical"; 
-};
-
 export const PreviewCard = ({
   name,
   slug,
@@ -22,8 +12,11 @@ export const PreviewCard = ({
   author,
   type
 }: ArticleCardProps) => {
+
+  const { color } = category;
+
   return (
-    <PreviewStyle color={category.color}>
+    <PreviewStyle color={color}>
       <div className={`article-card ${type}`}>
         <div className="thumbnail">
           <Image
@@ -57,3 +50,13 @@ export const PreviewCard = ({
     </PreviewStyle>
   )
 }
+
+type ArticleCardProps = {
+  name: string;
+  slug: string;
+  date: string;
+  category: any;
+  thumbnail: any;
+  author: string;
+  type: "lateral" | "vertical";
+};

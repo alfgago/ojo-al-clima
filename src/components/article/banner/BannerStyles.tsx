@@ -19,7 +19,7 @@ export const BannerStyles = styled.section`
       img {
         display: block;
         width: 100%;
-        height: 85vh;
+        height: 78vh;
         object-fit: cover;
         @media ${DEVICE.maxxs} {
           height: 32rem
@@ -67,7 +67,7 @@ export const BannerStyles = styled.section`
             color: ${COLORS.white};
             font-size: 1.25rem;
             font-style: normal;
-            font-weight: 800;
+            font-weight: 500;
             line-height: normal;
             @media ${DEVICE.maxxs} {
               font-size: 1.15rem;
@@ -81,7 +81,7 @@ export const BannerStyles = styled.section`
             font-size: 3.375rem;
             font-style: normal;
             font-weight: 500;
-            line-height: 118%; 
+            line-height: 110%; 
             @media ${DEVICE.maxxs} {
               font-size: 1.5rem;
               font-weight: 600;
@@ -92,14 +92,27 @@ export const BannerStyles = styled.section`
           color: ${COLORS.white};
           font-size: 1.25rem;
           font-style: normal;
-          font-weight: 800;
+          font-weight: 500;
           line-height: normal;
           @media ${DEVICE.maxxs} {
             font-size: 1.15rem;
-            font-weight: 500;
           }
         }
       }
+    }
+  }
+  .banner-caption {
+    max-width: 85rem;
+    min-height: 4.5rem;
+    margin: -1.5rem auto 0;
+    p {
+      color: #828282;
+      font-size: 1.125rem;
+      line-height: normal;
+      font-style: italic;
+      font-weight: 500;
+      max-width: 54rem;
+      width: 100%;
     }
   }
 `

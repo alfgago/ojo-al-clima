@@ -29,6 +29,7 @@ export const BarStyle = styled.section`
         align-items: center;
         gap: 5.5625rem;
         font-size: 1rem;
+        color: #858585;
         &:outline {
           border: none;
         }

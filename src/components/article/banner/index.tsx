@@ -9,6 +9,9 @@ export const ArticleBanner = ({
   publish_date,
   author
 }: any) => {
+
+  const { caption } = thumbnail;
+
   return (
     <BannerStyles>
       <div className="banner-container">
@@ -23,7 +26,7 @@ export const ArticleBanner = ({
         <div className="content-wrapper">
           <div className="data">
             <div className="meta">
-              <CategoryLabel {...category} type='circle'/>
+              <CategoryLabel {...category} type='circle' />
               <span className="date">{publish_date}</span>
             </div>
             <div className="title">
@@ -34,6 +37,9 @@ export const ArticleBanner = ({
             </div>
           </div>
         </div>
+      </div>
+      <div className="banner-caption">
+        <p>{caption}</p>
       </div>
     </BannerStyles>
   );

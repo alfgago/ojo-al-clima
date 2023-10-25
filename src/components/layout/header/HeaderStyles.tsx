@@ -136,6 +136,16 @@ export const HeaderStyle = styled.header`
                   background: ${GRADIENTS.red};  
                   border-top-right-radius: 0.3125rem;
                   border-top-left-radius: 0.3125rem;
+                }
+                &.red {
+                  &:before {
+                    background: ${GRADIENTS.red};
+                  }
+                } 
+                &.gray {
+                  &:before {
+                    background: ${GRADIENTS.gray};
+                  }
                 } 
               }
               &:hover .childrens {
