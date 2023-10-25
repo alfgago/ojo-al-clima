@@ -23,7 +23,6 @@ export const Pagination = ({ data }: any) => {
       const { q, author } = slug;
       return `/search/${page}?q=${q}${author ? `&author=${author}` : ''}`;
     }
-    
     return parent_category 
       ? `/category/${parent_category}/subcategory/${slug}/${page}`
       : `/category/${slug}/${page}`;
@@ -70,7 +69,6 @@ export const Pagination = ({ data }: any) => {
           {next_page && (
             <Link href={generateHref(next_page)}>
               <span>
-                
                 {
                   !isMobile ? 'Entradas más antiguas' : 'Siguientes'
                 }  

@@ -19,12 +19,14 @@ export const PreviewCard = ({
     <PreviewStyle color={color}>
       <div className={`article-card ${type}`}>
         <div className="thumbnail">
-          <Image
-            src={thumbnail.url_medium}
-            alt={thumbnail.alt}
-            width={thumbnail.width}
-            height={thumbnail.height}
-          />
+          <Link href={`/articles/${slug}`}>
+            <Image
+              src={thumbnail.url_medium}
+              alt={thumbnail.alt}
+              width={thumbnail.width}
+              height={thumbnail.height}
+            />
+          </Link>
         </div>
         <div className="content">
           <div className="meta">
