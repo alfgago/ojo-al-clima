@@ -83,7 +83,7 @@ export const Header = ({ data }: any) => {
                       <ReactSVG src="/icons/arrow-down.svg" />
                     </span>
                   </div>
-                  <div className="childrens">
+                  <div className={`childrens ${item.color}`}>
                     {item?.childrens?.map((child: any, index: number) => (
                       <Link key={index} href={child.url}>
                         <span className="child">{child.title}</span>

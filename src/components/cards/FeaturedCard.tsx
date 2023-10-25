@@ -3,17 +3,6 @@ import Link from "next/link"
 import { CategoryLabel } from ".."
 import { FeaturedStyle } from "./FeaturedStyle";
 
-
-type ArticleCardProps = {
-  name: string;
-  slug: string;
-  date: string;
-  category: any;
-  thumbnail: any;
-  author: string;
-  excerpt: string;
-};
-
 export const FeaturedCard = ({
   name,
   slug,
@@ -59,3 +48,13 @@ export const FeaturedCard = ({
     </FeaturedStyle>
   )
 }
+
+type ArticleCardProps = {
+  name: string;
+  slug: string;
+  date: string;
+  category: any;
+  thumbnail: any;
+  author: string;
+  excerpt: string;
+};
