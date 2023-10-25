@@ -76,8 +76,8 @@ export const LearnPageStyle = styled.section<LearnProps>`
       max-width: 67rem;
       width: 100%;
       margin-left: 5.8rem;
-      h1, h2, h3 a, p, strong, li, td, th {
-        color: ${ COLORS.white };
+      h1, h2, h3, a, p, strong, li, td, th {
+        color: ${ COLORS.white } !important;
         line-height: normal;
       }
 
@@ -87,6 +87,7 @@ export const LearnPageStyle = styled.section<LearnProps>`
 
       a, p {
         font-size: 1.5rem;
+
       }
 
       blockquote {
