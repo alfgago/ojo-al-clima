@@ -32,6 +32,8 @@ export const BannerStyles = styled.section`
           padding: 5rem 5.88rem;
           h1 {
             color: ${COLORS.white};
+            font-weight: 500;
+            line-height: 110%;
           }
           p {
             max-width: 51rem;
@@ -39,6 +41,10 @@ export const BannerStyles = styled.section`
             font-size: 1.25rem;
             font-weight: 400;
             line-height: 140%; /* 1.75rem */
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
           }
           a {
             border-radius: 3.125rem;
