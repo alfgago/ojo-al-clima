@@ -47,6 +47,9 @@ export const CardsContentStyle = styled.section<{background: string}>`
         margin: 0 auto;
         position: relative;
         z-index: 1;
+        @media ${DEVICE.maxmd} {
+          padding: 4.25rem 2rem 6.25rem;
+        }
         .content {
           h2 {
             color: ${COLORS.white};
@@ -55,6 +58,9 @@ export const CardsContentStyle = styled.section<{background: string}>`
             font-weight: 900;
             line-height: normal;
             text-align: center;
+            @media ${DEVICE.maxxs} {
+              font-size: 3.5rem;
+            }
           }
           .description {
             color: ${COLORS.white};
@@ -64,6 +70,9 @@ export const CardsContentStyle = styled.section<{background: string}>`
             font-weight: 500;
             line-height: normal;
             margin: 2.9rem 0rem 3.12rem;
+            @media ${DEVICE.maxxs} {
+              margin: 1rem 0rem 3.12rem;
+            }
             p,a,li,strong {
               color: ${COLORS.white};
               text-align: center;
@@ -81,12 +90,21 @@ export const CardsContentStyle = styled.section<{background: string}>`
               line-height: normal;
               padding: 0.62rem 1.25rem;
               text-decoration: none;
-              min-width: 12.5rem;
+              min-width: 15rem;
               justify-content: center;
               width: fit-content;
               border-radius: 3.125rem;
               border: 1px solid #FFF;
               backdrop-filter: blur(3px);
+              @media ${DEVICE.maxxs} {
+                padding: 0.62rem 2rem;
+                font-size: 1.5rem;
+                font-weight: 500;
+                border-radius: 3.125rem;
+                border: 1px solid #FFF;
+                background: rgba(255, 255, 255, 0.20);
+                backdrop-filter: blur(3px);
+              }
             }
           }
         }
@@ -94,12 +112,21 @@ export const CardsContentStyle = styled.section<{background: string}>`
           padding-top: 6.25rem;
           display: flex;
           justify-content: space-between;
+          @media ${DEVICE.maxxs} {
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 3rem;
+            align-items: center;
+          }
           .card-container {
             max-width: 20.3125rem;
             border-radius: 0.625rem;
             background: rgba(255, 255, 255, 0.20);
             backdrop-filter: blur(6px);
             padding: 1.87rem 2.3rem;
+            @media ${DEVICE.maxxs} {
+              flex: 1 20rem;
+            }
             h4 {
               color: ${COLORS.white};
               font-size: 6.25rem;

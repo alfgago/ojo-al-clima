@@ -6,6 +6,9 @@ export const GridNewStyle = styled.section<{ background: string, asset: string, 
   .grid-news-container {
     background: ${props => props.background === 'light' ? COLORS.white : COLORS.black};
     padding: 3.25rem 0 ;
+    @media ${DEVICE.maxmd} {
+      padding: 3.25rem 2rem;
+    }
     .wrapper {
       max-width: 84.30856rem;
       width: 100%;
@@ -50,7 +53,12 @@ export const GridNewStyle = styled.section<{ background: string, asset: string, 
         &.highlight {
           h2 {
             margin-bottom: -3rem;
-            left: ${props => props.reverse ? 'calc(65% + 3.25rem)' : '0'}; 
+            @media ${DEVICE.xs} {
+              left: ${props => props.reverse ? 'calc(65% + 3.25rem)' : '0'}; 
+            }
+            @media ${DEVICE.maxxs} {
+              margin-bottom: 2rem;
+            }
           }
         }
         &.normal {
@@ -65,8 +73,15 @@ export const GridNewStyle = styled.section<{ background: string, asset: string, 
           display: flex;
           flex-direction: ${props => props.reverse ? 'row-reverse' : 'row'};
           gap: 3.25rem;
+          @media ${DEVICE.maxxs} {
+            flex-direction: column-reverse;
+            gap: 0rem;
+          }
           .featured-wrapper {
             width: 65%;
+            @media ${DEVICE.maxxs} {
+              width: 100%;
+            }
           }
           .lateral-wrapper {
             flex: 1;
@@ -74,6 +89,9 @@ export const GridNewStyle = styled.section<{ background: string, asset: string, 
             flex-direction: column;
             gap: 1.94rem;
             padding-top: 5rem;
+            @media ${DEVICE.maxxs} {
+              padding-top: 2rem;
+            }
             .title {
               a {
                 color: ${props => props.background === 'light' ? COLORS.black : COLORS.white};
@@ -85,8 +103,10 @@ export const GridNewStyle = styled.section<{ background: string, asset: string, 
           }
         }
         &.normal {
-          display: flex;
-          gap: 3.25rem;
+          @media ${DEVICE.xs} {
+            display: flex;
+            gap: 3.25rem;
+          }
           .date {
             display: none;
           }

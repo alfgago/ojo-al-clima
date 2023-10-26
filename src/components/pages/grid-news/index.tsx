@@ -2,6 +2,8 @@ import { FeaturedCard, PreviewCard } from "@/components";
 import { GridNewStyle } from "./GridStyle";
 import Link from "next/link";
 import { ReactSVG } from "react-svg";
+import { useWindowSize } from "usehooks-ts";
+import Slider from "react-slick";
 
 const GridNews = ({ data }: any) => {
 
@@ -20,6 +22,18 @@ const GridNews = ({ data }: any) => {
   const background = light_background ? 'light' : 'dark';
   const type = highlight_first ? 'highlight' : 'normal';
   const layout = posts.length > 3 ? "small" : "large";
+
+  const { width } = useWindowSize();
+  const isMobile = width < 767;
+
+  let settings = {
+    dots: true,
+    arrows: false,  
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
 
   return (
     <GridNewStyle
@@ -45,13 +59,37 @@ const GridNews = ({ data }: any) => {
                 </div>
               )
             }
-          </div> 
+          </div>
           <div className={`articles ${type} ${layout}`}>
             {
               !highlight_first ?
-                posts.map((post: any, index: number) => (
-                  <PreviewCard key={index} {...post} type="vertical" />
-                ))
+                <>
+                  {
+                    !isMobile ?
+                      <>
+                        {
+                          posts.map((post: any, index: number) => (
+                            <PreviewCard key={index} {...post} type="vertical" />
+                          ))
+                        }
+                      </> :
+                      <>
+                        <Slider {...settings}>
+                          {
+                            posts.map((post: any, index: number) => {
+                              return (
+                                <div className="slide-image-container" key={index}>
+                                  <div className="slide-image-wrapper">
+                                    <PreviewCard key={index} {...post} type="vertical" />
+                                  </div>
+                                </div>
+                              )
+                            })
+                          }
+                        </Slider>
+                      </>
+                  }
+                </>
                 :
                 <>
                   <div className="lateral-wrapper">
@@ -75,7 +113,7 @@ const GridNews = ({ data }: any) => {
                 </Link>
               </div>
             )
-          } 
+          }
         </div>
       </div>
     </GridNewStyle>

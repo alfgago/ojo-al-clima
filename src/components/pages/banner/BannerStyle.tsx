@@ -6,6 +6,9 @@ export const BannerStyles = styled.section`
  .banner-wrapper {
     height: 100vh;
     margin-top: -5rem;
+    @media ${DEVICE.maxmd} {
+      height: 50rem;
+    }
     .content {
       background-size: calc(100% - 23.2rem) 100% !important;
       background-repeat: no-repeat!important;
@@ -14,6 +17,9 @@ export const BannerStyles = styled.section`
       display: flex;
       align-items: flex-end;
       position: relative;
+      @media ${DEVICE.maxmd} {
+        background-size: cover !important;
+      }
       &:before {
         content: "";
         position: absolute;
@@ -30,10 +36,16 @@ export const BannerStyles = styled.section`
         .data-wrapper {
           max-width: 76.5625rem;
           padding: 5rem 5.88rem;
+          @media ${DEVICE.maxxs} {
+            padding: 2rem 2rem;
+          }
           h1 {
             color: ${COLORS.white};
             font-weight: 500;
             line-height: 110%;
+            @media ${DEVICE.maxxs} {
+              font-size: 2.5rem;
+            }
           }
           p {
             max-width: 51rem;
@@ -45,6 +57,9 @@ export const BannerStyles = styled.section`
             display: -webkit-box;
             -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
+            @media ${DEVICE.maxxs} {
+              display: none;
+            }
           }
           a {
             border-radius: 3.125rem;
@@ -63,6 +78,10 @@ export const BannerStyles = styled.section`
             font-weight: 800;
             line-height: 1.2rem;
             text-decoration: none;
+            @media ${DEVICE.maxxs} {
+              margin-top: 1rem;
+              font-size: 1.5rem;
+            }
           }
         }
       }
