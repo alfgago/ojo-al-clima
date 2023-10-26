@@ -20,10 +20,11 @@ export const ImageStyle = styled.figure`
     gap: 0.625rem;
     background: #FFF;
     box-shadow: 0px 4px 43px 0px rgba(0, 0, 0, 0.09);
+    height: -webkit-fill-available;
     span {
       color: #828282;
       font-size: 1.125rem;
-      font-style: normal;
+      font-style: italic;
       font-weight: 400;
       line-height: 140%; /* 1.575rem */
     }
