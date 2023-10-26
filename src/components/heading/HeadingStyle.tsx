@@ -19,7 +19,9 @@ export const HeadingStyle = styled.section<{color: string}>`
       line-height: 1;
       padding-left: 1.5rem;
       position: relative;
-      margin-left: 2rem;
+      @media ${DEVICE.maxmd} {
+        margin-left: 2rem;
+      }
       &:before {
         position: absolute;
         content: "";
@@ -27,7 +29,7 @@ export const HeadingStyle = styled.section<{color: string}>`
         height: 100%;
         border-radius: 5rem;
         background: ${(props) => COLORS[props.color]};
-        left: 0;
+        left: 0; 
       }
     }
   }

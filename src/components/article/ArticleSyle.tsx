@@ -34,6 +34,26 @@ export const ArticleStyle = styled.section<{ color: string }>`
         fill: ${props => COLORS[props.color]};
       }
     }
+    .image-carousel {
+      ul.slick-dots {
+        button:before {
+          color: #EBEBEBEE;
+          opacity: 1;
+        }
+        li.slick-active {
+          button:before {
+            color: ${props => COLORS[props.color]};
+          }
+        }
+      }
+    }
+    ul {
+      li {
+        &::marker { 
+          color: ${props => COLORS[props.color]};
+        }
+      }
+    }
   }
   .recents-block {
     @media ${DEVICE.md} {
