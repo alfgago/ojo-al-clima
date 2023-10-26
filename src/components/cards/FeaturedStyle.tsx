@@ -19,6 +19,9 @@ export const FeaturedStyle = styled.div`
         height: 100%;
         object-fit: cover;
         border-radius: 0.3125rem;
+        @media ${DEVICE.maxxs} {
+          min-height: 30rem;
+        }
       }
       &:before {
         position: absolute;

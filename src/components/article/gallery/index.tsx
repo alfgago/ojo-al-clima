@@ -23,7 +23,7 @@ const Gallery = ({ data }: any) => {
               !highlight_first ?
                 <div className="gallery-wrapper">
                   {
-                    images.map((image: any, index: number) => {
+                    images?.map((image: any, index: number) => {
                       return (
                         <ImageCard key={index} data={image} />
                       )
