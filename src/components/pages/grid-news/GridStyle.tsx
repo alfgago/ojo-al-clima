@@ -111,16 +111,18 @@ export const GridNewStyle = styled.section<{ background: string, asset: string, 
             display: none;
           }
           &.small {
-            .thumbnail {
-              img {
-                height: 14.125rem
+            @media ${DEVICE.xs} {
+              .thumbnail {
+                img {
+                  height: 14.125rem
+                }
               }
-            }
-            .content {
-              min-height: 11.3125rem;
-              .title {
-                a {
-                  font-size: 0.9375rem;
+              .content {
+                min-height: 11.3125rem;
+                .title {
+                  a {
+                    font-size: 0.9375rem;
+                  }
                 }
               }
             }
