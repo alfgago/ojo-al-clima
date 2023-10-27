@@ -9,10 +9,10 @@ export const fetchSearchData = async (query: string, author: string, page: numbe
       console.log('request search data:', query, 'page:', page);
       
       // Prefetch next page if exists
-      if (response.data.pagination.next_page) {
-        queryClient.prefetchQuery(['searchData', query, author, response.data.pagination.next_page], 
-        () => fetchSearchData(query, author, response.data.pagination.next_page));
-      }
+      // if (response.data.pagination.next_page) {
+      //   queryClient.prefetchQuery(['searchData', query, author, response.data.pagination.next_page], 
+      //   () => fetchSearchData(query, author, response.data.pagination.next_page));
+      // }
 
       return response.data;
     }, 
