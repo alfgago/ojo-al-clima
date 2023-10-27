@@ -9,10 +9,10 @@ export const fetchCategoryData = async (categoryName: string, page: number, stal
       console.log('request category data:', categoryName, 'page:', page);
       
       // Prefetch next page if exists
-      if (response.data.pagination.next_page) {
-        queryClient.prefetchQuery(['categoryData', categoryName, response.data.pagination.next_page], 
-        () => fetchCategoryData(categoryName, response.data.pagination.next_page));
-      }
+      // if (response.data.pagination.next_page) {
+      //   queryClient.prefetchQuery(['categoryData', categoryName, response.data.pagination.next_page], 
+      //   () => fetchCategoryData(categoryName, response.data.pagination.next_page));
+      // }
 
       return response.data;
     }, 
