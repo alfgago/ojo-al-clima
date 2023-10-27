@@ -13,9 +13,9 @@ export default function Home({ page }: any) {
     </PageStyle>
   );
 }
-
+ 
 export const getServerSideProps = async () => {
-  const page = await fetchPageData('home', 60); 
+  const page = await fetchPageData('inicio', 60); 
 
   return {
     props: {
