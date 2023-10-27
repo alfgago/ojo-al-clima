@@ -6,7 +6,7 @@ const ImageCard = ({ data }: any) => {
   const { attrs } = data;
 
   return (
-    <ImageStyle className={attrs.className + 'image-block'}>
+    <ImageStyle className={attrs.className + ' image-block'}>
       <div className="img-wrapper">
         <Image
           src={attrs.url_full}
