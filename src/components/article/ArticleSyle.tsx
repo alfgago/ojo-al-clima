@@ -6,6 +6,7 @@ export const ArticleStyle = styled.section<{ color: string }>`
   display: flex;
   justify-content: center;
   gap: 3.25rem;
+  padding-bottom: 6rem;
   @media ${DEVICE.maxmd} {
     flex-direction: column;
     padding: 0 2rem 5rem;
