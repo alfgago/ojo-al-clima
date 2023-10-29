@@ -19,7 +19,7 @@ export const BannerStyles = styled.section`
       img {
         display: block;
         width: 100%;
-        height: 78vh;
+        height: 92vh;
         object-fit: cover;
         @media ${DEVICE.maxxs} {
           height: 32rem

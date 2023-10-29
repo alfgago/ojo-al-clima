@@ -4,6 +4,7 @@ import Gallery from "@/components/article/gallery";
 import ImageCard from "@/components/article/image";
 import List from "@/components/article/list";
 import Quote from "@/components/article/quote";
+import Shortcode from "@/components/article/shortcode";
 
 
 export const ARTICLE_COMPONENTS: { [key: string]: React.ComponentType<any> } = {
@@ -15,4 +16,5 @@ export const ARTICLE_COMPONENTS: { [key: string]: React.ComponentType<any> } = {
   "core/columns": ColumnsBlock,
   "acf/image-gradient": ImageCard,
   "acf/post-gallery": Gallery,
+  "core/shortcode": Shortcode,
 };

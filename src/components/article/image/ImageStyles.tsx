@@ -15,9 +15,9 @@ export const ImageStyle = styled.figure`
   }
   figcaption {
     display: flex;
+    flex-direction: column;
     padding: 1.5625rem;
     align-items: flex-start;
-    gap: 0.625rem;
     background: #FFF;
     box-shadow: 0px 4px 43px 0px rgba(0, 0, 0, 0.09);
     height: -webkit-fill-available;
@@ -27,6 +27,7 @@ export const ImageStyle = styled.figure`
       font-style: italic;
       font-weight: 400;
       line-height: 140%; /* 1.575rem */
+      display: block;
     }
   }
 `

@@ -32,9 +32,11 @@ export const ArticleBanner = ({
             <div className="title">
               <h1>{post_title}</h1>
             </div>
-            <div className="author">
-              por <span>{author}</span>
-            </div>
+            {author && (
+              <div className="author">
+                por <span>{author}</span>
+              </div>
+            )}
           </div>
         </div>
       </div>
