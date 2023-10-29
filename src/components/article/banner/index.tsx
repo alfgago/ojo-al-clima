@@ -40,9 +40,11 @@ export const ArticleBanner = ({
           </div>
         </div>
       </div>
-      <div className="banner-caption">
-        <p>{caption}</p>
-      </div>
+      {caption && (
+        <div className="banner-caption">
+          <p>{caption}</p>
+        </div>
+      )}
     </BannerStyles>
   );
 }
