@@ -32,7 +32,7 @@ export const PreviewStyle = styled.div<{color: string}>`
           font-size: 1.125rem;
           font-style: normal;
           font-weight: 500;
-          line-height: 118%; /* 1.3275rem */
+          line-height: 110%; /* 1.3275rem */
           text-decoration: none;
           transition: all 0.2s ease;
         }

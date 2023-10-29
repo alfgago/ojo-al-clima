@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-import { COLORS, GRADIENTS, DEVICE } from "@/styles/variables"
+import { COLORS, GRADIENTS, GRADIENTS_VERTICALS, DEVICE } from "@/styles/variables"
 
 export const ArticleStyle = styled.section<{ color: string }>`
   display: flex;
@@ -16,6 +16,10 @@ export const ArticleStyle = styled.section<{ color: string }>`
     max-width: 55.5rem;
     @media ${DEVICE.maxmd} {
       max-width: 100%;
+    }
+    a {
+      color: #48A1BF;
+      text-decoration-line: underline;
     }
     blockquote {
       background: white;
@@ -33,6 +37,27 @@ export const ArticleStyle = styled.section<{ color: string }>`
       }
       path {
         fill: ${props => COLORS[props.color]};
+      }
+    }
+    .old-box {
+      background: white;
+      border: none;
+      border-radius: 1.1rem;
+      position: relative;
+      h2,h3,h4,h5 {
+        &:before {
+          background: ${props => GRADIENTS_VERTICALS[props.color]};
+        }
+      }
+      &:before {
+        border-radius: 1.25rem;
+        content: '';
+        position: absolute;
+        top: 0; right: 0; bottom: 0; left: 0;
+        z-index: -1;
+        background: ${props => GRADIENTS[props.color]};
+        padding: 3px;  /* Grosor del borde */
+        margin: -3px;  /* Compensar el desplazamiento del padding */
       }
     }
     .image-carousel {

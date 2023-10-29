@@ -15,11 +15,10 @@ const ImageCard = ({ data }: any) => {
           height={attrs.height}
         />
       </div>
-      {attrs.caption && (
+      {(attrs.caption || attrs.author) && (
         <figcaption>
-          <span>
-            {attrs.caption}
-          </span>
+          {attrs.caption && <span>{attrs.caption}</span>}
+          {attrs.author && <span>(Créditos: {attrs.author})</span>}
         </figcaption>
       )}
     </ImageStyle>
