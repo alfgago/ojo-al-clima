@@ -12,6 +12,7 @@ export const LayoutStyle = styled.main`
   &.hide-layout {
     .header-container {
       background: transparent !important;
+      box-shadow: none !important;
       .content,
       .site-logo{
         ${hide}

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { BannerStyles } from "./BannerStyle";
 import { learn } from "@/constants/learnItems";
+import { ReactSVG } from "react-svg";
 
 const PageBanner = ({ data }: any) => {
 
@@ -30,6 +31,7 @@ const PageBanner = ({ data }: any) => {
                   <span>
                     {item.post_title}
                   </span>
+                  <ReactSVG src="/icons/plus.svg" />
                 </Link>
               </div>
             ))

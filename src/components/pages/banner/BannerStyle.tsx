@@ -8,8 +8,9 @@ export const BannerStyles = styled.section`
     margin-top: -5rem;
     display: flex;
     align-items: flex-end;
+    flex-wrap: wrap;
     @media ${DEVICE.maxmd} {
-      height: 50rem;
+      height: auto;
     }
     .content {
       background-size: cover !important;
@@ -21,7 +22,10 @@ export const BannerStyles = styled.section`
       position: relative;
       flex: 1;
       @media ${DEVICE.maxmd} {
-        background-size: cover !important;
+        height: 50rem;
+      }
+      @media ${DEVICE.maxxs} {
+        height: 30rem;
       }
       &:before {
         content: "";
@@ -93,6 +97,16 @@ export const BannerStyles = styled.section`
       width: 23.2rem;
       display: flex;
       height: calc(100% - 5rem);
+      @media ${DEVICE.maxmd} {
+        width: 100%;
+        opacity: 0;
+        pointer-events: none;
+      }
+      @media ${DEVICE.maxxs} {
+        height: 30rem;
+        opacity: 1;
+        pointer-events: all;
+      }
       div {
         flex: 1;
         &.red {
@@ -115,6 +129,10 @@ export const BannerStyles = styled.section`
           margin-top: -1rem;
           justify-content: center;
           text-decoration: none;
+          position: relative;
+          @media ${DEVICE.maxxs} {
+            margin-top: 1rem;
+          }
           span {
             color: #fff;
             font-size: 2rem;
@@ -126,6 +144,16 @@ export const BannerStyles = styled.section`
             display: block;
             width: 0rem;
             height: 2.8rem;
+            @media ${DEVICE.maxxs} {
+              font-size: 2.5rem;
+            }
+          }
+          div {
+            position: absolute;
+            bottom: 2rem;
+            @media ${DEVICE.xs} {
+              display: none;
+            }
           }
         }
       }
