@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-import { COLORS, GRADIENTS, DEVICE } from "@/styles/variables"
+import { COLORS, GRADIENTS_VERTICALS, DEVICE } from "@/styles/variables"
 
 const setDefaultPosition = (index: number) => {
   let baseValue = 17.4;
@@ -31,7 +31,7 @@ export const ControlStyle = styled.div<ControlProps>`
       display: flex;
       align-items: center;
       justify-content: center;
-      background: ${props => GRADIENTS[props.color]};
+      background: ${props => COLORS[props.color]};
       background-size: 100% 100vh;
       pointer-events: all;
       svg {
@@ -52,7 +52,7 @@ export const ControlStyle = styled.div<ControlProps>`
     .name {
       height: calc(100% - 5rem);
       padding-top: 2rem;
-      background: ${props => GRADIENTS[props.color]};
+      background: ${props => GRADIENTS_VERTICALS[props.color]};
       opacity: 0;
       transition: all 0.3s ease;
       pointer-events: none;

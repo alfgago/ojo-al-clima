@@ -142,6 +142,26 @@ export const HeaderStyle = styled.header`
                     background: ${GRADIENTS.red};
                   }
                 } 
+                &.blue {
+                  &:before {
+                    background: ${GRADIENTS.blue};
+                  }
+                }
+                &.yellow {
+                  &:before {
+                    background: ${GRADIENTS.yellow};
+                  }
+                }
+                &.purple {
+                  &:before {
+                    background: ${GRADIENTS.purple};
+                  }
+                }
+                &.green {
+                  &:before {
+                    background: ${GRADIENTS.green};
+                  } 
+                }
                 &.gray {
                   &:before {
                     background: ${GRADIENTS.gray};

@@ -29,20 +29,29 @@ const setContentMargin = (index: number) => {
 export const LearnPageStyle = styled.section<LearnProps>`
   margin-top: -5rem;
   padding-bottom: 5rem;
-  background-color: ${ props => COLORS[props.color] };
+  background-color: ${ props => props.color === 'blue' ? '#48a1bf' : COLORS[props.color] };
   .banner-gradient {
     height: 100vh;
     width: calc(100% - 16.5rem);
     margin-left: ${ props => setContentMargin(props.index) };
     position: relative;
     z-index: 1;
+    @media ${ DEVICE.maxmd} {
+      margin-left: 0 !important;
+      max-width: 100%;
+      width: 100%;
+      height: 60rem;
+    }
+    @media ${ DEVICE.maxxs} {
+      height: 40rem;
+    }
     .banner-gradient-inner {
       height: 100%;
       width: 100%;
       display: flex;
       align-items: center; 
       justify-content: center;
-      posistion: relative; 
+      position: relative; 
       &:before { 
         position: absolute;
         content: "";
@@ -61,12 +70,21 @@ export const LearnPageStyle = styled.section<LearnProps>`
       img {
         max-width: 100%;
         max-height: 100%;
+        height: 100% !important;
         object-fit: cover;
       }  
     }
   }
   .learn-content {
     margin-left: ${ props => setContentMargin(props.index)};
+    @media ${ DEVICE.maxmd} {
+      margin-left: 0 !important;
+      max-width: 100%;
+      padding: 4rem;
+    }
+    @media ${ DEVICE.maxxs} {
+      padding: 2rem;
+    }
     max-width: 90.375rem;
     width: 100%;
     margin-top: -25rem;
@@ -76,6 +94,11 @@ export const LearnPageStyle = styled.section<LearnProps>`
       max-width: 67rem;
       width: 100%;
       margin-left: 5.8rem;
+      @media ${ DEVICE.maxmd} {
+        max-width: 100%;
+        width: 100%;
+        margin-left: 0;
+      }
       h1, h2, h3, a, p, strong, li, td, th {
         color: ${ COLORS.white } !important;
         line-height: normal;
@@ -83,6 +106,9 @@ export const LearnPageStyle = styled.section<LearnProps>`
 
       h1 {
         font-size: 4rem;
+        @media ${ DEVICE.maxxs} {
+          font-size: 2.5rem;
+        }
       }
 
       a, p {
