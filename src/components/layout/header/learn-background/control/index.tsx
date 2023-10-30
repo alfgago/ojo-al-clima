@@ -33,7 +33,7 @@ export const Control = ({ data, index, setActive, active, isHomePage }: any) => 
   }, [router.pathname]);
 
   return (
-    <ControlStyle color={color} index={index}>
+    <ControlStyle color={color} index={index} className={index === active ? "curent" : ""}>
       <div
         className={index === active ? "control-wrapper active" : "control-wrapper"}
         style={{ right: setActivePosition(index, active) }}

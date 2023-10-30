@@ -73,6 +73,9 @@ export const SearchHeaderStyle = styled.div`
       svg {
         display: block;
         transition: all 0.6s ease;
+        path {
+          transition: all 0.4s ease;
+        }
       }
       &:before {
         position: absolute;

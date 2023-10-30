@@ -15,18 +15,27 @@ const generateDelay = (numOfItems:any) => {
 }
 
 export const HeaderStyle = styled.header`
-  position: relative;
-  z-index: 20;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  width: 100%;
   @media ${DEVICE.maxmd} {
     display: none;
   }
   .header-container { 
+    background: ${COLORS.white};
     position: relative;
     display: flex;
     width: 100%;
     justify-content: space-between;
     margin: auto;
     height: 5rem;
+    transition: all 0.6s ease;
+    box-shadow: 0px 4px 43px 0px rgba(0, 0, 0, 0.09);
+    &.homepage {
+      box-shadow: 0px 4px 43px 0px rgba(0, 0, 0, 0);
+      background: transparent;
+    }
     .site-logo {
       padding-left: 5rem;
       display: flex;
@@ -36,6 +45,7 @@ export const HeaderStyle = styled.header`
         display: block;
         height: auto;
         rect:nth-child(2) {
+          transition: all 0.4s ease;
           filter: brightness(0.6);
         }
       }
@@ -91,11 +101,17 @@ export const HeaderStyle = styled.header`
               span {
                 transition: all 0.4s ease;
               }
+              svg {
+                path { 
+                  transition: all 0.4s ease;
+                }
+              }
             }
             a {
               display: block;
               text-decoration: none;
               color: ${COLORS.black};
+              transition: all 0.4s ease;
               span {
                 font-size: 1rem;
                 font-style: normal;
@@ -229,11 +245,7 @@ export const HeaderStyle = styled.header`
       width: 23.2rem;
       background: ${GRADIENTS.red};
       &.homepage {
-        @media ${DEVICE.md} {
-          .control-wrapper {
-            pointer-events: all;
-          }
-        }
+
       }
     }
   }

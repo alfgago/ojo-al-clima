@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { BannerStyles } from "./BannerStyle";
+import { learn } from "@/constants/learnItems";
 
 const PageBanner = ({ data }: any) => {
 
@@ -20,6 +21,19 @@ const PageBanner = ({ data }: any) => {
               </Link>
             </div>
           </div>
+        </div>
+        <div className="learn-colors">
+          {
+            learn?.map((item: any, index: number) => (
+              <div key={index} className={`${item.color}`}>
+                <Link href={`/${item.post_name}`}>
+                  <span>
+                    {item.post_title}
+                  </span>
+                </Link>
+              </div>
+            ))
+          }
         </div>
       </div>
     </BannerStyles>

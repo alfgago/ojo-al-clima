@@ -6,41 +6,14 @@ import { ReactSVG } from "react-svg";
 import { useRouter } from "next/router";
 import { Control } from "./learn-background/control";
 import { Learn } from "./learn-background";
-
-
-const learn = [
-  {
-    "ID":1,
-    "post_title": "Evidencias",
-    "post_name": "evidencias",
-    "color": "red"
-  },
-  {
-    "ID":2,
-    "post_title": "Causas",
-    "post_name": "causas",
-    "color": "purple"
-  },
-  {
-    "ID":3,
-    "post_title": "Efectos",
-    "post_name": "efectos",
-    "color": "blue"
-  },
-  {
-    "ID":4,
-    "post_title": "Soluciones",
-    "post_name": "soluciones",
-    "color": "yellow"
-  }
-]
-
+import { learn } from "@/constants/learnItems";
 
 export const Header = ({ data }: any) => {
 
   const { menu } = data;
 
   const [hideMenuDesktop, setHideMenuDesktop] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const router = useRouter();
   const isHomePage = router.pathname === '/';
@@ -61,16 +34,34 @@ export const Header = ({ data }: any) => {
 
   const [activeLearn, setActiveLearn] = useState(initialActiveLearn);
 
+  const showHomepageClass = isHomePage && !scrolled;
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const offset = window.scrollY;
+      if (offset > 0) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
 
   return (
     <HeaderStyle>
-      <div className="header-container">
-        <div className={isHomePage ? 'site-logo homepage' : 'site-logo'}>
+      <div className={showHomepageClass ? 'header-container homepage' : 'header-container'}>
+        <div className={showHomepageClass ? 'site-logo homepage' : 'site-logo'}>
           <Link href="/">
             <ReactSVG src="/logos/site-logo.svg" />
           </Link>
         </div>
-        <div className={isHomePage ? 'content homepage' : 'content'}>
+        <div className={showHomepageClass ? 'content homepage' : 'content'}>
           <div className="menu">
             <div className={`menu-wrapper ${hideMenuDesktop}`}>
               {menu?.items?.map((item: any, index: number) => (
@@ -98,7 +89,7 @@ export const Header = ({ data }: any) => {
             <SearchHeader menuState={setHideMenuDesktop} />
           </div>
         </div>
-        <div className={isHomePage ? 'learn-controls homepage' : 'learn-controls'}>
+        <div className={showHomepageClass ? 'learn-controls homepage' : 'learn-controls'}>
           {
             learn?.map((item: any, index: number) => (
               <Control

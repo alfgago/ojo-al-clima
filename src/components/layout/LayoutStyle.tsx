@@ -11,6 +11,7 @@ const hide = () => `
 export const LayoutStyle = styled.main`
   &.hide-layout {
     .header-container {
+      background: transparent !important;
       .content,
       .site-logo{
         ${hide}
@@ -25,9 +26,6 @@ export const LayoutStyle = styled.main`
     footer {
       ${hide}
     }
-
-
-
   }
 `
 

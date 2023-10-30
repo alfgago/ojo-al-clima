@@ -66,11 +66,16 @@ export const ControlStyle = styled.div<ControlProps>`
         transform: rotate(90deg);
         display: block;
       }
-      &.homepage {
-        opacity: 1;
-      }
       &.active { 
         opacity: 1;
+        pointer-events: all;
+      }
+    }
+  }
+  &.curent {
+    .control-wrapper {
+      .name {
+        pointer-events: none;
       }
     }
   }
