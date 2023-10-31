@@ -5,7 +5,7 @@ interface PARAMS {
 export const GRADIENTS: PARAMS = {
   green: "linear-gradient(90deg, #137E24 0%, #27C840 90.77%)",
   yellow: "linear-gradient(90deg, #F58B28 0%, #F6BD29 100%)",
-  red: "linear-gradient(180deg, #C5242A 4.17%, #E24130 100%)",
+  red: "linear-gradient(90deg, #C5242A 4.17%, #E24130 100%)",
   blue: "linear-gradient(90deg, #388DAA 0%, #34BBD7 97.55%)",
   purple: "linear-gradient(90deg, #3F448F 0%, #6967F1 100%)",
   gray: "linear-gradient(90deg, #787277 0%, #E4E4E4 100%)"
@@ -28,7 +28,7 @@ export const COLORS: PARAMS = {
   purple: "#3F448F",
   yellow: "#F58B28",
   disabled: "#999999",
-  gray: "#787277",
+  gray: "#858585",
 }
 
 export const SIZE = {

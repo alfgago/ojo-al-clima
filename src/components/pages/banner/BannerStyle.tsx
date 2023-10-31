@@ -5,12 +5,14 @@ import { COLORS, GRADIENTS, DEVICE, GRADIENTS_VERTICALS } from "@/styles/variabl
 export const BannerStyles = styled.section`
  .banner-wrapper {
     height: 100vh;
-    margin-top: -5rem;
     display: flex;
     align-items: flex-end;
     flex-wrap: wrap;
     @media ${DEVICE.maxmd} {
       height: auto;
+    }
+    @media ${DEVICE.md} {
+      margin-top: -5rem;
     }
     .content {
       background-size: cover !important;

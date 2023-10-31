@@ -30,6 +30,9 @@ export const LearnPageStyle = styled.section<LearnProps>`
   margin-top: -5rem;
   padding-bottom: 5rem;
   background-color: ${ props => props.color === 'blue' ? '#48a1bf' : COLORS[props.color] };
+  @media ${ DEVICE.maxmd} {
+    margin-top: 10rem;
+  }
   .banner-gradient {
     height: 100vh;
     width: calc(100% - 16.5rem);
