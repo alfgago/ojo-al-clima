@@ -33,6 +33,9 @@ export const GridNewStyle = styled.section<{ background: string, asset: string, 
             background: ${props => props.asset};  
             left: 0;
           }
+          @media ${DEVICE.maxmd} {
+            font-size: 2.5rem;
+          }
         }
         .btn-show-more-top-wrapper {
           a {

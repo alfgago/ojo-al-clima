@@ -28,7 +28,7 @@ export const GridImageStyle = styled.section<{ items: string, background: number
         font-weight: 800;
         line-height: 118%; /* 2.36rem */
         @media ${DEVICE.maxxs} {
-          font-size: 3.5rem;
+          font-size: 2.5rem;
         }
       }
       .btn {
@@ -64,6 +64,8 @@ export const GridImageStyle = styled.section<{ items: string, background: number
         justify-items: center;
       }
       .item {
+        display: flex;
+        align-items: center;
         img {
           object-fit: scale-down;
           display: block;

@@ -104,14 +104,18 @@ export const Header = ({ data }: any) => {
           <div className={`menu ${isMobileMenuOpen ? 'active' : ''}`}>
             <div className={`menu-wrapper ${hideMenuDesktop}`}>
               {menu?.items?.map((item: any, index: number) => (
-                <div key={index} className="item">
+                <div key={index} className={`item ${item.classes}`}>
                   <div className={`parent ${item.color} ${activeSubMenu === index ? 'active' : ''}`}>
                     <Link href={item.url} onClick={handleHamburgerClick}>
                       {item.title}
                     </Link>
-                    <span className="open-sub-menu" onClick={() => handleSubMenuClick(index)}>
-                      <ReactSVG src="/icons/arrow-down.svg" />
-                    </span>
+                    {
+                      item?.childrens && (
+                        <span className="open-sub-menu" onClick={() => handleSubMenuClick(index)}>
+                          <ReactSVG src="/icons/arrow-down.svg" />
+                        </span>
+                      )
+                    }
                   </div>
                   <div
                     ref={(el) => childrenRefs.current[index] = el}
@@ -132,7 +136,7 @@ export const Header = ({ data }: any) => {
           </div>
           <div className="search">
             <SearchHeader menuState={setHideMenuDesktop} />
-            <div className={`hamburger-menu hide-desktop ${isMobileMenuOpen ? 'active' : ''}`} onClick={handleHamburgerClick}>
+            <div className={`hamburger-menu hide-on-desktop ${isMobileMenuOpen ? 'active' : ''}`} onClick={handleHamburgerClick}>
               <span className="menu-line"></span>
               <span className="menu-line"></span>
               <span className="menu-line"></span>

@@ -34,7 +34,7 @@ export const HeaderStyle = styled.header`
       background: transparent;
     }
     @media ${DEVICE.md} {
-      .hide-desktop {
+      .hide-on-desktop {
         display: none !important;
       }
     }
@@ -135,6 +135,50 @@ export const HeaderStyle = styled.header`
               border-bottom: solid #E2E2E2 1px;
               &:last-child {
                 border-bottom: none;
+              }
+            }
+            @media ${DEVICE.maxmd} {
+              &.hide-on-desktop {
+                .parent {
+                  a {
+                    color: ${COLORS.black} !important;
+                  }
+                }
+              }
+              &.learn {
+                .childrens {
+                  border-radius: 0;
+                  width: 100%; 
+                  a {
+                    width: 100%;
+                    display: block;
+                    text-transform: uppercase;
+                    padding: 1.5rem 1.5rem;
+                    color: #fff;
+                    position: relative;
+ 
+                    &:nth-child(1) {
+                      background: ${GRADIENTS.red};
+                    }
+                    &:nth-child(2) {
+                      background: ${GRADIENTS.purple};
+                    }
+                    &:nth-child(3) {
+                      background: ${GRADIENTS.blue};
+                    }
+                    &:nth-child(4) {
+                      background: ${GRADIENTS.yellow};
+                    }
+                    &:before {
+                      position: absolute;
+                      content: "➕";
+                      filter: brightness(0) invert(1);
+                      right: 2rem;
+                      top: 50%;
+                      transform: translateY(-50%);
+                    }
+                  }
+                }
               }
             }
             .parent {
@@ -333,6 +377,9 @@ export const HeaderStyle = styled.header`
           flex-direction: column;
           justify-content: space-between;
           cursor: pointer;
+          transform: translateY(-0.2rem);
+          position: relative;
+          z-index: 10;
           span {
             height: 0.2rem;
             background-color: #000;

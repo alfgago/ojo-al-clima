@@ -68,7 +68,7 @@ export const FooterStyle = styled.footer`
               order: 4;
             }
           }
-          @media ${DEVICE.maxxss} {
+          @media (max-width: 420px) {
             &:nth-child(4){
               margin-top: -6rem;
             }
@@ -110,7 +110,7 @@ export const FooterStyle = styled.footer`
           width: 35%;
           flex-direction: row;
         }
-        @media ${DEVICE.maxxss} {
+        @media (max-width: 420px) {
           width: 100%;
           display: grid;
           grid-gap: 3.25rem;

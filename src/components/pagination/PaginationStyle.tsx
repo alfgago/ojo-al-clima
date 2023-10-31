@@ -9,7 +9,7 @@ export const PaginationStyle = styled.section`
     justify-content: center;
     gap: 6.25rem;
     @media ${DEVICE.maxmd} { 
-      padding: 0 2rem;
+      gap: 1.25rem;
     }
     .arrow {
       min-width: 10rem;

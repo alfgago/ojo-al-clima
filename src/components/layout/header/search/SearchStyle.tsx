@@ -6,9 +6,7 @@ export const SearchHeaderStyle = styled.div`
  .search-header-wrapper {
   display: flex;
   position: relative;
-  @media ${DEVICE.maxmd} {
-    display: none;
-  }
+
   .bar { 
     position: absolute;
     right: calc(100% + 2.75rem);
@@ -21,6 +19,9 @@ export const SearchHeaderStyle = styled.div`
     pointer-events: none;
     transition: all 0.8s ease;
     transition-delay: 0.4s;
+    @media ${DEVICE.maxmd} {
+      right: calc(100% + 1.75rem);
+    }
     input {
       height: 100%;
       width: 100%;
@@ -54,6 +55,12 @@ export const SearchHeaderStyle = styled.div`
       width: 45rem;
       pointer-events: all;
       opacity: 1;
+      @media ${DEVICE.maxmd} {
+        width: calc(100vw - 30rem);
+      }
+      @media ${DEVICE.maxxs} {
+        width: calc(100vw - 15rem);
+      }
     }
 
   }
@@ -62,7 +69,9 @@ export const SearchHeaderStyle = styled.div`
     gap: 0.5rem;
     cursor: pointer;
     align-items: center;
-
+    @media ${DEVICE.maxmd} {
+      transform: translateX(2rem);
+    }
     .search-icon {
       transition: all 0.6s ease;
       width: 2.9375rem;
@@ -99,13 +108,22 @@ export const SearchHeaderStyle = styled.div`
     .text {
       transition: all 0.3s ease;
       @media ${DEVICE.maxmd} {
-        display: none;
+        position: absolute;
+        z-index: 1;
+        opacity: 0;
       }
     }
     .close-icon {
       transition: all 0.5s ease;
       svg {
         transition: all 0.5s ease;
+        @media ${DEVICE.maxmd} {
+          width: 4rem;
+          height: 4rem;
+          path {
+            stroke-width: 1;
+          }
+        }      
       }
     }
 
@@ -124,6 +142,9 @@ export const SearchHeaderStyle = styled.div`
     &.true {
       .search-icon { 
         transform: translateX(-2rem);
+        @media ${DEVICE.maxmd} {
+          transform: translateX(-3rem);
+        }
         svg {
           path {
             fill: ${COLORS.white};
