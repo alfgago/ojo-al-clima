@@ -1,24 +1,33 @@
 import styled from "styled-components"
 
-import { COLORS, GRADIENTS, DEVICE } from "@/styles/variables"
+import { COLORS, GRADIENTS, DEVICE, GRADIENTS_VERTICALS } from "@/styles/variables"
 
 export const BannerStyles = styled.section`
  .banner-wrapper {
     height: 100vh;
-    margin-top: -5rem;
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
     @media ${DEVICE.maxmd} {
-      height: 50rem;
+      height: auto;
+    }
+    @media ${DEVICE.md} {
+      margin-top: -5rem;
     }
     .content {
-      background-size: calc(100% - 23.2rem) 100% !important;
+      background-size: cover !important;
       background-repeat: no-repeat!important;
       background-color: ${COLORS.red} !important;
       height: 100%;
       display: flex;
       align-items: flex-end;
       position: relative;
+      flex: 1;
       @media ${DEVICE.maxmd} {
-        background-size: cover !important;
+        height: 50rem;
+      }
+      @media ${DEVICE.maxxs} {
+        height: 30rem;
       }
       &:before {
         content: "";
@@ -86,5 +95,70 @@ export const BannerStyles = styled.section`
         }
       }
     } 
+    .learn-colors{
+      width: 23.2rem;
+      display: flex;
+      height: calc(100% - 5rem);
+      @media ${DEVICE.maxmd} {
+        width: 100%;
+        opacity: 0;
+        pointer-events: none;
+      }
+      @media ${DEVICE.maxxs} {
+        height: 30rem;
+        opacity: 1;
+        pointer-events: all;
+      }
+      div {
+        flex: 1;
+        &.red {
+          background: ${GRADIENTS_VERTICALS.red};
+        }
+        &.purple {
+          background: ${GRADIENTS_VERTICALS.purple};
+        }
+        &.blue {
+          background: ${GRADIENTS_VERTICALS.blue};
+        }
+        &.yellow {
+          background: ${GRADIENTS_VERTICALS.yellow};
+        }
+        a {
+          display: flex;
+          height: 100%;
+          width: 100%;
+          align-items: flex-start;
+          margin-top: -1rem;
+          justify-content: center;
+          text-decoration: none;
+          position: relative;
+          @media ${DEVICE.maxxs} {
+            margin-top: 1rem;
+          }
+          span {
+            color: #fff;
+            font-size: 2rem;
+            font-style: normal;
+            font-weight: 300;
+            line-height: normal;
+            text-transform: uppercase;
+            transform: rotate(90deg);
+            display: block;
+            width: 0rem;
+            height: 2.8rem;
+            @media ${DEVICE.maxxs} {
+              font-size: 2.5rem;
+            }
+          }
+          div {
+            position: absolute;
+            bottom: 2rem;
+            @media ${DEVICE.xs} {
+              display: none;
+            }
+          }
+        }
+      }
+    }
   }
 `

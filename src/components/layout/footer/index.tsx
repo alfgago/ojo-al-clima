@@ -24,7 +24,7 @@ export const Footer = ({ data }: any) => {
                 height={200}
               />
             </Link>
-            <span>
+            {/* <span>
               Publicado bajo una licencia libre. Usted
               es bienvenido a utilizar nuestro material
               para fines no comerciales, acreditando a
@@ -32,7 +32,7 @@ export const Footer = ({ data }: any) => {
               citado. Por favor consúltenos para
               utilizar el material para fines
               comerciales.
-            </span>
+            </span> */}  
           </div>
           <div className="menu">
             {menu?.items?.map((item: any, index: number) => (

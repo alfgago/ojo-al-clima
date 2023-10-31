@@ -6,6 +6,9 @@ export const SearchHeaderStyle = styled.div`
  .search-header-wrapper {
   display: flex;
   position: relative;
+  @media ${DEVICE.maxmd} {
+    display: none;
+  }
   .bar { 
     position: absolute;
     right: calc(100% + 2.75rem);
@@ -73,6 +76,13 @@ export const SearchHeaderStyle = styled.div`
       svg {
         display: block;
         transition: all 0.6s ease;
+        @media ${DEVICE.maxmd} {
+          width: 2rem;
+          height: 2rem;
+        }
+        path {
+          transition: all 0.4s ease;
+        }
       }
       &:before {
         position: absolute;
@@ -88,6 +98,9 @@ export const SearchHeaderStyle = styled.div`
     }
     .text {
       transition: all 0.3s ease;
+      @media ${DEVICE.maxmd} {
+        display: none;
+      }
     }
     .close-icon {
       transition: all 0.5s ease;

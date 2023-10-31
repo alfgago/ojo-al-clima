@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-import { COLORS, GRADIENTS, DEVICE } from "@/styles/variables"
+import { COLORS, GRADIENTS, DEVICE, GRADIENTS_VERTICALS } from "@/styles/variables"
 
 export const PreviewStyle = styled.div<{color: string}>`
   width: 100%;
@@ -77,12 +77,27 @@ export const PreviewStyle = styled.div<{color: string}>`
         background: #FFF;
         box-shadow: 0px 4px 43px 0px rgba(0, 0, 0, 0.09);
         min-height: 13.75rem;
+        position: relative;
+        &:before {
+          position: absolute;
+          content: "";
+          width: 100%;
+          height: 100%;
+          background: ${props => GRADIENTS_VERTICALS[props.color]};
+          opacity: 0;
+          top: 0;
+          left: 0;
+          transition: all 0.5s ease;
+          border-radius: 0rem 0rem 0.3125rem 0.3125rem;
+        }
         .meta {
           display: flex;
           align-items: center;
           justify-content: space-between;
+          position: relative;
         }
         .title {
+          position: relative;
           a {
             color: ${COLORS.black};
             font-size: 1.5625rem;
@@ -90,6 +105,9 @@ export const PreviewStyle = styled.div<{color: string}>`
             font-weight: 500;
             line-height: 118%; /* 1.84375rem */
           }
+        }
+        .author {
+          position: relative;
         }
       }
       &:hover {
@@ -99,7 +117,9 @@ export const PreviewStyle = styled.div<{color: string}>`
           }
         }
         .content {
-          background: ${props => GRADIENTS[props.color]};
+          &:before {
+            opacity: 1;
+          }
           span, a {
             color: ${COLORS.white} !important;
           }

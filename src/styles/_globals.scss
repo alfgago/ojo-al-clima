@@ -10,15 +10,18 @@ body {
   width: 100%;
   font-family: Avenir;
   scroll-behavior: smooth;
+
   @media screen and (max-width: 1600px) {
     font-size: 14px;
   }
+
   @media screen and (max-width: 1400px) {
     font-size: 12px;
   }
-  @media screen and (max-width: 1200px) {
-    font-size: 10px;
-  }
+
+  // @media screen and (max-width: 1200px) {
+  //   font-size: 10px;
+  // }
 }
 
 *,
@@ -57,4 +60,12 @@ p {
   line-height: normal;
   margin: 1.3rem 0;
   min-height: 1rem;
+}
+
+section.main-section {
+  margin-top: 5rem;
+
+  @media (max-width: 1024px) {
+    margin-top: 6.5rem;
+  }
 }

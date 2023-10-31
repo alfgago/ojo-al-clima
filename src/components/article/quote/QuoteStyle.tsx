@@ -25,19 +25,29 @@ export const QuoteStyle = styled.blockquote`
     &.top {
       top: -9%;
       left: 6%;
-    }
+      @media ${DEVICE.maxxs} {
+        left: 2%;
+      }
+    } 
     &.down {
       bottom: -9%;
       right: 6%;
+      @media ${DEVICE.maxxs} {
+        right: 2%;
+      }
     }
-  }
+  } 
   .content-wrapper{
+    width: 100%;
     p {
       color: #5A5A5A;
       font-size: 1.25rem;
       font-style: italic;
       font-weight: 500;
       line-height: 140%; 
+      span {
+        position: relative;
+      }
     }
   }
 `
