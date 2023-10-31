@@ -21,6 +21,7 @@ export const ImageStyle = styled.figure`
     background: #FFF;
     box-shadow: 0px 4px 43px 0px rgba(0, 0, 0, 0.09);
     height: -webkit-fill-available;
+    small,
     span {
       color: #828282;
       font-size: 1.125rem;
@@ -28,6 +29,9 @@ export const ImageStyle = styled.figure`
       font-weight: 400;
       line-height: 140%; /* 1.575rem */
       display: block;
+    }
+    small {
+      display: inline-block;
     }
   }
 `
