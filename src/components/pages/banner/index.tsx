@@ -31,7 +31,7 @@ const PageBanner = ({ data }: any) => {
                   <span>
                     {item.post_title}
                   </span>
-                  <ReactSVG src="/icons/plus.svg" />
+                  <ReactSVG src="/icons/plus.svg" className="plus-icon" />
                 </Link>
               </div>
             ))

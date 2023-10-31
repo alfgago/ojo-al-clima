@@ -110,6 +110,30 @@ export const GridNewStyle = styled.section<{ background: string, asset: string, 
             display: flex;
             gap: 3.25rem;
           }
+          @media ${DEVICE.maxxs} {
+            margin-bottom: 4rem;
+            .slick-dots {
+              bottom: -6rem;
+              display: flex !important;
+              gap: 1rem;
+              align-items: center;
+              justify-content: center;
+              li {
+                margin: 2rem 0;
+                button:before {
+                  opacity: 1;
+                  color: #E2E2E2;
+                  font-size: 1.2rem;
+                  
+                }
+                &.slick-active {
+                  button:before {
+                    color: ${COLORS.blue};
+                  }
+                }
+              }
+            }
+          }
           .date {
             display: none;
           }
@@ -137,6 +161,9 @@ export const GridNewStyle = styled.section<{ background: string, asset: string, 
         align-items: center;
         justify-content: center;
         padding: 3.12rem 0;
+        @media ${DEVICE.maxmd} {
+          padding: 3.12rem 0 0;
+        }
         a {
           color: ${props => props.background === 'light' ? COLORS.black : COLORS.white};
           font-size: 1.25rem;

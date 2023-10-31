@@ -53,6 +53,7 @@ export const FooterStyle = styled.footer`
           display: flex;
           flex-direction: column;
           gap: 0.94rem;
+          position: relative;
           @media ${DEVICE.maxmd} {
             flex: 1 9rem;
             &:nth-child(1){
@@ -95,6 +96,15 @@ export const FooterStyle = styled.footer`
               text-transform: capitalize;
             }
           }
+          .share {
+            @media ${DEVICE.md} {
+              position: absolute;
+              bottom: 5%;
+            }
+            path {
+              fill: #959595;
+            }
+          }
         }
       }
       .logo-u {
@@ -114,7 +124,7 @@ export const FooterStyle = styled.footer`
           width: 100%;
           display: grid;
           grid-gap: 3.25rem;
-          margin: -10rem 0 -0.75rem;
+          margin: -8rem 0 -0.75rem;
           justify-items: center;
           align-items: center;
           justify-content: end;

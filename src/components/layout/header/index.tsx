@@ -8,10 +8,11 @@ import { Control } from "./learn-background/control";
 import { Learn } from "./learn-background";
 import { learn } from "@/constants/learnItems";
 import { useWindowSize } from "usehooks-ts";
+import { Share } from "@/components";
 
 export const Header = ({ data }: any) => {
 
-  const { menu } = data;
+  const { menu, lateral } = data;
 
   const [hideMenuDesktop, setHideMenuDesktop] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -33,7 +34,6 @@ export const Header = ({ data }: any) => {
   };
 
   const [childrenHeights, setChildrenHeights] = useState<number[]>([]);
-
 
   const handleSubMenuClick = (index: number) => {
     if (activeSubMenu === index) {
@@ -68,11 +68,16 @@ export const Header = ({ data }: any) => {
   const showHomepageClass = isHomePage && isDesktop && !scrolled;
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isLateralMenuOpen, setIsLateralMenuOpen] = useState(false);
+
 
   const handleHamburgerClick = () => {
     if (!isDesktop) {
       setIsMobileMenuOpen(prevState => !prevState);
     }
+  };
+  const handleLateralMenuClick = () => {
+    setIsLateralMenuOpen(prevState => !prevState);
   };
 
   useEffect(() => {
@@ -95,8 +100,25 @@ export const Header = ({ data }: any) => {
   return (
     <HeaderStyle>
       <div className={showHomepageClass ? 'header-container homepage' : 'header-container'}>
+        <div className={`lateral-menu hide-on-mobile ${isLateralMenuOpen ? 'active' : ''}`}>
+          {lateral?.items?.map((item: any, index: number) => (
+            <div key={index} className={`item`}>
+              <div className={`parent`}>
+                <Link href={item.url}>
+                  {item.title}
+                </Link>
+              </div>
+            </div>
+          ))}
+          <Share/>
+        </div>
         <div className={showHomepageClass ? 'site-logo homepage' : 'site-logo'}>
-          <Link href="/">
+          <div className={`hamburger-menu hide-on-mobile  ${isLateralMenuOpen ? 'active' : ''}`} onClick={handleLateralMenuClick}>
+            <span className="menu-line"></span>
+            <span className="menu-line"></span>
+            <span className="menu-line"></span>
+          </div>
+          <Link href="/" className="logo">
             <ReactSVG src="/logos/site-logo.svg" />
           </Link>
         </div>
@@ -131,7 +153,6 @@ export const Header = ({ data }: any) => {
                   </div>
                 </div>
               ))}
-
             </div>
           </div>
           <div className="search">

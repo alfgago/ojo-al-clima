@@ -105,7 +105,7 @@ export const BannerStyles = styled.section`
         pointer-events: none;
       }
       @media ${DEVICE.maxxs} {
-        height: 30rem;
+        height: 28rem;
         opacity: 1;
         pointer-events: all;
       }
@@ -150,9 +150,9 @@ export const BannerStyles = styled.section`
               font-size: 2.5rem;
             }
           }
-          div {
+          .plus-icon {
             position: absolute;
-            bottom: 2rem;
+            bottom: 3.5rem;
             @media ${DEVICE.xs} {
               display: none;
             }

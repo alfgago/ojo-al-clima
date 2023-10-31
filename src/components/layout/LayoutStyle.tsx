@@ -24,9 +24,10 @@ export const LayoutStyle = styled.main`
           }
         }
       }
-      footer {
-        ${hide}
-      }
+    }
+    footer {
+      ${hide}
+      display: none !important;
     }
   }
 `

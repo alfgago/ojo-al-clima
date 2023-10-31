@@ -24,7 +24,7 @@ export * from './cards/FeaturedCard';
 export * from './cards/PreviewCard';
 export * from './heading';
 export * from './pagination';
-
+export * from './share';
 
 //Styles
 export * from './pages/PageStyle';
