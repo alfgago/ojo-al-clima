@@ -9,6 +9,9 @@ export const CardsContentStyle = styled.section<{background: string}>`
     background-repeat: no-repeat!important;
     position: relative;
     margin: 3.25rem 0 0;
+    @media ${DEVICE.maxmd} {
+      background-size: cover !important;
+    }
     &:before {
       position: absolute;
       content: "";
@@ -59,7 +62,7 @@ export const CardsContentStyle = styled.section<{background: string}>`
             line-height: normal;
             text-align: center;
             @media ${DEVICE.maxxs} {
-              font-size: 3.5rem;
+              font-size: 2.5rem;
             }
           }
           .description {
@@ -72,6 +75,7 @@ export const CardsContentStyle = styled.section<{background: string}>`
             margin: 2.9rem 0rem 3.12rem;
             @media ${DEVICE.maxxs} {
               margin: 1rem 0rem 3.12rem;
+              font-size: 1.3rem;
             }
             p,a,li,strong {
               color: ${COLORS.white};
