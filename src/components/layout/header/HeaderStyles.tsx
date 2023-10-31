@@ -39,29 +39,74 @@ export const HeaderStyle = styled.header`
       }
     }
     @media ${DEVICE.maxmd} {
+      .hide-on-mobile {
+        display: none !important;
+      }
+    }
+    @media ${DEVICE.maxmd} {
       height: 6.5rem;
     }
+    .lateral-menu {
+      position: absolute;
+      top: 100%;
+      border-radius: 0rem 0rem 0.9375rem 0rem;
+      background: #FFF;
+      padding: 1.88rem 2.91rem;
+      transform: translate(-100%, 0px);
+      transition: transform .6s cubic-bezier(0.56, 0.1, 0.34, 0.91);
+      box-shadow: 37px 43px 22px -30px rgba(0, 0, 0, 0.02);
+      &.active {
+        transform: translate(0%, 0px);
+      }
+      .parent {
+        a {
+          color: ${COLORS.purple};
+          font-size: 1.25rem;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+          text-decoration: none;
+          padding: 1rem 0;
+          display: block;
+        }
+      }
+    }
     .site-logo {
-      padding-left: 5rem;
+      padding-left: 3rem;
       display: flex;
       align-items: center;
+      @media ${DEVICE.md} {
+        gap: 2rem;
+      }
       @media ${DEVICE.maxmd} {
         padding-left: 2rem;
       }
-      svg {
-        max-width: 8rem;
-        display: block;
-        height: auto;
-        rect:nth-child(2) {
-          transition: all 0.4s ease;
-          filter: brightness(0.6);
+      .logo {
+        transition: all 0.6s ease;
+        svg {
+          max-width: 8rem;
+          display: block;
+          height: auto;
+          rect:nth-child(2) {
+            transition: all 0.4s ease;
+            filter: brightness(0.6);
+          }
         }
       }
       &.homepage {
         @media ${DEVICE.md} {
-          svg {
-            rect:nth-child(2) {
-              filter: brightness(1);
+          .hamburger-menu {
+            transform: translateX(2rem);
+            opacity: 0;
+            pointer-events: none;
+          }
+          .logo {
+            scale: 1.2;
+            transform: translate(-3rem, 0.3rem);
+            svg {
+              rect:nth-child(2) {
+                filter: brightness(1);
+              }
             }
           }
         }
@@ -236,7 +281,7 @@ export const HeaderStyle = styled.header`
               }
               @media ${DEVICE.maxxs} {
                 a {
-                  font-size: 2rem;
+                  font-size: 1.5rem;
                 }
                 svg {
                   width: 1.5rem;
@@ -292,7 +337,7 @@ export const HeaderStyle = styled.header`
                 @media ${DEVICE.maxxs} {
                   padding: 0.8rem 0rem;
                   span {
-                    font-size: 1.5rem;
+                    font-size: 1.2rem;
                   }
                 }
               }
@@ -370,38 +415,6 @@ export const HeaderStyle = styled.header`
           flex: 1;
           justify-content: flex-end;
         }
-        .hamburger-menu{
-          width: 2.8rem;
-          height: 2rem;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          cursor: pointer;
-          transform: translateY(-0.2rem);
-          position: relative;
-          z-index: 10;
-          span {
-            height: 0.2rem;
-            background-color: #000;
-            opacity: 1;
-            transform: translateY(0) rotate(0);
-            transition: all .3s;
-            border-radius: 0.2rem;
-          }
-          &.active {
-            span {
-              &:nth-child(1) {
-                transform: translateY(1rem) rotate(45deg);
-              }
-              &:nth-child(2) {
-                opacity: 0;
-              }
-              &:nth-child(3) {
-                transform: translateY(-0.8rem) rotate(-45deg);
-              }
-            }
-          }
-        }
       }
 
       &.homepage {
@@ -450,6 +463,55 @@ export const HeaderStyle = styled.header`
       background: ${GRADIENTS.red};
       @media ${DEVICE.maxmd} {
         width: 0;
+      }
+    }
+    .hamburger-menu{
+      width: 2rem;
+      height: 1.6rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      position: relative;
+      z-index: 10;
+      transition: all 0.6s ease;
+      @media ${DEVICE.maxmd} {
+        width: 2.8rem;
+        height: 2rem;
+        transform: translateY(-0.2rem);
+      }
+      span {
+        height: 0.14rem;
+        @media ${DEVICE.maxmd} {
+          height: 0.2rem;
+          background-color: #000;
+        }
+        background-color: #3F448F;
+        opacity: 1;
+        transform: translateY(0) rotate(0);
+        transition: all .3s;
+        border-radius: 0.2rem;
+      }
+      &.active {
+        span {
+          &:nth-child(1) {
+            transform: translateY(0.9rem) rotate(42deg);
+          }
+          &:nth-child(2) {
+            opacity: 0;
+          }
+          &:nth-child(3) {
+            transform: translateY(-0.6rem) rotate(-45deg);
+          }
+          @media ${DEVICE.maxmd} {
+            &:nth-child(1) {
+              transform: translateY(1rem) rotate(45deg);
+            }
+            &:nth-child(3) {
+              transform: translateY(-0.8rem) rotate(-45deg);
+            }
+          }
+        }
       }
     }
   }

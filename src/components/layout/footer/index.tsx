@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { SocialMedia } from "./social-media";
 import { Form } from "./form";
 import { FooterStyle } from "./FooterStyle";
+import { Share } from "@/components";
 
 export const Footer = ({ data }: any) => {
 
@@ -46,7 +46,7 @@ export const Footer = ({ data }: any) => {
                   ))}
                 </div>
                 {/* Si es el último ítem, renderiza el componente SocialMedia */}
-                {index === menu.items.length - 1 && <SocialMedia />}
+                {index === menu.items.length - 1 && <Share />}
               </div>
             ))}
           </div>

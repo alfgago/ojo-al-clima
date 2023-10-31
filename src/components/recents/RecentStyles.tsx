@@ -68,6 +68,7 @@ export const RecentStyle = styled.div`
     }
     .search-general {
       margin: 1.75rem 0 0;
+      padding: 0;
       .bar-container {
         flex-direction: column-reverse;
         select,

@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-import { COLORS, GRADIENTS, DEVICE } from "@/styles/variables"
+import { COLORS, GRADIENTS, DEVICE, GRADIENTS_VERTICALS } from "@/styles/variables"
 
 export const HeadingStyle = styled.section<{color: string}>`
   background: ${COLORS.black};
@@ -45,16 +45,16 @@ export const HeadingStyle = styled.section<{color: string}>`
       width: 5.8rem;
       height: 100%;
       &.red {
-        background: ${GRADIENTS.red};
+        background: ${GRADIENTS_VERTICALS.red};
       }
       &.purple {
-        background: ${GRADIENTS.purple};
+        background: ${GRADIENTS_VERTICALS.purple};
       }
       &.blue {
-        background: ${GRADIENTS.blue};
+        background: ${GRADIENTS_VERTICALS.blue};
       }
       &.yellow {
-        background: ${GRADIENTS.yellow};
+        background: ${GRADIENTS_VERTICALS.yellow};
       }
     }
   }
