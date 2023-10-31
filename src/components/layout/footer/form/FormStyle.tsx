@@ -164,30 +164,16 @@ export const FormStyle = styled.section`
         flex: 1;
       }
       &.red {
-        background: ${GRADIENTS.red};
+        background: ${GRADIENTS_VERTICALS.red};
       }
       &.purple {
-        background: ${GRADIENTS.purple};
+        background: ${GRADIENTS_VERTICALS.purple};
       }
       &.blue {
-        background: ${GRADIENTS.blue};
+        background: ${GRADIENTS_VERTICALS.blue};
       }
       &.yellow {
-        background: ${GRADIENTS.yellow};
-      }
-      @media ${DEVICE.maxmd} {
-        &.red {
-          background: ${GRADIENTS_VERTICALS.red};
-        }
-        &.purple {
-          background: ${GRADIENTS_VERTICALS.purple};
-        }
-        &.blue {
-          background: ${GRADIENTS_VERTICALS.blue};
-        }
-        &.yellow {
-          background: ${GRADIENTS_VERTICALS.yellow};
-        }
+        background: ${GRADIENTS_VERTICALS.yellow};
       }
     }
   }

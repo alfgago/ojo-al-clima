@@ -11,12 +11,12 @@ export const BarStyle = styled.section`
   .bar-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.75rem;
+    gap: 1.5rem;
     max-width: 55.25rem;
     .authors {
       @media ${DEVICE.maxxss} {
         width: 100%;
-      }
+      } 
       select {
         border-radius: 3.125rem;
         border: 1px solid #000;

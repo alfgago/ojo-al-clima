@@ -114,6 +114,25 @@ export const LearnPageStyle = styled.section<LearnProps>`
         }
       }
 
+      h2 {
+        font-size: 3rem;
+        line-height: 1;
+        position: relative;
+        padding-left: 2rem;
+        &:before {
+          position: absolute;
+          content: "";
+          width: 0.6875rem;
+          height: 100%;
+          border-radius: 5rem;
+          background: ${({ color }) => determineColor(color)};  
+          left: 0;
+        }
+        @media ${ DEVICE.maxxs} {
+          font-size: 2.5rem;
+        }
+      }
+
       a, p {
         font-size: 1.5rem;
 
@@ -138,6 +157,26 @@ export const LearnPageStyle = styled.section<LearnProps>`
         margin: 3rem -11rem -5rem;
         position: relative;
         z-index: -1;
+        figcaption {
+          background: transparent !important;
+          padding: 0 !important;
+          box-shadow: none !important;
+          position: absolute;
+          top: 3rem;
+          right: 5rem;
+          @media ${ DEVICE.maxmd} {
+            right: 10rem;
+          }
+          .caption,
+          .author {
+            display: none;
+          }
+          span {
+            color: #fff;
+            font-size: 1.125rem;
+            font-style: normal;
+          }
+        }
         &:before {
           position: absolute;
           content: "";
@@ -160,3 +199,18 @@ interface LearnProps {
 interface PARAMS {
   [key: string]: string;
 }
+
+const determineColor = (color:string) => {
+  switch (color) {
+    case 'red':
+      return '#6967F1';
+    case 'purple':
+      return '#48A1BF';
+    case 'blue':
+      return '#F5AA28';
+    case 'yellow':
+      return '#C5242A';
+    default:
+      return '#6967F1';  // Valor por defecto
+  }
+};
