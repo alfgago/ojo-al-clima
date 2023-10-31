@@ -1,12 +1,15 @@
 import styled from "styled-components"
 
-import { COLORS, GRADIENTS, DEVICE } from "@/styles/variables"
+import { COLORS, GRADIENTS, DEVICE, GRADIENTS_VERTICALS } from "@/styles/variables"
 
 export const FormStyle = styled.section`
   background: url("/images/footer-background.webp") no-repeat;
   background-color: ${COLORS.black};
   background-size: cover;
   position: relative;
+  @media ${DEVICE.maxmd} {
+    margin-top: 8rem;
+  }
   &:before { 
     position: absolute;
     content: "";
@@ -150,16 +153,9 @@ export const FormStyle = styled.section`
     top: 0;
     @media ${DEVICE.maxmd} {
       width: 100%;
-      display: none;
-      height: 15rem;
-      &:before {
-        position: absolute;
-        content: '';
-        width: 100%;
-        height: 10rem;
-        background: linear-gradient(0deg, rgba(7, 10, 17, 0.00) 0%, rgba(7, 9, 15, 0.18) 20.83%, #050507 100%);
-        top: 0;
-      }
+      height: 4rem;
+      bottom: 100%;
+      top: auto;
     }
     div {
       width: 5.8rem;
@@ -179,9 +175,39 @@ export const FormStyle = styled.section`
       &.yellow {
         background: ${GRADIENTS.yellow};
       }
+      @media ${DEVICE.maxmd} {
+        &.red {
+          background: ${GRADIENTS_VERTICALS.red};
+        }
+        &.purple {
+          background: ${GRADIENTS_VERTICALS.purple};
+        }
+        &.blue {
+          background: ${GRADIENTS_VERTICALS.blue};
+        }
+        &.yellow {
+          background: ${GRADIENTS_VERTICALS.yellow};
+        }
+      }
     }
   }
   &.on-contact-page {
+    @media ${DEVICE.maxmd} {
+      margin-top: 23rem;
+      .learn-colors {
+        height: 20rem;
+        bottom: 100%;
+        top: auto;  
+        &:before {
+          position: absolute;
+          content: '';
+          width: 100%;
+          height: 15rem;
+          bottom: 0%;
+          background: linear-gradient(180deg, rgba(7, 10, 17, 0.00) 0%, rgba(7, 9, 15, 0.18) 20.83%, #050507 100%);
+        }
+      }
+    }
     @media ${DEVICE.md} {
       .meta-data {
         display: block;
@@ -193,6 +219,10 @@ export const FormStyle = styled.section`
       height: 160rem;
       bottom: 0;
       top: auto;  
+      @media ${DEVICE.maxmd} {
+        height: 25rem;
+        bottom: 100%;
+      }
       &:before {
         position: absolute;
         content: '';
@@ -200,14 +230,23 @@ export const FormStyle = styled.section`
         height: 50rem;
         top: 0;
         background: linear-gradient(0deg, rgba(7, 10, 17, 0.00) 0%, rgba(7, 9, 15, 0.18) 20.83%, #050507 100%);
+        @media ${DEVICE.maxmd} {
+          height: 15rem;
+          bottom: 100%;
+        }
       }
     }
   }
   &.on-home-page { 
+    margin-top: 0;
     .learn-colors {
       height: 75rem;
       bottom: 0;
       top: auto;  
+      @media ${DEVICE.maxmd} {
+        height: 20rem;
+        bottom: 100%;
+      }
       &:before {
         position: absolute;
         content: '';
@@ -215,6 +254,9 @@ export const FormStyle = styled.section`
         height: 50rem;
         top: 0;
         background: linear-gradient(0deg, rgba(7, 10, 17, 0.00) 0%, rgba(7, 9, 15, 0.18) 20.83%, #050507 100%);
+        @media ${DEVICE.maxmd} {
+          height: 20rem;
+        }
       }
     }
   }

@@ -9,7 +9,7 @@ export const ArticleStyle = styled.section<{ color: string }>`
   padding-bottom: 6rem;
   @media ${DEVICE.maxmd} {
     flex-direction: column;
-    padding: 0 2rem 5rem;
+    padding: 0 2rem;
   }
   .wordpress-content {
     width: 100%;

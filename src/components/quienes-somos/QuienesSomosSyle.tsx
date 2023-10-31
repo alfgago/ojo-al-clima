@@ -23,6 +23,8 @@ export const QuienesSomosStyle = styled.section`
     width: 84.4375rem;
     margin: auto;
     padding: 1rem 16rem 1rem 0;
+    position: relative;
+    z-index: 1;
     @media ${DEVICE.maxmd} {
       width: 100%;
       padding: 0 2rem 5rem;
@@ -31,10 +33,16 @@ export const QuienesSomosStyle = styled.section`
       @media ${DEVICE.md} {
         font-size: 4rem;
       }
+      @media ${DEVICE.maxxs} {
+        font-size: 3rem;
+      }
       margin-bottom: 3rem;
     }
     h2 {
       font-size: 3rem;
+      @media ${DEVICE.maxxs} {
+        font-size: 2.5rem;
+      }
     }
  
     h1, h2, h3 {
