@@ -80,6 +80,27 @@ export const QuienesSomosStyle = styled.section`
       }
     }
 
+    .columns-block {
+      .wp-column {
+        p, em {
+          color: #858585 !important;
+          font-size: 1.125rem !important;
+          margin-top: 0;
+        }
+        &:first-child {
+          .wp-content {
+            padding-right: 3.12rem;
+            @media ${DEVICE.md} {
+              figure {
+                display: flex;
+                justify-content: flex-end;
+              }
+            }
+          }
+        }
+      }
+    }
+
   }
 
 `

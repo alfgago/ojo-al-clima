@@ -13,12 +13,9 @@ export const ColumnsStyle = styled.div`
       flex-basis: 100% !important; 
     }
   }
-  p,em {
-    color: #858585;
-    font-size: 1.125rem;
-  }
   figure {
     margin: 0;
   }
+  margin-bottom: 3rem;
 `
- 
+   
