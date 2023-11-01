@@ -9,7 +9,7 @@ export default function Evidencias({ page }: any) {
   );
 }
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const page = await fetchLearnData('evidencias', 30000);
 
   return {

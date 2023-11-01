@@ -9,7 +9,7 @@ export default function Soluciones({ page }: any) {
   );
 }
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const page = await fetchLearnData('soluciones', 3000);
 
   return {

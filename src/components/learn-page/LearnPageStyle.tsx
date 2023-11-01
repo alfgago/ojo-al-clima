@@ -21,7 +21,7 @@ export const IMAGE_GRADIENTS: PARAMS = {
   blue: "linear-gradient(180deg, rgba(72, 161, 191, 0.00) 0%, #48A1BF 73.44%);",
   yellow: "linear-gradient(180deg, rgba(47, 47, 105, 0.00) 0%, rgba(246, 189, 41, 0.00) 0.01%, #F58B28 100%);" 
 } 
- 
+
 const setContentMargin = (index: number) => {
   return `calc(5.8rem + ${(index) * 5.8}rem)`;
 } 
@@ -117,6 +117,13 @@ export const LearnPageStyle = styled.section<LearnProps>`
       h2 {
         font-size: 3rem;
         line-height: 1;
+        @media ${ DEVICE.maxxs} {
+          font-size: 2.5rem;
+        }
+      }
+
+      h2, h3, h4, h5 {
+        line-height: 1;
         position: relative;
         padding-left: 2rem;
         &:before {
@@ -127,9 +134,6 @@ export const LearnPageStyle = styled.section<LearnProps>`
           border-radius: 5rem;
           background: ${({ color }) => determineColor(color)};  
           left: 0;
-        }
-        @media ${ DEVICE.maxxs} {
-          font-size: 2.5rem;
         }
       }
 
@@ -186,6 +190,13 @@ export const LearnPageStyle = styled.section<LearnProps>`
         }
       }
 
+      .data-card-wrapper {
+        .image {
+          &:before {
+            background: ${ props => IMAGE_GRADIENTS[props.color] };
+          }
+        }
+      }
     }
   }
 

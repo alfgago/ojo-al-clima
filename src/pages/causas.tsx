@@ -9,7 +9,7 @@ export default function Causas({ page }: any) {
   );
 }
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const page = await fetchLearnData('causas', 3000);
 
   return {
