@@ -3,7 +3,7 @@ import { ColumnsStyle } from "./ColumsStyle";
 
 const ColumnsBlock = ({ data }: any) => {
   return (
-    <ColumnsStyle>
+    <ColumnsStyle className="columns-block">
       {data.innerBlocks.map((columnData: any, index: number) => (
         <div 
           key={index} 
