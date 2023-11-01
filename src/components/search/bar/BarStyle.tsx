@@ -17,22 +17,9 @@ export const BarStyle = styled.section`
       @media ${DEVICE.maxxss} {
         width: 100%;
       } 
-      select {
-        border-radius: 3.125rem;
-        border: 1px solid #000;
-        background: rgba(255, 255, 255, 0.55);
-        backdrop-filter: blur(2.5px);
-        display: flex;
-        min-width: 17.1875rem;
-        width: 100%;
-        padding: 0.75rem 1.5rem;
-        align-items: center;
-        gap: 5.5625rem;
-        font-size: 1rem;
-        color: #858585;
-        &:outline {
-          border: none;
-        }
+      input {
+        padding: 0.75rem 1.62rem;
+        height: 2.9375rem;
       }
     }
     .search-wrapper {
