@@ -1,3 +1,5 @@
+import Head from 'next/head';
+import parse from "html-react-parser"
 
 import { dehydrate } from 'react-query/hydration';
 import { queryClient } from "@/utils";
@@ -6,8 +8,12 @@ import { fetchPostData } from '@/pages/api/posts';
 import { CategoryComponents } from '@/components';
 
 export default function Category({ data, recents }: any) {
+
+  const { yoast } = data;
+
   return (
     <>
+      <Head>{parse(yoast)}</Head>
       <CategoryComponents data={data} recents={recents} />
     </>
   );

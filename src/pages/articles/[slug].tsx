@@ -1,3 +1,6 @@
+import Head from 'next/head';
+import parse from "html-react-parser"
+
 import { dehydrate } from 'react-query/hydration';
 import { queryClient } from "@/utils";
 import { fetchPostData } from '@/pages/api/posts';
@@ -6,17 +9,20 @@ import { ArticleStyle } from '@/components/article/ArticleSyle';
 
 export default function Post({ post, recents }: any) {
 
-  const { category, blocks } = post;
+  const { category, blocks, yoast } = post;
   const { color } = category;
 
   return (
-    <article>
-      <ArticleBanner {...post} />
-      <ArticleStyle color={color}>
-        <ArticleComponents blocks={blocks} />
-        <Recents articles={recents} />
-      </ArticleStyle>
-    </article>
+    <>
+      <Head>{parse(yoast)}</Head>
+      <article>
+        <ArticleBanner {...post} />
+        <ArticleStyle color={color}>
+          <ArticleComponents blocks={blocks} />
+          <Recents articles={recents} />
+        </ArticleStyle>
+      </article>
+    </>
   );
 }
 

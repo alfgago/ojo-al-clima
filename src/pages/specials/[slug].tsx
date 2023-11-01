@@ -1,3 +1,6 @@
+import Head from 'next/head';
+import parse from "html-react-parser"
+
 import { dehydrate } from 'react-query/hydration';
 import { queryClient } from "@/utils";
 import { fetchSpecialData } from '../api/specials';
@@ -6,21 +9,25 @@ import { SpecialStyle } from '@/components/specials/SpecialStyle';
 import { SpecialsComponents } from '@/components/specials/SpecialComponents';
 
 export default function Special({ special }: any) {
- 
-  const { blocks } = special;
+
+  const { blocks, yoast } = special;
 
   return (
-    <article>
-      <ArticleBanner {...special} />
-      <SpecialStyle>
-        <SpecialsComponents blocks={blocks} />
-      </SpecialStyle>
-    </article>
+    <>
+      <Head>{parse(yoast)}</Head>
+      <article>
+        <ArticleBanner {...special} />
+        <SpecialStyle>
+          <SpecialsComponents blocks={blocks} />
+        </SpecialStyle>
+      </article>
+    </>
+
   );
 }
 
 export const getServerSideProps = async (context: any) => {
-  
+
   const { slug } = context.params;
   const special = await fetchSpecialData(slug);
 

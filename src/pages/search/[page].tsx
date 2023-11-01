@@ -1,4 +1,5 @@
-
+import Head from 'next/head';
+import parse from "html-react-parser"
 import { dehydrate } from 'react-query/hydration';
 import { queryClient } from "@/utils";
 import { fetchPostData } from '@/pages/api/posts';
@@ -6,8 +7,12 @@ import { fetchSearchData } from '../api/search';
 import { SearchComponets } from '@/components';
 
 export default function Search({ data, recents }: any) {
+
+  const { yoast } = data;
+
   return (
     <>
+      <Head>{parse(yoast)}</Head>
       <SearchComponets data={data} recents={recents} />
     </>
   );

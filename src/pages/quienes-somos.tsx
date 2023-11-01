@@ -1,3 +1,5 @@
+import Head from 'next/head';
+import parse from "html-react-parser"
 import { dehydrate } from 'react-query/hydration';
 import { queryClient } from "@/utils";
 import { fetchPageData } from "@/pages/api/pages";
@@ -6,7 +8,7 @@ import { useEffect } from 'react';
 
 export default function QuienesSomos({ page }: any) {
 
-  const { blocks } = page;
+  const { blocks, yoast } = page;
 
   //Usando para hacer scroll pasando # por url
   useEffect(() => {
@@ -27,10 +29,13 @@ export default function QuienesSomos({ page }: any) {
   }, []);
 
   return (
-    <QuienesSomosStyle>
-      <div className="banner"></div>
-      <ArticleComponents blocks={blocks} />
-    </QuienesSomosStyle>
+    <>
+      <Head>{parse(yoast)}</Head>
+      <QuienesSomosStyle>
+        <div className="banner"></div>
+        <ArticleComponents blocks={blocks} />
+      </QuienesSomosStyle>
+    </>
   );
 }
 
