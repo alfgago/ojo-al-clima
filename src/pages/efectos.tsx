@@ -9,7 +9,7 @@ export default function Efectos({ page }: any) {
   );
 }
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const page = await fetchLearnData('efectos', 3000);
 
   return {
