@@ -49,11 +49,15 @@ export const BannerStyles = styled.section`
             padding: 2rem 2rem;
           }
           h1 {
-            color: ${COLORS.white};
-            font-weight: 500;
-            line-height: 110%;
-            @media ${DEVICE.maxxs} {
-              font-size: 2.5rem;
+            a {
+              color: ${COLORS.white};
+              font-weight: 500;
+              line-height: 110%;
+              text-decoration: none;
+              display: block;
+              @media ${DEVICE.maxxs} {
+                font-size: 2.5rem;
+              }
             }
           }
           p {
@@ -70,7 +74,7 @@ export const BannerStyles = styled.section`
               display: none;
             }
           }
-          a {
+          .btn {
             border-radius: 3.125rem;
             background: ${COLORS.white};
             display: flex;
