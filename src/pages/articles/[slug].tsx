@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import parse from "html-react-parser"
-
 import { dehydrate } from 'react-query/hydration';
 import { queryClient } from "@/utils";
 import { fetchPostData } from '@/pages/api/posts';

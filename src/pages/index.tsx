@@ -1,11 +1,9 @@
 import Head from 'next/head';
 import parse from "html-react-parser"
-
 import { dehydrate } from 'react-query/hydration';
 import { cleanYoast, queryClient } from "@/utils";
 import { fetchPageData } from "@/pages/api/pages";
 import { PageComponents, PageStyle } from '@/components';
-
 
 export default function Home({ page }: any) {
   const { blocks, yoast } = page;

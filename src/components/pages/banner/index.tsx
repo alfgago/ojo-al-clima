@@ -15,9 +15,13 @@ const PageBanner = ({ data }: any) => {
         <div className="content" style={{ background: `url(${banner.thumbnail.url_full})` }}>
           <div className="data-container">
             <div className="data-wrapper">
-              <h1>{banner.name}</h1>
+              <h1>
+                <Link href={`/articles/${banner.slug}`}>
+                  {banner.name}
+                </Link>
+              </h1>
               <p>{banner.excerpt}</p>
-              <Link href={`/articles/${banner.slug}`}>
+              <Link className="btn" href={`/articles/${banner.slug}`}>
                 Leer más
               </Link>
             </div>
