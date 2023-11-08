@@ -18,7 +18,7 @@ export default function Evidencias({ page }: any) {
 }
 
 export const getServerSideProps = async () => {
-  const page = await fetchLearnData('evidencias', 30000);
+  const page = await fetchLearnData('evidencias', 30);
 
   return {
     props: {

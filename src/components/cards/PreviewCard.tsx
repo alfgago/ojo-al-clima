@@ -10,7 +10,8 @@ export const PreviewCard = ({
   category,
   thumbnail,
   author,
-  type
+  type,
+  post = "articles"
 }: ArticleCardProps) => {
 
   const { color } = category;
@@ -19,7 +20,7 @@ export const PreviewCard = ({
     <PreviewStyle color={color}>
       <div className={`article-card ${type}`}>
         <div className="thumbnail">
-          <Link href={`/articles/${slug}`}>
+          <Link href={`/${post}/${slug}`}>
             <Image
               src={thumbnail.url_medium}
               alt={thumbnail.alt}
@@ -37,7 +38,7 @@ export const PreviewCard = ({
           </div>
           <div className="title">
             <h4>
-              <Link href={`/articles/${slug}`}>
+              <Link href={`/${post}/${slug}`}>
                 {name}
               </Link>
             </h4>
@@ -61,4 +62,5 @@ type ArticleCardProps = {
   thumbnail: any;
   author: string;
   type: "lateral" | "vertical";
+  post: "articles" | "specials";
 };

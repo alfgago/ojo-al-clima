@@ -39,6 +39,7 @@ export const ArticleStyle = styled.section<{ color: string }>`
         fill: ${props => COLORS[props.color]};
       }
     }
+    .box,
     .old-box {
       background: white;
       border: none;

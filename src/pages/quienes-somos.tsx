@@ -40,7 +40,7 @@ export default function QuienesSomos({ page }: any) {
 }
 
 export const getServerSideProps = async () => {
-  const page = await fetchPageData('quienes-somos', 60);
+  const page = await fetchPageData('quienes-somos', 30);
 
   return {
     props: {

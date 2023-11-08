@@ -28,7 +28,7 @@ export default function Post({ post, recents }: any) {
 export const getServerSideProps = async (context: any) => {
   const { slug } = context.params;
 
-  const post = await fetchPostData(slug, 3 * 60);  // 3 minutos de cache
+  const post = await fetchPostData(slug, 30); 
   const recents = await fetchPostData('recents', 60);
 
   return {

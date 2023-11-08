@@ -1,4 +1,5 @@
 import Block from "@/components/article/block";
+import Box from "@/components/article/box";
 import ColumnsBlock from "@/components/article/columns/indext";
 import DataCard from "@/components/article/data-card";
 import Gallery from "@/components/article/gallery";
@@ -18,5 +19,6 @@ export const ARTICLE_COMPONENTS: { [key: string]: React.ComponentType<any> } = {
   "acf/image-gradient": ImageCard,
   "acf/post-gallery": Gallery,
   "core/shortcode": Shortcode,
-  "acf/data-card": DataCard
+  "acf/data-card": DataCard,
+  "acf/box": Box
 };
