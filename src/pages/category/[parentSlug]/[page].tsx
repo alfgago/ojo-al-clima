@@ -22,7 +22,7 @@ export default function Category({ data, recents }: any) {
 export const getServerSideProps = async (context: any) => {
   const { parentSlug, page } = context.params;
 
-  const data = await fetchCategoryData(parentSlug, parseInt(page, 10), 120);  // 120s de cache aumentar en produccion
+  const data = await fetchCategoryData(parentSlug, parseInt(page, 10), 30);  // 120s de cache aumentar en produccion
   const recents = await fetchPostData('recents', 60);
 
   return {

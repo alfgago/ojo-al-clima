@@ -4,6 +4,7 @@ import { CategoryLabel } from '@/components';
 
 export const ArticleBanner = ({
   post_title,
+  secondary_title,
   thumbnail,
   category,
   publish_date,
@@ -29,6 +30,15 @@ export const ArticleBanner = ({
               <CategoryLabel {...category} type='circle' />
               <span className="date">{publish_date}</span>
             </div>
+            {
+              secondary_title && (
+                <div className="secondary-title">
+                  <span>
+                    {secondary_title}
+                  </span>
+                </div>
+              )
+            }
             <div className="title">
               <h1>{post_title}</h1>
             </div>

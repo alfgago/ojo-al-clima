@@ -75,6 +75,13 @@ export const BannerStyles = styled.section`
             }
           }
         }
+        .secondary-title {
+          color: ${COLORS.white};
+          font-size: 1.5rem;
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+        }
         .title {
           h1 {
             color: ${COLORS.white};
@@ -105,6 +112,9 @@ export const BannerStyles = styled.section`
     max-width: 85rem;
     min-height: 4.5rem;
     margin: -1.5rem auto 0;
+    @media ${DEVICE.maxmd} {
+      padding: 0 2rem;
+    }
     p {
       color: #828282;
       font-size: 1.125rem;

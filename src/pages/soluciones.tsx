@@ -20,7 +20,7 @@ export default function Soluciones({ page }: any) {
 
 
 export const getServerSideProps = async () => {
-  const page = await fetchLearnData('soluciones', 3000);
+  const page = await fetchLearnData('soluciones', 30);
 
   return {
     props: {

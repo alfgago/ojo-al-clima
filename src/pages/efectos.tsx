@@ -19,7 +19,7 @@ export default function Efectos({ page }: any) {
 
 
 export const getServerSideProps = async () => {
-  const page = await fetchLearnData('efectos', 3000);
+  const page = await fetchLearnData('efectos', 30);
 
   return {
     props: {

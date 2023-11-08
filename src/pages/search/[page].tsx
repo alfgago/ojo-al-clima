@@ -23,7 +23,7 @@ export const getServerSideProps = async (context: any) => {
     const { page } = context.params;
     const { q = '', author = '' } = context.query;
 
-    const data = await fetchSearchData(q, author, parseInt(page, 10), 120);
+    const data = await fetchSearchData(q, author, parseInt(page, 10), 30);
     const recents = await fetchPostData('recents', 60);
 
     // Si no hay datos, redirige al usuario al home

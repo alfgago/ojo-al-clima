@@ -7,10 +7,16 @@ export const BlockStyle = styled.div`
     h3,
     h4,
     h5 {
-      font-size: 2rem;
+      font-size: 1.8rem;
       font-style: normal;
       font-weight: 800;
       line-height: normal;
+    }
+    h4 {
+      font-size: 1.6rem;
+    }
+    h5 {
+      font-size: 1.4rem;
     }
     p {
       color: #242424;

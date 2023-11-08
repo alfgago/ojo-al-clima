@@ -19,7 +19,7 @@ export default function Causas({ page }: any) {
 
 
 export const getServerSideProps = async () => {
-  const page = await fetchLearnData('causas', 3000);
+  const page = await fetchLearnData('causas', 30);
 
   return {
     props: {

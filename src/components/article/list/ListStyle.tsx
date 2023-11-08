@@ -8,6 +8,7 @@ ul {
   li {
     padding: 0.3rem 0;
     font-size: 1.25rem;
+    font-weight: 500;
     &::marker { 
       color: #828282;
     }
