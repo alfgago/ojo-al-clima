@@ -141,9 +141,14 @@ export const CardsContentStyle = styled.section<{background: string}>`
                 font-size: 3.75rem;
               }
             }
-            p {
+            .card-description {
               color: ${COLORS.white};
               margin: 0;
+              font-size: 1.5rem;
+              font-style: normal;
+              font-weight: 400;
+              line-height: normal;
+              min-height: 1rem;
             }
           }
         }

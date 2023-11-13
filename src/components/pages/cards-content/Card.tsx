@@ -13,9 +13,7 @@ export const Card = ({
             {suffix}
           </span>
         </h4>
-        <p>
-          {description}
-        </p>
+        <div className="card-description" dangerouslySetInnerHTML={{ __html: description }}></div>
       </div>
     </div>
   )
