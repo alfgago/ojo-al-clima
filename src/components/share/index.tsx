@@ -11,6 +11,9 @@ export const Share = () => {
       <a target='_blank' href='https://twitter.com/ojoalclima'>
         <ReactSVG src='/icons/x.svg' />
       </a>
+      <a target='_blank' href='https://www.youtube.com/@ojoalclima3707'>
+        <ReactSVG src='/icons/yt.svg' />
+      </a>
     </ShareStyle >
   );
 };

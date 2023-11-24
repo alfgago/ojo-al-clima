@@ -1,32 +1,56 @@
 import Image from "next/image";
 import { ImageStyle } from "./ImageStyles";
+import PropTypes from 'prop-types'; // Si decides usar PropTypes
 
 const ImageCard = ({ data }: any) => {
+  const { attrs = {} } = data || {};
+  const { 
+    className = '', 
+    url_full = '', 
+    alt = '', 
+    width = 100, 
+    height = 100, 
+    caption = '',
+    author = ''
+  } = attrs;
 
-  const { attrs } = data;
-  const hasImageGradientClass = attrs.className.includes('image-gradient');
+  const hasImageGradientClass = className.includes('image-gradient');
 
   return (
-    <ImageStyle className={attrs.className + ' image-block'}>
+    <ImageStyle className={`${className} image-block`}>
       <div className="img-wrapper">
         <Image
-          src={attrs.url_full}
-          alt={attrs.alt}
-          width={attrs.width}
-          height={attrs.height}
+          src={url_full}
+          alt={alt}
+          width={width}
+          height={height}
         />
       </div>
-      {(attrs.caption || attrs.author) && (
+      {(caption || author) && (
         <figcaption>
-          {attrs.caption && <span className="caption">{attrs.caption}</span>}
-          {attrs.author && <span className="author">(Créditos: {attrs.author})</span>}
-          {attrs.author && hasImageGradientClass && (
-            <span className="credits-image-gradient">{attrs.author}</span>
+          {caption && <span className="caption">{caption}</span>}
+          {author && <span className="author">(Créditos: {author})</span>}
+          {author && hasImageGradientClass && (
+            <span className="credits-image-gradient">{author}</span>
           )}
         </figcaption>
       )}
     </ImageStyle>
   )
 }
+
+ImageCard.propTypes = {
+  data: PropTypes.shape({
+    attrs: PropTypes.shape({
+      className: PropTypes.string,
+      url_full: PropTypes.string,
+      alt: PropTypes.string,
+      width: PropTypes.number,
+      height: PropTypes.number,
+      caption: PropTypes.string,
+      author: PropTypes.string,
+    }),
+  }),
+};
 
 export default ImageCard;

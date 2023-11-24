@@ -5,24 +5,27 @@ export const CategoryComponents = ({
   recents,
 }: any) => {
 
-  const { name, color, posts, pagination } = data;
+  const { name = '', color = '', posts = [], pagination = {} } = data || {};
 
   return (
     <CategoryStyle>
       <Heading title={name} color={color} />
       <section className="wrapper-category">
         <div className="articles-container">
-          <div className="featured-article">
-            <FeaturedCard {...posts[0]} />
-          </div>
+
+          {posts.length > 0 && (
+            <div className="featured-article">
+              <FeaturedCard {...posts[0]} />
+            </div>
+          )}
           <div className="category-articles">
-            {posts.slice(1).map((post: any, index: number) => (
+            {posts.length > 1 && posts.slice(1).map((post: any, index: number) => (
               <PreviewCard key={index} {...post} type="vertical" />
             ))}
           </div>
-          <Pagination data={pagination} />
+          {pagination && <Pagination data={pagination} />}
         </div>
-        <Recents articles={recents} />
+        {recents && <Recents articles={recents} />}
       </section>
     </CategoryStyle>
   )

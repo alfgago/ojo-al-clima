@@ -71,7 +71,7 @@ export const Footer = ({ data }: any) => {
           <span>
             Diseñado por:
           </span>
-          <a target="_blank" href="5e.cr">
+          <a target="_blank" href="https://5e.cr/">
             5e Creative Labs
           </a>
         </div>
