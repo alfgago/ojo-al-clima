@@ -1,7 +1,8 @@
-import Image from "next/image"
-import Link from "next/link"
-import { CategoryLabel } from ".."
-import { PreviewStyle } from "./PreviewStyle"
+import Image from "next/image";
+import Link from "next/link";
+import { CategoryLabel } from "..";
+import { PreviewStyle } from "./PreviewStyle";
+
 
 export const PreviewCard = ({
   name,
@@ -11,27 +12,29 @@ export const PreviewCard = ({
   thumbnail,
   author,
   type,
-  post = "articles"
+  post = "articles" 
 }: ArticleCardProps) => {
 
-  const { color } = category;
+  const color = category?.color || 'gray'; 
 
   return (
     <PreviewStyle color={color}>
       <div className={`article-card ${type}`}>
-        <div className="thumbnail">
-          <Link href={`/${post}/${slug}`}>
-            <Image
-              src={thumbnail.url_medium}
-              alt={thumbnail.alt}
-              width={thumbnail.width}
-              height={thumbnail.height}
-            />
-          </Link>
-        </div>
+        {thumbnail && thumbnail.url_medium && (
+          <div className="thumbnail">
+            <Link href={`/${post}/${slug}`}>
+                <Image
+                  src={thumbnail.url_medium}
+                  alt={thumbnail.alt || 'Thumbnail'}
+                  width={thumbnail.width || 100}
+                  height={thumbnail.height || 100}
+                />
+            </Link>
+          </div>
+        )}
         <div className="content">
           <div className="meta">
-            <CategoryLabel {...category} />
+            {category && <CategoryLabel {...category} />}
             <span className="date">
               {date}
             </span>
@@ -54,13 +57,28 @@ export const PreviewCard = ({
   )
 }
 
-type ArticleCardProps = {
+
+interface ThumbnailProps {
+  url_medium?: string;
+  alt?: string;
+  width?: number;
+  height?: number;
+}
+
+interface CategoryProps {
+  name?: string;
+  slug?: string;
+  color?: string;
+  type?: "normal" | "circle";
+}
+
+interface ArticleCardProps {
   name: string;
   slug: string;
   date: string;
-  category: any;
-  thumbnail: any;
+  category: CategoryProps;
+  thumbnail: ThumbnailProps;
   author: string;
   type: "lateral" | "vertical";
-  post: "articles" | "specials";
-};
+  post?: "articles" | "specials";
+}

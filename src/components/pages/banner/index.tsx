@@ -5,31 +5,35 @@ import { ReactSVG } from "react-svg";
 
 const PageBanner = ({ data }: any) => {
 
-  const { attrs } = data;
-  const { posts } = attrs;
-  const banner = posts[0];
+  const { attrs = {} } = data || {};
+  const { posts = [] } = attrs;
+  const banner = posts.length > 0 ? posts[0] : null;
 
   return (
     <BannerStyles>
-      <div className="banner-wrapper">
-        <div className="content" style={{ background: `url(${banner.thumbnail.url_full})` }}>
-          <div className="data-container">
-            <div className="data-wrapper">
-              <h1>
-                <Link href={`/articles/${banner.slug}`}>
-                  {banner.name}
-                </Link>
-              </h1>
-              <p>{banner.excerpt}</p>
-              <Link className="btn" href={`/articles/${banner.slug}`}>
-                Leer más
-              </Link>
+      {banner && (
+        <div className="banner-wrapper">
+          <div className="content" style={{ background: `url(${banner.thumbnail?.url_full})` }}>
+            <div className="data-container">
+              <div className="data-wrapper">
+                <h1>
+                  {banner.slug && (
+                    <Link href={`/articles/${banner.slug}`}>
+                      {banner.name}
+                    </Link>
+                  )}
+                </h1>
+                <p>{banner.excerpt}</p>
+                {banner.slug && (
+                  <Link className="btn" href={`/articles/${banner.slug}`}>
+                    Leer más
+                  </Link>
+                )}
+              </div>
             </div>
           </div>
-        </div>
-        <div className="learn-colors">
-          {
-            learn?.map((item: any, index: number) => (
+          <div className="learn-colors">
+            {learn?.map((item: any, index: number) => (
               <div key={index} className={`${item.color}`}>
                 <Link href={`/${item.post_name}`}>
                   <span>
@@ -38,10 +42,10 @@ const PageBanner = ({ data }: any) => {
                   <ReactSVG src="/icons/plus.svg" className="plus-icon" />
                 </Link>
               </div>
-            ))
-          }
+            ))}
+          </div>
         </div>
-      </div>
+      )}
     </BannerStyles>
   )
 }

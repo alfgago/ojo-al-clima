@@ -1,11 +1,18 @@
-import Link from 'next/link'
-import { LabelStyle } from './LabelStyle'
+import Link from 'next/link';
+import { LabelStyle } from './LabelStyle';
+
+type LabelProps = {
+  name?: string; 
+  slug?: string; 
+  color?: string;
+  type?: "normal" | "circle";
+};
 
 export const CategoryLabel = ({
-  name,
-  slug,
-  color,
-  type="normal"
+  name = '',     
+  slug = '/',  
+  color = '',    
+  type = "normal" 
 }: LabelProps) => {
   
   return (
@@ -16,12 +23,5 @@ export const CategoryLabel = ({
         </Link>
       </span>
     </LabelStyle>
-  )
-} 
-
-type LabelProps = {
-  name: string;
-  slug: string;
-  color: string;
-  type?: "normal" | "circle";
-};
+  );
+}
