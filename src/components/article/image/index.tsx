@@ -16,6 +16,11 @@ const ImageCard = ({ data }: any) => {
 
   const hasImageGradientClass = className.includes('image-gradient');
 
+  // Verificar si url_full está presente y no es nula
+  if (!url_full) {
+    return null; // No renderiza nada si no hay URL
+  }
+
   return (
     <ImageStyle className={`${className} image-block`}>
       <div className="img-wrapper">
