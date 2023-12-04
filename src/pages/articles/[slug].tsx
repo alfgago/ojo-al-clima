@@ -5,8 +5,9 @@ import { queryClient } from "@/utils";
 import { fetchPostData } from '@/pages/api/posts';
 import { ArticleBanner, ArticleComponents, Recents } from '@/components';
 import { ArticleStyle } from '@/components/article/ArticleSyle';
+import { layoutPageData } from '../api/layout';
 
-export default function Post({ post, recents }: any) {
+export default function Post({ post, recents, form }: any) {
 
   const { category, blocks, yoast } = post;
   const { color } = category;
@@ -18,7 +19,7 @@ export default function Post({ post, recents }: any) {
         <ArticleBanner {...post} />
         <ArticleStyle color={color}>
           <ArticleComponents blocks={blocks} />
-          <Recents articles={recents} />
+          <Recents articles={recents} form={form} />
         </ArticleStyle>
       </article>
     </>
@@ -30,11 +31,13 @@ export const getServerSideProps = async (context: any) => {
 
   const post = await fetchPostData(slug, 30); 
   const recents = await fetchPostData('recents', 60);
+  const form = await layoutPageData('newsletter', 60);
 
   return {
     props: {
       post,
       recents,
+      form,
       dehydratedState: dehydrate(queryClient),
     },
   };
