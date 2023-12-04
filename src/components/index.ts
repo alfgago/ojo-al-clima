@@ -25,6 +25,7 @@ export * from './cards/PreviewCard';
 export * from './heading';
 export * from './pagination';
 export * from './share';
+export * from './newsletter';
 
 //Styles
 export * from './pages/PageStyle';

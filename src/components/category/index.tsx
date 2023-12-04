@@ -3,6 +3,7 @@ import { CategoryStyle, FeaturedCard, Heading, Pagination, PreviewCard, Recents 
 export const CategoryComponents = ({
   data,
   recents,
+  form = null
 }: any) => {
 
   const { name = '', color = '', posts = [], pagination = {} } = data || {};
@@ -25,7 +26,7 @@ export const CategoryComponents = ({
           </div>
           {pagination && <Pagination data={pagination} />}
         </div>
-        {recents && <Recents articles={recents} />}
+        {recents && <Recents articles={recents} form={form} />}
       </section>
     </CategoryStyle>
   )
