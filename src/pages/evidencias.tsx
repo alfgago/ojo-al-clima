@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import parse from "html-react-parser"
 import { dehydrate } from 'react-query/hydration';
-import { queryClient } from "@/utils";
+import { cleanYoast, queryClient } from "@/utils";
 import { fetchLearnData } from './api/learn';
 import { LearnPage } from '@/components';
 
@@ -17,12 +17,17 @@ export default function Evidencias({ page }: any) {
   );
 }
 
-export const getServerSideProps = async () => {
-  const page = await fetchLearnData('evidencias', 30);
-
+export const getServerSideProps = async (context:any) => {
+  const page = await fetchLearnData('evidencias', 30) as { yoast: string };
+  const currentURL = `${process.env.NEXT_PUBLIC_DOMAIN}${context.resolvedUrl}`;
+  const cleanedYoast = cleanYoast(page.yoast, currentURL)
+  
   return {
     props: {
-      page,
+      page: {
+        ...page,
+        yoast: cleanedYoast,
+      },
       dehydratedState: dehydrate(queryClient),
     },
   };

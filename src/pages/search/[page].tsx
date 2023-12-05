@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import parse from "html-react-parser"
 import { dehydrate } from 'react-query/hydration';
-import { queryClient } from "@/utils";
+import { cleanYoast, queryClient } from "@/utils";
 import { fetchPostData } from '@/pages/api/posts';
 import { fetchSearchData } from '../api/search';
 import { SearchComponets } from '@/components';
@@ -23,10 +23,12 @@ export const getServerSideProps = async (context: any) => {
     const { page } = context.params;
     const { q = '', author = '' } = context.query;
 
-    const data = await fetchSearchData(q, author, parseInt(page, 10), 30);
+    const data = await fetchSearchData(q, author, parseInt(page, 10), 30) as { yoast: string };
+    const currentURL = `${process.env.NEXT_PUBLIC_DOMAIN}${context.resolvedUrl}`;
+    const cleanedYoast = cleanYoast(data.yoast, currentURL)
+  
     const recents = await fetchPostData('recents', 60);
 
-    // Si no hay datos, redirige al usuario al home
     if (!data) {
       return {
         redirect: {
@@ -38,7 +40,10 @@ export const getServerSideProps = async (context: any) => {
 
     return {
       props: {
-        data,
+        data: {
+          ...data,
+          yoast: cleanedYoast,
+        },
         recents,
         dehydratedState: dehydrate(queryClient),
       },
