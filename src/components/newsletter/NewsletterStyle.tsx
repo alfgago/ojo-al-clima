@@ -7,13 +7,13 @@ import {
   GRADIENTS_VERTICALS,
 } from "@/styles/variables"
 
-export const NewsletterStyle = styled.section`
+export const NewsletterStyle = styled.div`
   position: relative;
   background: #FFF;
   border-radius: 0.3125rem;
   box-shadow: 0px 4px 43px 0px rgba(0, 0, 0, 0.09);
   padding: 1.25rem 1.81rem 1.87rem 1.81rem;
-  margin-top: 3.12rem;
+  margin-top: 1.6rem;
 
   .learn-colors {
     display: flex;

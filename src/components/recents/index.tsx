@@ -1,4 +1,6 @@
+import { ADS_GROUPS } from "@/constants/adsGroups"
 import { Newsletter, PreviewCard } from ".."
+import { AdController } from "../ad-controller"
 import { RecentStyle } from "./RecentStyles"
 import { SearchBlock } from "./search-block"
 
@@ -17,9 +19,10 @@ export const Recents = ({ articles, limit = null, form = null }: any) => {
         {!limit && (
           <>
             <SearchBlock />
-            {
-              form && <Newsletter form={form}/>
-            }
+            
+            <AdController group={ ADS_GROUPS["articles-lateral"] }/>
+        
+            { form && <Newsletter form={form}/> }
           </>
         )}
       </div>
