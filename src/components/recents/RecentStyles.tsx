@@ -46,6 +46,7 @@ export const RecentStyle = styled.div`
     border-radius: 0.625rem;
     background: ${COLORS.white};
     margin-top: 3.12rem;
+    margin-bottom: 1.6rem;
     padding: 1.75rem 1.75rem 3.12rem;
     box-shadow: 0px 4px 43px 0px rgba(0, 0, 0, 0.09);
     position: relative;
