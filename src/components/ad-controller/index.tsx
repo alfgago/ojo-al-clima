@@ -1,6 +1,7 @@
 import { fetchAdsData } from "@/pages/api/ads"
 import { useQuery, useQueries } from "react-query"
 import { AdBlock } from "../ads"
+import { Loader } from ".."
 
 export const AdController = ({ group }: { group: string }) => {
   const {
@@ -20,12 +21,14 @@ export const AdController = ({ group }: { group: string }) => {
 
   if (isError) return null
 
+  if (isLoading) return <Loader />
+
   return (
     <div className="ads-container">
       {!isLoading &&
         adQueries.map((ad, index) =>
           ad.isLoading ? (
-            <div key={index}>Loading ad...</div>
+            <div key={index}> <Loader/> </div>
           ) : (
             <AdBlock key={ad.data?.ID} data={ad.data?.content} />
           )

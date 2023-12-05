@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import { LearnBackgroundStyle } from "./LearnBackgroundStyle"
+import { Loader } from "@/components";
 
 export const Learn = ({ data, index, active }: any) => {
   const { pathname } = useRouter();
@@ -32,7 +33,7 @@ export const Learn = ({ data, index, active }: any) => {
         }}
       >
         <div className="learn-item-wrapper">
-          <span className="loader"></span>
+          <Loader />
         </div>
       </section>
     </LearnBackgroundStyle>

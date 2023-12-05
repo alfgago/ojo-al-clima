@@ -56,7 +56,7 @@ export const BannerStyles = styled.section`
               text-decoration: none;
               display: block;
               @media ${DEVICE.maxxs} {
-                font-size: 2.5rem;
+                font-size: 2rem;
               }
             }
           }

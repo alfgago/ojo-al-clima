@@ -2,7 +2,7 @@ import Head from 'next/head';
 import parse from "html-react-parser"
 
 import { dehydrate } from 'react-query/hydration';
-import { queryClient } from "@/utils";
+import { cleanYoast, queryClient } from "@/utils";
 import { fetchSpecialData } from '../api/specials';
 import { ArticleBanner } from '@/components';
 import { SpecialStyle } from '@/components/specials/SpecialStyle';
@@ -29,11 +29,17 @@ export default function Special({ special }: any) {
 export const getServerSideProps = async (context: any) => {
 
   const { slug } = context.params;
-  const special = await fetchSpecialData(slug);
+  const special = await fetchSpecialData(slug) as { yoast: string };
+  const currentURL = `${process.env.NEXT_PUBLIC_DOMAIN}${context.resolvedUrl}`;
+  const cleanedYoast = cleanYoast(special.yoast, currentURL)
+
 
   return {
     props: {
-      special,
+      special: {
+        ...special,
+        yoast: cleanedYoast,
+      },
       dehydratedState: dehydrate(queryClient),
     },
   };

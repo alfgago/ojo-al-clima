@@ -11,6 +11,11 @@ export const ArticleStyle = styled.section<{ color: string }>`
     flex-direction: column;
     padding: 0 2rem;
   }
+  
+  .loader {
+    border-top: 3px solid ${props => COLORS[props.color]};
+  }
+
   .wordpress-content {
     width: 100%;
     max-width: 55.5rem;
@@ -74,6 +79,7 @@ export const ArticleStyle = styled.section<{ color: string }>`
         }
       }
     }
+
     ul {
       li {
         &::marker { 
