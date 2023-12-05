@@ -20,19 +20,17 @@ const Shortcode = ({ data: { innerHTML } }: ShortcodeProps) => {
  
 export default Shortcode;
 
-interface ShortcodeProps {
-  data: {
-    innerHTML: string;
-  };
-}
-
 const handlers = [
   {
     detect: (html: string) => html.includes("[box]"),
     transform: (html: string) => html.replace(/\[box\]|\[\/box\]/g, ''),
     className: 'old-box'
+  },
+  {
+    detect: (html: string) => html.includes("iframe"),
+    transform: (html: string) => { return html; },
+    className: 'iframe-container'
   }
-  // Puedes agregar más handlers aquí en el futuro
 ];
 
 const processContent = (html: string) => {
@@ -47,3 +45,10 @@ const processContent = (html: string) => {
 
   return { customClass: '', processedHTML: html };
 }
+
+interface ShortcodeProps {
+  data: {
+    innerHTML: string;
+  };
+}
+ 

@@ -26,6 +26,7 @@ export * from './heading';
 export * from './pagination';
 export * from './share';
 export * from './newsletter';
+export * from './loader';
 
 //Styles
 export * from './pages/PageStyle';

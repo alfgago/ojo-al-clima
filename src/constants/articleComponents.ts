@@ -12,6 +12,8 @@ import Shortcode from "@/components/article/shortcode";
 export const ARTICLE_COMPONENTS: { [key: string]: React.ComponentType<any> } = {
   "core/heading": Block,
   "core/paragraph": Block,
+  "core/html": Block,
+  "core/embed": Block,
   "core/image": ImageCard,
   "core/quote": Quote,
   "core/list": List,
