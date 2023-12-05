@@ -1,9 +1,12 @@
 import React, { useState } from "react"
 import { NewsletterStyle } from "./NewsletterStyle"
 import { contactFormAPI } from "@/pages/api/base"
+import { Loader } from ".."
 
 export const Newsletter = ({ form }: any) => {
   const { id, fields } = form[0].data[0]
+
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   const [formSubmission, setFormSubmissionError] = useState({
     show: false,
@@ -23,6 +26,8 @@ export const Newsletter = ({ form }: any) => {
 
   const formSubmissionHandler = async (e: any) => {
     e.preventDefault()
+
+    setIsSubmitting(true)
 
     const formElement = e.target
     const { action, method } = formElement
@@ -71,6 +76,8 @@ export const Newsletter = ({ form }: any) => {
         message: "Debes completar todos los campos requeridos",
       })
     }
+
+    setIsSubmitting(false)
   }
 
   return (
@@ -127,8 +134,9 @@ export const Newsletter = ({ form }: any) => {
                 </div>
               )
           )}
-          <button className="btn-send" type="submit">
-            Suscribirse
+          <button className="btn-send" type="submit" disabled={isSubmitting}>
+            {isSubmitting ? "Enviando..." : "Suscribirse"}
+            {isSubmitting && <Loader />}
           </button>
           {formSubmission.show && (
             <span className={`form-request-message ${formSubmission.status}`}>

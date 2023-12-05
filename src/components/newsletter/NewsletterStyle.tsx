@@ -102,6 +102,11 @@ export const NewsletterStyle = styled.div`
         background: ${COLORS.red};
         border: none;
         cursor: pointer;
+        .loader {
+          width: 1rem;
+          height: 1rem;
+          border-top: 2px solid #fff !important;
+        }
       }
     }
   }

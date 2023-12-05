@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { COLORS, GRADIENTS, DEVICE } from "@/styles/variables"
 
 
-export const LoaderStyle = styled.header<{color:string}>`
+export const LoaderStyle = styled.div<{color:string}>`
   .loader {
     width: 48px;
     height: 48px;
