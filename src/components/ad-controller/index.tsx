@@ -3,14 +3,18 @@ import { useQuery, useQueries } from "react-query"
 import { AdBlock } from "../ads"
 import { Loader } from ".."
 
-export const AdController = ({ group }: { group: string }) => {
+export const AdController = ({
+  group,
+  type,
+}: {
+  group: string
+  type: 'horizontal' | 'full'
+}) => {
   const {
     data: adsGroup,
     isLoading,
     isError,
-  } = useQuery<AdsGroupData>(["adsGroup", group], () =>
-    fetchAdsData(group)
-  )
+  } = useQuery<AdsGroupData>(["adsGroup", group], () => fetchAdsData(group))
 
   const adQueries = useQueries(
     adsGroup?.ads?.map((adId) => ({
@@ -28,9 +32,12 @@ export const AdController = ({ group }: { group: string }) => {
       {!isLoading &&
         adQueries.map((ad, index) =>
           ad.isLoading ? (
-            <div key={index}> <Loader/> </div>
+            <div key={index}>
+              {" "}
+              <Loader />{" "}
+            </div>
           ) : (
-            <AdBlock key={ad.data?.ID} data={ad.data?.content} />
+            <AdBlock key={ad.data?.ID} data={ad.data?.content} type={type} />
           )
         )}
     </div>

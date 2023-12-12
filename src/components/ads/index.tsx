@@ -1,10 +1,10 @@
 import { AdBlockStyle } from "./AdBlockStyle"
 
-export const AdBlock = ({ data }: AdBlockProps) => {
+export const AdBlock = ({ data, type='horizontal' }: AdBlockProps) => {
   return (
     <AdBlockStyle>
       <div
-        className="wp-ad"
+        className={`ad-block ${type}`}
         dangerouslySetInnerHTML={{
           __html: data,
         }}
@@ -14,5 +14,6 @@ export const AdBlock = ({ data }: AdBlockProps) => {
 }
 
 interface AdBlockProps {
-  data: string;
+  data: string
+  type: "horizontal" | "full"
 }

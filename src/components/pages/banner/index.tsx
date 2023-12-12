@@ -20,9 +20,6 @@ const PageBanner = ({ data }: any) => {
           >
             <div className="data-container">
               <div className="data-wrapper">
-                
-                <AdController group={ADS_GROUPS["home-banner"]} />
-
                 <h1>
                   {banner.slug && (
                     <Link href={`/articles/${banner.slug}`}>{banner.name}</Link>
@@ -34,6 +31,7 @@ const PageBanner = ({ data }: any) => {
                     Leer más
                   </Link>
                 )}
+                <AdController group={ADS_GROUPS["home-banner"]} type='horizontal'/>
               </div>
             </div>
           </div>

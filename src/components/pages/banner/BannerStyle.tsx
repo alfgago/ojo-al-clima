@@ -96,6 +96,9 @@ export const BannerStyles = styled.section`
               font-size: 1.5rem;
             }
           }
+          .ad-block img {
+            margin: 0;
+          }
         }
       }
     } 
