@@ -20,7 +20,7 @@ export const Recents = ({ articles, limit = null, form = null }: any) => {
           <>
             <SearchBlock />
             
-            <AdController group={ ADS_GROUPS["articles-lateral"] }/>
+            <AdController group={ ADS_GROUPS["articles-lateral"] } type="full"/>
         
             { form && <Newsletter form={form}/> }
           </>

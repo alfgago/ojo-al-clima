@@ -4,6 +4,7 @@ import { COLORS, GRADIENTS, DEVICE } from "@/styles/variables"
 
 
 export const LoaderStyle = styled.div<{color:string}>`
+  padding: 3rem 0;
   .loader {
     width: 48px;
     height: 48px;

@@ -40,7 +40,7 @@ export const ArticleComponents = ({ blocks }: any) => {
           paragraphCount = 0
           const ad = adsQueries[adIndex++].data as AdData 
           if (ad) {
-            content.push(<AdBlock key={`ad-${adIndex}`} data={ad.content} />)
+            content.push(<AdBlock key={`ad-${adIndex}`} data={ad.content} type="horizontal" />)
           }
         }
       }
@@ -51,7 +51,7 @@ export const ArticleComponents = ({ blocks }: any) => {
 
   return (
     <div className="wordpress-content">
-      <AdController group={ADS_GROUPS["articles-start"]} />
+      <AdController group={ADS_GROUPS["articles-start"]} type="horizontal" />
       {renderContentWithAds()}
     </div>
   )

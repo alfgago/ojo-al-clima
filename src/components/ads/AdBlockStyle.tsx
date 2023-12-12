@@ -8,8 +8,24 @@ import {
 } from "@/styles/variables"
 
 export const AdBlockStyle = styled.div`
-  img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem auto;
+  .ad-block{
     width: 100%;
-    height: auto;
+    img {
+      margin: 0 auto;
+      display: block;
+      width: auto;
+      max-width: 100%;
+      height: auto;
+    }
+    &.full {
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
   }
 `
