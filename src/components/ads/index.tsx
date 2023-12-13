@@ -2,7 +2,7 @@ import { AdBlockStyle } from "./AdBlockStyle"
 
 export const AdBlock = ({ data, type='horizontal' }: AdBlockProps) => {
   return (
-    <AdBlockStyle>
+    <AdBlockStyle className="ad-block-container">
       <div
         className={`ad-block ${type}`}
         dangerouslySetInnerHTML={{

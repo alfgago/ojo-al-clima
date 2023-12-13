@@ -1,3 +1,4 @@
+import Ads from "@/components/pages/ads";
 import PageBanner from "@/components/pages/banner";
 import CardsContent from "@/components/pages/cards-content";
 import GridImages from "@/components/pages/grid-images";
@@ -10,4 +11,5 @@ export const PAGE_COMPONENTS: { [key: string]: React.ComponentType<any> } = {
   "acf/grid-specials": GridSpecial,
   "acf/grid-images": GridImages,
   "acf/card-content": CardsContent,
+  "advads/gblock": Ads
 };
