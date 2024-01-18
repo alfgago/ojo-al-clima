@@ -31,7 +31,6 @@ const PageBanner = ({ data }: any) => {
                     Leer más
                   </Link>
                 )}
-                <AdController group={ADS_GROUPS["home-banner"]} type='horizontal'/>
               </div>
             </div>
           </div>
