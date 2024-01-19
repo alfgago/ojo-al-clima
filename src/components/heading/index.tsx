@@ -1,3 +1,4 @@
+import { GradientBackground } from "..";
 import { HeadingStyle } from "./HeadingStyle"
 
 export const Heading = ({
@@ -8,6 +9,9 @@ export const Heading = ({
     <HeadingStyle color={color}>
       <div className="wrapper">
         {title && <h1>{title}</h1>} 
+      </div>
+      <div className="gradient-wrapper">
+        <GradientBackground className="background" useColor={color}/>
       </div>
       <div className="learn-colors">
         <div className="red"></div>

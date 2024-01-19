@@ -1,7 +1,15 @@
 interface PARAMS {
-  [key: string]: string;
+  [key: string]: string | string[];
 }
 
+export const GRADIENT_WEBGL: PARAMS = {
+  green:["#27C840", "#137E24"],
+  yellow:["#F6BD29", "#F58B28"],
+  red:["#f83622","#b8171d"],
+  blue:["#388DAA", "#34BBD7" ],
+  purple:["#6967F1","#3F448F"],
+  gray:["#E4E4E4", "#787277"],
+}
 export const GRADIENTS: PARAMS = {
   green: "linear-gradient(90deg, #137E24 0%, #27C840 90.77%)",
   yellow: "linear-gradient(90deg, #F58B28 0%, #F6BD29 100%)",
@@ -51,3 +59,4 @@ export const DEVICE = {
   maxlg: `(max-width: ${SIZE.lg}px)`,
   maxxl: `(max-width: ${SIZE.xl}px)`,
 }
+

@@ -51,7 +51,6 @@ export const ArticleComponents = ({ blocks }: any) => {
 
   return (
     <div className="wordpress-content">
-      <AdController group={ADS_GROUPS["articles-start"]} type="horizontal" />
       {renderContentWithAds()}
     </div>
   )
