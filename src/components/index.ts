@@ -27,6 +27,7 @@ export * from './pagination';
 export * from './share';
 export * from './newsletter';
 export * from './loader';
+export * from './gradient'
 
 //Styles
 export * from './pages/PageStyle';

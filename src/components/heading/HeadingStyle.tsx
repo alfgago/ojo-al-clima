@@ -5,7 +5,6 @@ import { COLORS, GRADIENTS, DEVICE, GRADIENTS_VERTICALS } from "@/styles/variabl
 export const HeadingStyle = styled.section<{color: string}>`
   background: ${COLORS.black};
   min-height: 7.5rem;
-  box-shadow: 0px 4px 19px 0px rgba(0, 0, 0, 0.15);
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -14,11 +13,13 @@ export const HeadingStyle = styled.section<{color: string}>`
     max-width: 84.6875rem;
     width: 100%;
     margin: 0 auto;
+    z-index: 10;
     h1 {
       color: ${COLORS.white};
       line-height: 1;
       padding-left: 1.5rem;
       position: relative;
+      2px 4px 5px #0000002bl;
       @media ${DEVICE.maxmd} {
         margin-left: 2rem;
       }
@@ -29,8 +30,21 @@ export const HeadingStyle = styled.section<{color: string}>`
         height: 100%;
         border-radius: 5rem;
         background: ${(props) => COLORS[props.color]};
-        left: 0; 
+        left: 0; \
+        box-shadow: 2px 4px 5px #0000002b;
       }
+    }
+  }
+  .gradient-wrapper {
+    &:before {
+      height: 40%;
+      content: "";
+      position: absolute;
+      bottom: 0px;
+      left: 0px;
+      width: 100%;
+      z-index: 2;
+      background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgb(255 255 255 / 94%) 90%);
     }
   }
   .learn-colors {
@@ -38,6 +52,7 @@ export const HeadingStyle = styled.section<{color: string}>`
     display: flex;
     height: 100%;
     right: 0;
+    z-index: 10;
     @media ${DEVICE.maxmd} {
       display: none;
     }
