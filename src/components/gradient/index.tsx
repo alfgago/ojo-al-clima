@@ -22,7 +22,7 @@ export const GradientBackground = ({
 
   useEffect(() => {
     if (initiated) {
-      const colors = [GRADIENT_WEBGL[useColor][0], GRADIENT_WEBGL[useColor][1], GRADIENT_WEBGL[useColor][0]]
+      const colors = [GRADIENT_WEBGL[useColor][0], GRADIENT_WEBGL[useColor][1], GRADIENT_WEBGL[useColor][2]]
 
       window.gradient = new Gradient()
       window.gradient.colorSet = colors
