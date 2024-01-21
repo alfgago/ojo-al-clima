@@ -1,14 +1,14 @@
 interface PARAMS {
-  [key: string]: string | string[];
+  [key: string]: string | string[]
 }
 
 export const GRADIENT_WEBGL: PARAMS = {
-  green:["#27C840", "#137E24"],
-  yellow:["#F6BD29", "#F58B28"],
-  red:["#f83622","#b8171d"],
-  blue:["#388DAA", "#34BBD7" ],
-  purple:["#6967F1","#3F448F"],
-  gray:["#E4E4E4", "#787277"],
+  green: ["#27C840", "#137E24", "#27C840"],
+  yellow: ["#F6BD29", "#F58B28", "#F6BD29"],
+  red: ["#f83622", "#b8171d", "#f83622"],
+  blue: ["#2abddb", "#34BBD7", "#2abddb"],
+  purple: ["#6967F1", "#3F448F", "#6967F1"],
+  gray: ["#E4E4E4", "#787277", "#E4E4E4"],
 }
 export const GRADIENTS: PARAMS = {
   green: "linear-gradient(90deg, #137E24 0%, #27C840 90.77%)",
@@ -16,7 +16,7 @@ export const GRADIENTS: PARAMS = {
   red: "linear-gradient(90deg, #C5242A 4.17%, #E24130 100%)",
   blue: "linear-gradient(90deg, #388DAA 0%, #34BBD7 97.55%)",
   purple: "linear-gradient(90deg, #3F448F 0%, #6967F1 100%)",
-  gray: "linear-gradient(90deg, #787277 0%, #E4E4E4 100%)"
+  gray: "linear-gradient(90deg, #787277 0%, #E4E4E4 100%)",
 }
 export const GRADIENTS_VERTICALS: PARAMS = {
   green: "linear-gradient(180deg, #137E24 0%, #27C840 90.77%)",
@@ -24,10 +24,10 @@ export const GRADIENTS_VERTICALS: PARAMS = {
   red: "linear-gradient(180deg, #C5242A 4.17%, #E24130 100%)",
   blue: "linear-gradient(180deg, #388DAA 0%, #34BBD7 97.55%)",
   purple: "linear-gradient(180deg, #3F448F 0%, #6967F1 100%)",
-  gray: "linear-gradient(180deg, #787277 0%, #E4E4E4 100%)"
-} 
- 
-export const COLORS: PARAMS = { 
+  gray: "linear-gradient(180deg, #787277 0%, #E4E4E4 100%)",
+}
+
+export const COLORS: PARAMS = {
   black: "#050507",
   white: "#fff",
   red: "#C5242A",
@@ -59,4 +59,3 @@ export const DEVICE = {
   maxlg: `(max-width: ${SIZE.lg}px)`,
   maxxl: `(max-width: ${SIZE.xl}px)`,
 }
-
