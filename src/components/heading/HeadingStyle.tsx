@@ -37,6 +37,7 @@ export const HeadingStyle = styled.section<{color: string}>`
   }
   .gradient-wrapper {
     &:before {
+      display: none
       height: 40%;
       content: "";
       position: absolute;

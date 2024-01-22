@@ -63,11 +63,16 @@ export const HeaderStyle = styled.header`
           color: ${COLORS.purple};
           font-size: 1.25rem;
           font-style: normal;
-          font-weight: 500;
+          font-weight: 500; 
           line-height: normal;
           text-decoration: none;
           padding: 1rem 0;
           display: block;
+        }
+      } 
+      .share { 
+        path {
+          fill: rgb(63, 68, 143);
         }
       }
     }
