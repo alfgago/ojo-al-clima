@@ -91,7 +91,7 @@ export const Form = ({ form }: any) => {
   return (
     <FormStyle className={getClassFromPath(pathname)}>
       <div className="form-wrapper">
-        <div className="title">
+        <div className="title" data-aos="fade-right">
           {
             pathname === "/contactenos" ? (
               <h1>Contáctenos</h1>
@@ -104,6 +104,7 @@ export const Form = ({ form }: any) => {
           action={contactFormAPI(id)}
           method={"POST"}
           onSubmit={formSubmissionHandler}
+          data-aos="fade-up"
         >
           {fields?.map(
             (field: any, index: number) =>
@@ -137,7 +138,7 @@ export const Form = ({ form }: any) => {
                 </div>
               )
           )}
-          <button className="btn-send" type="submit">
+          <button className="btn-send" type="submit" data-aos="fade-up">
             Enviar
           </button>
           {formSubmission.show && (
@@ -148,7 +149,7 @@ export const Form = ({ form }: any) => {
             </span>
           )}
         </form>
-        <div className="meta-data">
+        <div className="meta-data" data-aos="custom-fade-in" data-aos-delay="300">
           <div className="phone">
             <span>Teléfono: <a href="tel:+50625116735 ">2511-6735 </a> </span>
           </div>

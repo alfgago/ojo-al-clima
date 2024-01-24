@@ -22,6 +22,8 @@ export const Footer = ({ data }: any) => {
                 alt="Site Logo"
                 width={200}
                 height={200}
+                data-aos="custom-fade-in" 
+                data-aos-delay="300"
               />
             </Link>
             {/* <span>
@@ -34,7 +36,7 @@ export const Footer = ({ data }: any) => {
               comerciales.
             </span> */}  
           </div>
-          <div className="menu">
+          <div className="menu" data-aos="custom-fade-in" data-aos-delay="300">
             {menu?.items?.map((item: any, index: number) => (
               <div key={item.title} className="item">
                 <span>{item.title}</span>
@@ -50,7 +52,7 @@ export const Footer = ({ data }: any) => {
               </div>
             ))}
           </div>
-          <div className="logo-u">
+          <div className="logo-u" data-aos="custom-fade-in" data-aos-delay="300">
             <Image
               src="/logos/semanario-logo.png"
               alt="Logo Semanario"

@@ -7,10 +7,10 @@ export const Heading = ({
 }: HeadingProps) => {
   return (
     <HeadingStyle color={color}>
-      <div className="wrapper">
+      <div className="wrapper" data-aos="fade-right" data-aos-delay="300">
         {title && <h1>{title}</h1>} 
       </div>
-      <div className="gradient-wrapper">
+      <div className="gradient-wrapper" >
         <GradientBackground className="background" useColor={color}/>
       </div>
       <div className="learn-colors">

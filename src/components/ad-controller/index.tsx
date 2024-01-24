@@ -38,7 +38,7 @@ export const AdController = ({
   if (isLoading) return <Loader color={loader} />;
 
   return (
-    <div className="ads-container">
+    <div className="ads-container" data-aos="custom-fade-in" data-aos-delay="300">
       {!isLoading &&
         adQueries.map((ad, index) =>
           ad.isLoading ? (

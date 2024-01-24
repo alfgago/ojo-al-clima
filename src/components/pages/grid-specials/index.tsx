@@ -43,7 +43,7 @@ const GridSpecial = ({ data }: any) => {
     >
       <div className="grid-news-container">
         <div className="wrapper">
-          <div className={`title ${type}`}>
+          <div className={`title ${type}`} data-aos="fade-right">
             <h2>
               {title_text}
             </h2>
@@ -57,7 +57,7 @@ const GridSpecial = ({ data }: any) => {
                       <>
                         {
                           posts.map((post: any, index: number) => (
-                            <PreviewCard key={index} {...post} type="vertical" post="specials" />
+                            <PreviewCard key={index} delay={index * 200} {...post} type="vertical" post="specials" />
                           ))
                         }
                       </> :

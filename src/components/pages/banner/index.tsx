@@ -20,14 +20,14 @@ const PageBanner = ({ data }: any) => {
           >
             <div className="data-container">
               <div className="data-wrapper">
-                <h1>
+                <h1 data-aos="fade-up" data-aos-delay="300">
                   {banner.slug && (
                     <Link href={`/articles/${banner.slug}`}>{banner.name}</Link>
                   )}
                 </h1>
-                <p>{banner.excerpt}</p>
+                <p data-aos="fade-up" data-aos-delay="400">{banner.excerpt}</p>
                 {banner.slug && (
-                  <Link className="btn" href={`/articles/${banner.slug}`}>
+                  <Link className="btn" href={`/articles/${banner.slug}`} data-aos="fade-up" data-aos-delay="500" >
                     Leer más
                   </Link>
                 )}

@@ -32,20 +32,20 @@ export const ArticleBanner = ({
         </div>
         <div className="content-wrapper">
           <div className="data">
-            <div className="meta">
+            <div className="meta" data-aos="custom-fade-in" data-aos-delay="300">
               {category && <CategoryLabel {...category} type='circle'/>}
               <span className="date">{publish_date}</span>
             </div>
             {secondary_title && (
-              <div className="secondary-title">
+              <div className="secondary-title" >
                 <span>{secondary_title}</span>
               </div>
             )}
-            <div className="title">
+            <div className="title" data-aos="fade-right" data-aos-delay="300">
               <h1>{post_title}</h1>
             </div>
             {author && (
-              <div className="author">
+              <div className="author" data-aos="custom-fade-in" data-aos-delay="300">
                 por <span>{author}</span>
               </div>
             )}
