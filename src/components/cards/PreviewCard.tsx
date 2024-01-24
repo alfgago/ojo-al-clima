@@ -12,14 +12,15 @@ export const PreviewCard = ({
   thumbnail,
   author,
   type,
-  post = "articles" 
+  post = "articles",
+  delay
 }: ArticleCardProps) => {
 
   const color = category?.color || 'gray'; 
 
   return (
     <PreviewStyle color={color}>
-      <div className={`article-card ${type}`}>
+      <div className={`article-card ${type}`} data-aos="fade-up" data-aos-delay={delay}>
         {thumbnail && thumbnail.url_medium && (
           <div className="thumbnail">
             <Link href={`/${post}/${slug}`}>
@@ -81,4 +82,5 @@ interface ArticleCardProps {
   author: string;
   type: "lateral" | "vertical";
   post?: "articles" | "specials";
+  delay: number;
 }

@@ -43,7 +43,7 @@ const GridNews = ({ data }: any) => {
     >
       <div className="grid-news-container">
         <div className="wrapper">
-          <div className={`title ${type}`}>
+          <div className={`title ${type}`} data-aos="fade-right">
             <h2>
               {title_text}
             </h2>
@@ -69,7 +69,7 @@ const GridNews = ({ data }: any) => {
                       <>
                         {
                           posts.map((post: any, index: number) => (
-                            <PreviewCard key={index} {...post} type="vertical" />
+                            <PreviewCard key={index} delay={index * 200} {...post} type="vertical"/>
                           ))
                         }
                       </> :
@@ -108,7 +108,7 @@ const GridNews = ({ data }: any) => {
           {
             !highlight_first && btn?.text && !btn?.after_title && (
               <div className="btn-show-more-bottom-wrapper">
-                <Link href={btn.url}>
+                <Link href={btn.url} data-aos="fade-up" data-aos-delay="300">
                   {btn.text}
                 </Link>
               </div>
