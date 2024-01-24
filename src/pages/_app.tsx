@@ -10,9 +10,16 @@ import { queryClient } from '@/utils';
 
 import '@/styles/fonts/stylesheet.css';
 import '@/styles/styles.scss';
-
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function App({ Component, pageProps}: AppProps) {
+
+  useEffect(() => {
+    setTimeout(function () { AOS.init(); }, 1000);
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
       <Meta />

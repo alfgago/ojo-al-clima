@@ -82,13 +82,13 @@ export const Newsletter = ({ form }: any) => {
 
   return (
     <NewsletterStyle>
-      <div className="learn-colors">
+      <div className="learn-colors" data-aos="fade-up">
         <div className="red"></div>
         <div className="purple"></div>
         <div className="blue"></div>
         <div className="yellow"></div>
       </div>
-      <div className="form-wrapper">
+      <div className="form-wrapper" data-aos="fade-up">
         <div className="title">
           <h5>Suscríbase a nuestro boletín!</h5>
         </div>

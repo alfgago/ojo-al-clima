@@ -16,7 +16,7 @@ export const FeaturedCard = ({
 
   return (
     <FeaturedStyle>
-      <div className="featured-card">
+      <div className="featured-card" data-aos="custom-fade-in" data-aos-duration="1000" data-aos-delay="300">
         {thumbnail && thumbnail.url_full && (
           <div className="thumbnail-wrapper">
             <Link href={`/articles/${slug}`}>
