@@ -37,7 +37,7 @@ export const GradientStyle = styled.div`
       --gradient-color-2: #137E24;
       --gradient-color-3: #27C840;
       --gradient-color-4: #137E24;
-      opacity: 0.9;
+      
     }
   }
 `
