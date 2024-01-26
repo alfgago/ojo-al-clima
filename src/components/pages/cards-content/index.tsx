@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { CardsContentStyle } from "./CardContentStyle";
 import { Card } from "./Card";
+import { GradientBackground } from "@/components";
 
 const CardsContent = ({ data }: any) => {
   const { attrs = {} } = data || {};
@@ -16,6 +17,7 @@ const CardsContent = ({ data }: any) => {
   return (
     <CardsContentStyle background={thumbnail.url_full || ''}>
       <div className="cards-content-container">
+      <GradientBackground className="background" useColor={'home'} />
         <div className="colors-layer">
           <div className="wrapper">
             <div className="content">

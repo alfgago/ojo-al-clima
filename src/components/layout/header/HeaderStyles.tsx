@@ -427,6 +427,7 @@ export const HeaderStyle = styled.header`
           .parent {
             a {
               color: ${COLORS.white} !important;
+              text-shadow: 1px 2px 4px #000;
             }
             svg {
               path { 

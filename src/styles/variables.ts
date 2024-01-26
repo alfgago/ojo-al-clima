@@ -9,6 +9,7 @@ export const GRADIENT_WEBGL: PARAMS = {
   blue: ["#2abddb", "#34BBD7", "#368daa"],
   purple: ["#6967F1", "#3F448F", "#2c3285"],
   gray: ["#E4E4E4", "#787277", "#858585"],
+  home: ["#6176e7", "#d07a33", "#b4292a"]
 }
 
 export const GRADIENTS: PARAMS = {
