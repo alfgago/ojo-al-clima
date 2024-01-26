@@ -8,7 +8,7 @@ export const AdBlock = ({ data, type='horizontal' }: AdBlockProps) => {
         dangerouslySetInnerHTML={{
           __html: data,
         }}
-      />
+      /> 
     </AdBlockStyle>
   )
 }
