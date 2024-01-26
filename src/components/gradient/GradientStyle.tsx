@@ -7,7 +7,7 @@ export const GradientStyle = styled.div`
   top: 0;
   left: 0;
   width: 100%;
-  height: 50vh;
+  height: 100%;
   overflow: hidden;
   pointer-events: none;
 
@@ -15,7 +15,7 @@ export const GradientStyle = styled.div`
     position: absolute;
     top: -10px;
     left: -10px;
-    height: 50vh;
+    height: calc(100% + 20px);
     width: calc(100% + 20px);
     content: "";
     backdrop-filter: blur(10px);
@@ -26,7 +26,7 @@ export const GradientStyle = styled.div`
     position: absolute;
     top: -10px;
     left: -10px;
-    height: 50vh;
+    height: calc(100% + 20px);
     width: calc(100% + 20px);
     opacity: 1;
     z-index: 0;

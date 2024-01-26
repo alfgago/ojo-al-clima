@@ -46,6 +46,9 @@ export const HeadingStyle = styled.section<{color: string}>`
       z-index: 2;
       background: linear-gradient(180deg, rgba(0,0,0,0) 7.5rem, rgb(255 255 255 / 100%) 100%);
     }
+    #grad-container {
+      height: 50vh;
+    }
   }
   .learn-colors {
     position: absolute;
