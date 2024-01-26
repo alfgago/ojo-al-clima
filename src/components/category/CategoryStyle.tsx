@@ -4,11 +4,14 @@ import { COLORS, GRADIENTS, DEVICE } from "@/styles/variables"
 
 export const CategoryStyle = styled.section`
   .wrapper-category {
+    position: relative;
     max-width: 84.6875rem;
     width: 100%;
     margin: 4.38rem auto;
     display: flex;
     gap: 3.38rem;
+    z-index: 9;
+    
     @media ${DEVICE.maxmd} {
       padding: 0 2rem;
     }

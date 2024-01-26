@@ -37,15 +37,14 @@ export const HeadingStyle = styled.section<{color: string}>`
   }
   .gradient-wrapper {
     &:before {
-      display: none
-      height: 40%;
+      height: 50vh;
       content: "";
       position: absolute;
-      bottom: 0px;
+      top: 0px;
       left: 0px;
       width: 100%;
       z-index: 2;
-      background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgb(255 255 255 / 94%) 90%);
+      background: linear-gradient(180deg, rgba(0,0,0,0) 7.5rem, rgb(255 255 255 / 100%) 100%);
     }
   }
   .learn-colors {
