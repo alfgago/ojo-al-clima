@@ -13,7 +13,7 @@ const GridSpecials = ({ data }: any) => {
           <div className='articles'>
             {
               posts.map((post: any, index: number) => (
-                <PreviewCard key={index} {...post} type="vertical" />
+                <PreviewCard key={index} delay={index * 200} {...post} type="vertical" />
               ))
             }
           </div>

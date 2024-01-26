@@ -41,6 +41,8 @@ const GridImages = ({ data }: any) => {
                     alt={image.alt || 'Image'} 
                     width={image.width || 100}
                     height={image.height || 100}
+                    data-aos="fade-up"
+                    data-aos-delay={index * 200}
                   />
                 )}
               </div>
