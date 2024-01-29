@@ -26,7 +26,7 @@ export const BannerStyles = styled.section`
       @media ${DEVICE.maxmd} {
         height: 50rem;
       }
-      @media ${DEVICE.maxxs} {
+      @media ${DEVICE.maxxs} { 
         height: 30rem;
       }
       &:before {
