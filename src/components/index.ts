@@ -8,6 +8,9 @@ export * from './article/banner';
 //Page blocks
 export * from './pages/PageComponents';
 
+//Quienes somos blocks
+export * from './quienes-somos/QuienesSomosComponents';
+
 //Category blocks
 export * from './category';
 

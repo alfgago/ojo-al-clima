@@ -23,7 +23,7 @@ export const LearnPage = ({ data }: any) => {
       )}
       <section className="learn-content">
         <div className="wrapper">
-          <ArticleComponents blocks={blocks} />
+          <ArticleComponents blocks={blocks} adsKey="learn-content" lastKey="learn-end"/>
         </div>
       </section>
     </LearnPageStyle>
