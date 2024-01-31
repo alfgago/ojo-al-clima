@@ -26,7 +26,7 @@ export const BannerStyles = styled.section`
       @media ${DEVICE.maxmd} {
         height: 50rem;
       }
-      @media ${DEVICE.maxxs} {
+      @media ${DEVICE.maxxs} { 
         height: 30rem;
       }
       &:before {
@@ -36,6 +36,14 @@ export const BannerStyles = styled.section`
         height: 80%;
         bottom: 0;
         background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgba(7, 10, 17, 0.80) 100%);
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        top: 0;
+        height: 10%;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.00) 0%, rgba(7, 10, 17, 0.80) 100%);
       }
       .data-container {
         position: relative;
