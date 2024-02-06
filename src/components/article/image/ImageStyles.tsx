@@ -10,7 +10,9 @@ export const ImageStyle = styled.figure`
     img {
       display: block;
       width: 100%;
-      height: auto;
+      height: 100%;
+      min-height: 15rem;
+      object-fit: cover;
     }
   }
   figcaption {

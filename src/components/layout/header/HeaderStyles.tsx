@@ -95,6 +95,9 @@ export const HeaderStyle = styled.header`
           rect:nth-child(2) {
             transition: all 0.4s ease;
             filter: brightness(0.6);
+            @media ${DEVICE.maxmd} {
+              filter: brightness(0);
+            }
           }
         }
       }

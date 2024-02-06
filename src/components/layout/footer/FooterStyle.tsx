@@ -71,7 +71,7 @@ export const FooterStyle = styled.footer`
           }
           @media (max-width: 420px) {
             &:nth-child(4){
-              margin-top: -6rem;
+              margin-top: -3rem;
             }
           }
           span {
@@ -110,7 +110,7 @@ export const FooterStyle = styled.footer`
       .logo-u {
         width: 11%;
         display: flex;
-        flex-direction: column;
+        flex-direction: column-reverse;
         gap: 3.75rem;
         img {
           width: 100%;
@@ -124,7 +124,7 @@ export const FooterStyle = styled.footer`
           width: 100%;
           display: grid;
           grid-gap: 3.25rem;
-          margin: -8rem 0 -0.75rem;
+          margin: -5rem 0 -0.75rem;
           justify-items: center;
           align-items: center;
           justify-content: end;
