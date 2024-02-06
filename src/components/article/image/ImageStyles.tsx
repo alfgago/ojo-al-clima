@@ -11,6 +11,8 @@ export const ImageStyle = styled.figure`
       display: block;
       width: 100%;
       height: 100%;
+      min-height: 15rem;
+      object-fit: cover;
     }
   }
   figcaption {
