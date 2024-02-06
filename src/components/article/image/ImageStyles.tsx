@@ -23,6 +23,9 @@ export const ImageStyle = styled.figure`
     background: #FFF;
     box-shadow: 0px 4px 43px 0px rgba(0, 0, 0, 0.09);
     height: -webkit-fill-available;
+    @media ${DEVICE.maxmd} {
+      height: fit-content;
+    }
     small,
     span {
       color: #828282;
