@@ -13,6 +13,7 @@ const nextConfig = {
   images: {
     domains: [
       "ojoalclima.stag.host",
+      "admin.ojoalclima.com",
       process.env.NEXT_PUBLIC_WORDPRESS_URL,
       process.env.NEXT_PUBLIC_DOMAIN,
     ],
