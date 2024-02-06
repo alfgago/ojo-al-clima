@@ -95,9 +95,6 @@ export const HeaderStyle = styled.header`
           rect:nth-child(2) {
             transition: all 0.4s ease;
             filter: brightness(0.6);
-            @media ${DEVICE.maxmd} {
-              filter: brightness(0);
-            }
           }
         }
       }
@@ -113,7 +110,7 @@ export const HeaderStyle = styled.header`
             transform: translate(-3rem, 0.3rem);
             svg {
               rect:nth-child(2) {
-                filter: brightness(1);
+                filter: brightness(0) invert(1);
               }
             }
           }
