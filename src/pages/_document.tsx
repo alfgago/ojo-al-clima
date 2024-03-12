@@ -12,19 +12,6 @@ export default class MyDocument extends Document {
     return (
       <Html lang="es">
         <Head>
-          <script
-            src={`https://www.googletagmanager.com/gtag/js?id=G-1E2N0PYHBL`}
-          />
-          <script>
-            {`
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-1E2N0PYHBL', {
-              page_path: window.location.pathname,
-              });
-            `}
-          </script>
           <link
             rel="stylesheet"
             type="text/css"

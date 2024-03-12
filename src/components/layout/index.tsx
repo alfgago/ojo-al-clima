@@ -1,6 +1,6 @@
 import { useRouter } from "next/router"
 import { AnimatePresence, motion } from "framer-motion"
-
+import { GoogleAnalytics } from '@next/third-parties/google'
 import { Header } from "./header"
 import { Footer } from "./footer"
 import { LayoutStyle } from "./LayoutStyle"
@@ -39,6 +39,7 @@ export const Layout = ({ children, header, footer }: any) => {
   return (
     <LayoutStyle className={className}>
       <Header data={header} />
+      <GoogleAnalytics gaId="G-1E2N0PYHBL" />
       <section className="main-section">
         <AnimatePresence mode="wait" onExitComplete={onExitCompleteHandler}>
           <motion.div
