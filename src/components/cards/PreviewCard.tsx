@@ -47,11 +47,14 @@ export const PreviewCard = ({
               </Link>
             </h4>
           </div>
-          <div className="author">
-            <span>
-              por {author}
-            </span>
-          </div>
+          {author &&
+            <div className="author">
+              <span>
+                por {author}
+              </span>
+            </div>
+          }
+          
         </div>
       </div>
     </PreviewStyle>

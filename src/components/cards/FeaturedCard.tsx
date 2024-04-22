@@ -9,7 +9,8 @@ export const FeaturedCard = ({
   category,
   thumbnail,
   author = '',
-  excerpt = ''
+  excerpt = '',
+  url = 'articles'
 }: ArticleCardProps) => {
   // Verificar si todas las propiedades requeridas para CategoryLabel están presentes
   const isCategoryLabelRenderable = category && category.name && category.slug && category.color;
@@ -19,7 +20,7 @@ export const FeaturedCard = ({
       <div className="featured-card" data-aos="custom-fade-in" data-aos-duration="1000" data-aos-delay="300">
         {thumbnail && thumbnail.url_full && (
           <div className="thumbnail-wrapper">
-            <Link href={`/articles/${slug}`}>
+            <Link href={`/${url}/${slug}`}>
                 <Image
                   src={thumbnail.url_full}
                   alt={thumbnail.alt || 'Thumbnail'}
@@ -36,7 +37,7 @@ export const FeaturedCard = ({
           <div className="title">
             {name && (
               <h3>
-                <Link href={`/articles/${slug}`}>
+                <Link href={`/${url}/${slug}`}>
                   {name}
                 </Link>
               </h3>
@@ -75,4 +76,5 @@ interface ArticleCardProps {
   thumbnail?: ThumbnailProps;
   author?: string;
   excerpt?: string;
+  url?: string;
 }
