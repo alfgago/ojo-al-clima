@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { NewsletterStyle } from "./NewsletterStyle"
-import { contactFormAPI } from "@/pages/api/base"
+import { contactFormAPI } from "@/services/base"
 import { Loader } from ".."
 
 export const Newsletter = ({ form }: any) => {

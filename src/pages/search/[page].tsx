@@ -2,8 +2,8 @@ import Head from 'next/head';
 import parse from "html-react-parser"
 import { dehydrate } from 'react-query/hydration';
 import { cleanYoast, queryClient } from "@/utils";
-import { fetchPostData } from '@/pages/api/posts';
-import { fetchSearchData } from '../api/search';
+import { fetchPostData } from '@/services/posts';
+import { fetchSearchData } from '../../services/search';
 import { SearchComponets } from '@/components';
 
 export default function Search({ data, recents }: any) {

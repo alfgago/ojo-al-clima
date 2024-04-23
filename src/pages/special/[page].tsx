@@ -3,10 +3,10 @@ import parse from "html-react-parser"
 import { dehydrate } from 'react-query/hydration';
 import { cleanYoast, queryClient } from "@/utils";
 
-import { fetchPostData } from '../api/posts';
-import { layoutPageData } from '../api/layout';
+import { fetchPostData } from '../../services/posts';
+import { layoutPageData } from '../../services/layout';
 import { CategoryComponents } from '@/components';
-import { fetchAllSpecials } from '../api/specials';
+import { fetchAllSpecials } from '../../services/specials';
 
 export default function Special({ data, recents, form }: any) {
   const { yoast} = data;

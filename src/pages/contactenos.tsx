@@ -2,7 +2,7 @@ import Head from 'next/head';
 import parse from "html-react-parser"
 import { dehydrate } from 'react-query/hydration';
 import { cleanYoast, queryClient } from "@/utils";
-import { fetchPageData } from "@/pages/api/pages";
+import { fetchPageData } from "@/services/pages";
 
 export default function Contactenos({ page }: any)  {
 

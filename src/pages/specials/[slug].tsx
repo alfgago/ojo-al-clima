@@ -3,7 +3,7 @@ import parse from "html-react-parser"
 
 import { dehydrate } from 'react-query/hydration';
 import { cleanYoast, queryClient } from "@/utils";
-import { fetchSpecialData } from '../api/specials';
+import { fetchSpecialData } from '../../services/specials';
 import { ArticleBanner } from '@/components';
 import { SpecialStyle } from '@/components/specials/SpecialStyle';
 import { SpecialsComponents } from '@/components/specials/SpecialComponents';

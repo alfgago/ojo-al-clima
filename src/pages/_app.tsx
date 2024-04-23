@@ -4,7 +4,7 @@ import { QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import { Hydrate } from 'react-query/hydration';
 
-import { layoutPageData } from './api/layout';
+import { layoutPageData } from '../services/layout';
 import { Layout, Meta } from '@/components';
 import { queryClient } from '@/utils';
 
