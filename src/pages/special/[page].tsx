@@ -6,7 +6,7 @@ import { cleanYoast, queryClient } from "@/utils";
 import { fetchPostData } from '../api/posts';
 import { layoutPageData } from '../api/layout';
 import { CategoryComponents } from '@/components';
-import { fetchAllSpecials, fetchSpecialData } from '../api/specials';
+import { fetchAllSpecials } from '../api/specials';
 
 export default function Special({ data, recents, form }: any) {
   const { yoast} = data;
