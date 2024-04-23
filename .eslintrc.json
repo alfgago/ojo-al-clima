@@ -1,5 +1,16 @@
 {
   "extends": [
-    "next/core-web-vitals"
-  ]
+    "plugin:react/recommended",
+    "next/core-web-vitals",
+    "google",
+    "prettier"
+  ],
+  "rules": {
+    "prefer-promise-reject-errors": "off",
+    "no-unused-vars": "off",
+    "prefer-const": "off",
+    "camelcase": "off",
+    "spaced-comment": "off",
+    "require-jsdoc": "off"
+  }
 }
