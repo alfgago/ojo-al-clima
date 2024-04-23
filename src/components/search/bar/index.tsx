@@ -3,7 +3,7 @@ import { ReactSVG } from 'react-svg';
 import { BarStyle } from './BarStyle';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import { layoutPageData } from '@/pages/api/layout';
+import { layoutPageData } from '@/services/layout';
 import Select, { StylesConfig } from 'react-select';
 
 export const SearchBar = () => {

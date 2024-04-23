@@ -2,10 +2,10 @@ import Head from 'next/head';
 import parse from "html-react-parser"
 import { dehydrate } from 'react-query/hydration';
 import { cleanYoast, queryClient } from "@/utils";
-import { fetchPostData } from '@/pages/api/posts';
+import { fetchPostData } from '@/services/posts';
 import { ArticleBanner, ArticleComponents, Recents } from '@/components';
 import { ArticleStyle } from '@/components/article/ArticleSyle';
-import { layoutPageData } from '../api/layout';
+import { layoutPageData } from '../../services/layout';
 
 export default function Post({ post, recents, form }: any) {
 

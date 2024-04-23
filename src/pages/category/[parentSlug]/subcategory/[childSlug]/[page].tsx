@@ -2,10 +2,10 @@ import Head from 'next/head';
 import parse from "html-react-parser"
 import { dehydrate } from 'react-query/hydration';
 import { cleanYoast, queryClient } from "@/utils";
-import { fetchCategoryData } from '@/pages/api/categories';
-import { fetchPostData } from '@/pages/api/posts';
+import { fetchCategoryData } from '@/services/categories';
+import { fetchPostData } from '@/services/posts';
 import { CategoryComponents } from '@/components';
-import { layoutPageData } from '@/pages/api/layout';
+import { layoutPageData } from '@/services/layout';
 
 export default function Subcategory({ data, recents, form }: any) {
 

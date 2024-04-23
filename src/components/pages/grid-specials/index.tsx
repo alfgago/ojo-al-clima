@@ -47,6 +47,18 @@ const GridSpecial = ({ data }: any) => {
             <h2>
               {title_text}
             </h2>
+            {
+              !highlight_first && btn?.text && btn?.after_title && (
+                <div className="btn-show-more-top-wrapper">
+                  <Link href={btn.url || '/'}>
+                    {btn.text}
+                    <ReactSVG
+                      src="/icons/arrow-next.svg"
+                    />
+                  </Link>
+                </div>
+              )
+            }
           </div>
           <div className={`articles ${type} ${layout}`}>
             {
@@ -81,6 +93,15 @@ const GridSpecial = ({ data }: any) => {
                 : null
             }
           </div>
+          {
+           !highlight_first && btn?.text && !btn?.after_title && (
+              <div className="btn-show-more-bottom-wrapper">
+                <Link href={btn.url} data-aos="fade-up" data-aos-delay="300">
+                  {btn.text}
+                </Link>
+              </div>
+            )
+          }
         </div>
       </div>
     </GridSpecialStyle>

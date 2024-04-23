@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FormStyle } from "./FormStyle"
 import { useRouter } from "next/router";
-import { contactFormAPI } from "@/pages/api/base";
+import { contactFormAPI } from "@/services/base";
 
 const pathClassMapping: PathClassMapping = {
   "/": "on-home-page",

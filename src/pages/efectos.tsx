@@ -2,7 +2,7 @@ import Head from 'next/head';
 import parse from "html-react-parser"
 import { dehydrate } from 'react-query/hydration';
 import { cleanYoast, queryClient } from "@/utils";
-import { fetchLearnData } from './api/learn';
+import { fetchLearnData } from '../services/learn';
 import { LearnPage } from '@/components';
 
 export default function Efectos({ page }: any) {

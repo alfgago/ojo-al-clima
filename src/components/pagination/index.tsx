@@ -23,6 +23,9 @@ export const Pagination = ({ data }: any) => {
       const { q, author } = slug;
       return `/search/${page}?q=${q}${author ? `&author=${author}` : ''}`;
     }
+    if(slug === 'special'){
+      return `/${slug}/${page}`;
+    }
     return parent_category 
       ? `/category/${parent_category}/subcategory/${slug}/${page}`
       : `/category/${slug}/${page}`;

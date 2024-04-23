@@ -1,7 +1,7 @@
 import { useQuery, useQueries } from "react-query"
 import { ARTICLE_COMPONENTS } from "@/constants/articleComponents"
 import { ADS_GROUPS } from "@/constants/adsGroups"
-import { fetchAdsData } from "@/pages/api/ads"
+import { fetchAdsData } from "@/services/ads"
 import { AdBlock } from "../ads"
 import { AdController } from "../ad-controller"
 

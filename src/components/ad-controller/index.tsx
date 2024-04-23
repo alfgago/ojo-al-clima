@@ -1,4 +1,4 @@
-import { fetchAdsData } from "@/pages/api/ads";
+import { fetchAdsData } from "@/services/ads";
 import { useQuery, useQueries } from "react-query";
 import { AdBlock } from "../ads";
 import { Loader } from "..";

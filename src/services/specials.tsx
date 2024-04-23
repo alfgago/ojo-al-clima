@@ -14,3 +14,17 @@ export const fetchSpecialData = async (slug: string) => {
 
   return queryClient.getQueryData(['specialData', slug]);
 };
+
+
+export const fetchAllSpecials = async (slug: string , staleTime?: number) => {
+  await queryClient.prefetchQuery(
+    ['specialDataPage', slug], 
+    async () => {
+      const response = await customAPI.get(`/${slug}/`); 
+      console.log('request special data:', response);
+      return response.data; 
+    }, 
+    { staleTime: 60 * 1000 } 
+  );
+  return queryClient.getQueryData(['specialDataPage', slug]);
+};

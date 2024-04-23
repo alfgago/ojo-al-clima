@@ -30,6 +30,11 @@ const nextConfig = {
         source: '/category/:parentSlug/subcategory/:childSlug',
         destination: '/category/:parentSlug/subcategory/:childSlug/1',
         permanent: false,
+      },
+      {
+        source: '/special',
+        destination: '/special/1',
+        permanent: false,
       }
     ]
   },
